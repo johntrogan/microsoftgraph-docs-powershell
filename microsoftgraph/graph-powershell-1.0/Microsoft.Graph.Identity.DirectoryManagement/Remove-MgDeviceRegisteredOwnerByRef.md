@@ -449,8 +449,8 @@ INPUTOBJECT `<IIdentityDirectoryManagementIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement/Remove-MgDeviceRegisteredOwnerByRef)
-- [](https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0)
+- [Remove-MgDeviceRegisteredOwnerByRef](https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement/Remove-MgDeviceRegisteredOwnerByRef)
+- [Graph API Reference](https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0)
 
 
 

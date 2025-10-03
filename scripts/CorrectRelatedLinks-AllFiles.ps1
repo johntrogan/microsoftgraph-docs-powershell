@@ -78,6 +78,21 @@ function Process-ModulesByProfile {
             }
         }
     }
+    git config --global user.email "GraphTooling@service.microsoft.com"
+    git config --global user.name "Microsoft Graph DevX Tooling"
+    git add .
+
+    # Check for staged changes; commit only if any exist
+    $pending = git status --porcelain
+    if (-not [string]::IsNullOrWhiteSpace($pending)) {
+        git commit -m "Corrected related link to conform to the new platyps rules"
+        Write-Host "Committed correction of related links."
+    }
+    else {
+        Write-Host "Nothing to commit; skipping commit step."
+        # Ensure a clean exit code even if earlier native commands returned 1
+        $global:LASTEXITCODE = 0
+    }
     
     return @{ Fixed = $totalFixed; Processed = $totalProcessed }
 }

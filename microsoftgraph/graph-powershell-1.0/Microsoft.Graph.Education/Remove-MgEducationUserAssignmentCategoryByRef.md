@@ -442,7 +442,7 @@ INPUTOBJECT `<IEducationIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.education/Remove-MgEducationUserAssignmentCategoryByRef)
+- [Remove-MgEducationUserAssignmentCategoryByRef](https://learn.microsoft.com/powershell/module/microsoft.graph.education/Remove-MgEducationUserAssignmentCategoryByRef)
 
 
 

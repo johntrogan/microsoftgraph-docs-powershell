@@ -530,8 +530,8 @@ INPUTOBJECT `<IIdentityGovernanceIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance/Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef)
-- [](https://learn.microsoft.com/graph/api/connectedorganization-delete-internalsponsors?view=graph-rest-beta)
+- [Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance/Remove-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef)
+- [Graph API Reference](https://learn.microsoft.com/graph/api/connectedorganization-delete-internalsponsors?view=graph-rest-beta)
 
 
 

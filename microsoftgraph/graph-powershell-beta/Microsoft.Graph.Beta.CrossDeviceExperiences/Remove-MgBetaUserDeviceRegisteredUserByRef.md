@@ -434,7 +434,7 @@ INPUTOBJECT `<ICrossDeviceExperiencesIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.crossdeviceexperiences/Remove-MgBetaUserDeviceRegisteredUserByRef)
+- [Remove-MgBetaUserDeviceRegisteredUserByRef](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.crossdeviceexperiences/Remove-MgBetaUserDeviceRegisteredUserByRef)
 
 
 

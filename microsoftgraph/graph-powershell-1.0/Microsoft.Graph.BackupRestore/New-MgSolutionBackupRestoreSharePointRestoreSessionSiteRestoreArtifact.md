@@ -797,7 +797,7 @@ For example, in the access reviews decisions API, this property might record the
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/new-mgsolutionbackuprestoresharepointrestoresessionsiterestoreartifact)
+- [New-MgSolutionBackupRestoreSharePointRestoreSessionSiteRestoreArtifact](https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/new-mgsolutionbackuprestoresharepointrestoresessionsiterestoreartifact)
 
 
 

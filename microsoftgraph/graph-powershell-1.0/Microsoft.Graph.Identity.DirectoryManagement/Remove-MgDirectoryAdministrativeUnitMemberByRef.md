@@ -458,8 +458,8 @@ INPUTOBJECT `<IIdentityDirectoryManagementIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement/Remove-MgDirectoryAdministrativeUnitMemberByRef)
-- [](https://learn.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0)
+- [Remove-MgDirectoryAdministrativeUnitMemberByRef](https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement/Remove-MgDirectoryAdministrativeUnitMemberByRef)
+- [Graph API Reference](https://learn.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0)
 
 
 

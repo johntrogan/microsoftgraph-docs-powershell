@@ -10960,7 +10960,7 @@ Read-only.
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.files/update-mggroupdriveitemanalyticitemactivitystat)
+- [Update-MgGroupDriveItemAnalyticItemActivityStat](https://learn.microsoft.com/powershell/module/microsoft.graph.files/update-mggroupdriveitemanalyticitemactivitystat)
 
 
 

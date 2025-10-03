@@ -461,7 +461,7 @@ INPUTOBJECT `<IApplicationsIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications/Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef)
+- [Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications/Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef)
 
 
 

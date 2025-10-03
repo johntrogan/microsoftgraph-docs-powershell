@@ -450,8 +450,8 @@ INPUTOBJECT `<IGroupsIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups/Remove-MgBetaGroupMemberByRef)
-- [](https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-beta)
+- [Remove-MgBetaGroupMemberByRef](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups/Remove-MgBetaGroupMemberByRef)
+- [Graph API Reference](https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-beta)
 
 
 

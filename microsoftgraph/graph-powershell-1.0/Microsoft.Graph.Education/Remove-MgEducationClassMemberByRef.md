@@ -433,8 +433,8 @@ INPUTOBJECT `<IEducationIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.education/Remove-MgEducationClassMemberByRef)
-- [](https://learn.microsoft.com/graph/api/educationclass-delete-members?view=graph-rest-1.0)
+- [Remove-MgEducationClassMemberByRef](https://learn.microsoft.com/powershell/module/microsoft.graph.education/Remove-MgEducationClassMemberByRef)
+- [Graph API Reference](https://learn.microsoft.com/graph/api/educationclass-delete-members?view=graph-rest-1.0)
 
 
 

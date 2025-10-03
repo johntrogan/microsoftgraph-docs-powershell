@@ -447,8 +447,8 @@ INPUTOBJECT `<IGroupsIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.groups/Remove-MgGroupMemberByRef)
-- [](https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0)
+- [Remove-MgGroupMemberByRef](https://learn.microsoft.com/powershell/module/microsoft.graph.groups/Remove-MgGroupMemberByRef)
+- [Graph API Reference](https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0)
 
 
 

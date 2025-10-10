@@ -680,7 +680,7 @@ INPUTOBJECT `<IDevicesCorporateManagementIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/new-mgbetausermobileapptroubleshootingeventapplogcollectionrequest)
+- [New-MgBetaUserMobileAppTroubleshootingEventAppLogCollectionRequest](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/new-mgbetausermobileapptroubleshootingeventapplogcollectionrequest)
 
 
 

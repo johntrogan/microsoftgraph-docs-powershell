@@ -26564,7 +26564,7 @@ Start with 1.
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/update-mgbetateamwork)
+- [Update-MgBetaTeamwork](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/update-mgbetateamwork)
 
 
 

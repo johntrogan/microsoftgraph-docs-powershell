@@ -10883,7 +10883,7 @@ Always null when the object hasn't been deleted.
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/update-mgidentitygovernanceprivilegedaccessgroupeligibilityscheduleinstance)
+- [Update-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance](https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/update-mgidentitygovernanceprivilegedaccessgroupeligibilityscheduleinstance)
 
 
 

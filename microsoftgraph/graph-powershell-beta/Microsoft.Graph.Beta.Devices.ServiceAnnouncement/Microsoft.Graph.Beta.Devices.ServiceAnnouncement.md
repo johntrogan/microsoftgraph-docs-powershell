@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
-Module Guid: 2d818275-35a8-45a3-9305-e88e079ea807
+Module Guid: d75d52f6-05e4-4ebf-a572-a94dda6aad1a
 Download Help Link: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.devices.serviceannouncement/?view=graph-powershell-beta
 Help Version: 1.0.0.0
 Locale: en-US
@@ -60,23 +60,4 @@ Microsoft Graph PowerShell Cmdlets
 ### [Invoke-MgBetaUnarchiveServiceAnnouncementMessage](Invoke-MgBetaUnarchiveServiceAnnouncementMessage.md)
 
 ### [Invoke-MgBetaUnfavoriteServiceAnnouncementMessage](Invoke-MgBetaUnfavoriteServiceAnnouncementMessage.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

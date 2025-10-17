@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: 3fb9096c-1dd7-4a9a-898e-0fd71d89e52e
+Module Guid: be1c0cc8-dbf3-45d9-a851-4735e6ecdc27
 Download Help Link: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.sites/?view=graph-powershell-beta
 Help Version: 1.0.0.0
 Locale: en-US
@@ -2910,23 +2910,4 @@ Microsoft Graph PowerShell Cmdlets
 ### [Update-MgBetaSiteTermStoreSetTermChildRelation](Update-MgBetaSiteTermStoreSetTermChildRelation.md)
 
 ### [Update-MgBetaSiteTermStoreSetTermRelation](Update-MgBetaSiteTermStoreSetTermRelation.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -32912,7 +32912,7 @@ Read-only.
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.files/new-mggroupdriverootchild)
+- [New-MgGroupDriveRootChild](https://learn.microsoft.com/powershell/module/microsoft.graph.files/new-mggroupdriverootchild)
 
 
 

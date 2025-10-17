@@ -46240,7 +46240,7 @@ Read-only.
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.files/new-mgdrive)
+- [New-MgDrive](https://learn.microsoft.com/powershell/module/microsoft.graph.files/new-mgdrive)
 
 
 

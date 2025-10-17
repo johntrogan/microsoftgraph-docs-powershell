@@ -408,7 +408,7 @@ INPUTOBJECT `<IDevicesCorporateManagementIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/get-mgbetauserdeviceenrollmentconfigurationcount)
+- [Get-MgBetaUserDeviceEnrollmentConfigurationCount](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/get-mgbetauserdeviceenrollmentconfigurationcount)
 
 
 

@@ -2431,7 +2431,7 @@ Read-only.
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/new-mgbetanetworkaccessconnectivityremotenetworkforwardingprofile)
+- [New-MgBetaNetworkAccessConnectivityRemoteNetworkForwardingProfile](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/new-mgbetanetworkaccessconnectivityremotenetworkforwardingprofile)
 
 
 

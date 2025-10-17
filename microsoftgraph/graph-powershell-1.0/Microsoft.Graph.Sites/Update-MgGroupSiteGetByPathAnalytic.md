@@ -20775,7 +20775,7 @@ Read-only.
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.sites/update-mggroupsitegetbypathanalytic)
+- [Update-MgGroupSiteGetByPathAnalytic](https://learn.microsoft.com/powershell/module/microsoft.graph.sites/update-mggroupsitegetbypathanalytic)
 
 
 

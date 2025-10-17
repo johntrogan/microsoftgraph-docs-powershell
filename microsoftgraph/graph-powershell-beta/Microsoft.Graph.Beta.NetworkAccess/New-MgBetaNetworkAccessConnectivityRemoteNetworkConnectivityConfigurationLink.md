@@ -602,7 +602,7 @@ PEERCONFIGURATION `<IMicrosoftGraphNetworkaccessPeerConnectivityConfiguration>`:
 
 ## RELATED LINKS
 
-- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/new-mgbetanetworkaccessconnectivityremotenetworkconnectivityconfigurationlink)
+- [New-MgBetaNetworkAccessConnectivityRemoteNetworkConnectivityConfigurationLink](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/new-mgbetanetworkaccessconnectivityremotenetworkconnectivityconfigurationlink)
 
 
 

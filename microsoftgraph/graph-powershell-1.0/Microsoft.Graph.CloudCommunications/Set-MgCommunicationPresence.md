@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.CloudCommunications-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.cloudcommunications/set-mgcommunicationpresence
 Locale: en-US
 Module Name: Microsoft.Graph.CloudCommunications
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: Set-MgCommunicationPresence
 ---
@@ -14,6 +14,7 @@ title: Set-MgCommunicationPresence
 ## SYNOPSIS
 
 Set the state of a user's presence session as an application.
+For more information about presence sessions, states permutations, and timeouts, see Manage presence state using the Microsoft Graph API.
 
 ## SYNTAX
 
@@ -70,12 +71,23 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Set the state of a user's presence session as an application.
+For more information about presence sessions, states permutations, and timeouts, see Manage presence state using the Microsoft Graph API.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
 ### -Activity
 
-
+.
 
 ```yaml
 Type: System.String
@@ -129,7 +141,7 @@ HelpMessage: ''
 
 ### -Availability
 
-
+.
 
 ```yaml
 Type: System.String
@@ -156,7 +168,7 @@ HelpMessage: ''
 
 ### -BodyParameter
 
-
+.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -227,7 +239,7 @@ HelpMessage: ''
 
 ### -ExpirationDuration
 
-
+.
 
 ```yaml
 Type: System.TimeSpan
@@ -478,7 +490,7 @@ HelpMessage: ''
 
 ### -SessionId
 
-
+.
 
 ```yaml
 Type: System.String
@@ -559,14 +571,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IPathsTm7IsmCommunicationsPresencesPresenceIdMicrosoftGraphSetpresencePostRequestbodyContentApplicationJsonSchema>`: .
+BODYPARAMETER <IPathsTm7IsmCommunicationsPresencesPresenceIdMicrosoftGraphSetpresencePostRequestbodyContentApplicationJsonSchema>: .
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Activity <String>]: 
   [Availability <String>]: 
   [ExpirationDuration <TimeSpan?>]: 
   [SessionId <String>]: 
 
-INPUTOBJECT `<ICloudCommunicationsIdentity>`: Identity Parameter
+INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   [AttendanceRecordId <String>]: The unique identifier of attendanceRecord
   [AudioRoutingGroupId <String>]: The unique identifier of audioRoutingGroup
   [CallId <String>]: The unique identifier of call
@@ -585,28 +597,5 @@ INPUTOBJECT `<ICloudCommunicationsIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [Set-MgCommunicationPresence](https://learn.microsoft.com/powershell/module/microsoft.graph.cloudcommunications/set-mgcommunicationpresence)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.cloudcommunications/set-mgcommunicationpresence)
+- [](https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0)

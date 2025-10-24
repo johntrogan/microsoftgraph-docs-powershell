@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Users-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.users/remove-mguserbyuserprincipalname
 Locale: en-US
 Module Name: Microsoft.Graph.Users
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: Remove-MgUserByUserPrincipalName
 ---
@@ -13,10 +13,11 @@ title: Remove-MgUserByUserPrincipalName
 
 ## SYNOPSIS
 
-Deletes a user.
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Remove-MgBetaUserByUserPrincipalName](/powershell/module/Microsoft.Graph.Beta.Users/Remove-MgBetaUserByUserPrincipalName?view=graph-powershell-beta)
+Delete a user object.
+ When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them.
+The user is also restored to any groups they were a member of.
+After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed.
+To manage the deleted user object, see deletedItems.
 
 ## SYNTAX
 
@@ -47,7 +48,21 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-Deletes a user.
+Delete a user object.
+ When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them.
+The user is also restored to any groups they were a member of.
+After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed.
+To manage the deleted user object, see deletedItems.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -379,7 +394,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
+INPUTOBJECT <IUsersIdentity>: Identity Parameter
   [AttachmentBaseId <String>]: The unique identifier of attachmentBase
   [AttachmentSessionId <String>]: The unique identifier of attachmentSession
   [ChecklistItemId <String>]: The unique identifier of checklistItem
@@ -405,28 +420,5 @@ INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [Remove-MgUserByUserPrincipalName](https://learn.microsoft.com/powershell/module/microsoft.graph.users/remove-mguserbyuserprincipalname)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/intune-mam-user-delete?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.users/remove-mguserbyuserprincipalname)
+- [](https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0)

@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.NetworkAccess-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/invoke-mgbetaentitynetworkaccessreportsummary
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.NetworkAccess
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: Invoke-MgBetaEntityNetworkAccessReportSummary
 ---
@@ -46,26 +46,13 @@ This cmdlet has the following aliases,
 
 Get the number of users, devices, and workloads per traffic type in a specified time period.
 
-**Permissions**
-
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | NetworkAccess-Reports.Read.All, NetworkAccess.ReadWrite.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | NetworkAccess-Reports.Read.All, NetworkAccess.ReadWrite.All,  |
-
 ## EXAMPLES
-### Example 1: Code snippet
 
-```powershell
+### EXAMPLE 1
 
 Import-Module Microsoft.Graph.Beta.NetworkAccess
 
 Invoke-MgBetaEntityNetworkAccessReportSummary
-
-```
-This example shows how to use the Invoke-MgBetaEntityNetworkAccessReportSummary Cmdlet.
-
 
 ## PARAMETERS
 
@@ -438,7 +425,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-INPUTOBJECT `<INetworkAccessIdentity>`: Identity Parameter
+INPUTOBJECT <INetworkAccessIdentity>: Identity Parameter
   [ActivityPivotDateTime <DateTime?>]: Usage: activityPivotDateTime={activityPivotDateTime}
   [AggregatedBy <String>]: Usage: aggregatedBy='{aggregatedBy}'
   [AlertId <String>]: The unique identifier of alert
@@ -462,31 +449,10 @@ INPUTOBJECT `<INetworkAccessIdentity>`: Identity Parameter
   [StartDateTime <DateTime?>]: Usage: startDateTime={startDateTime}
   [ThreatIntelligencePolicyId <String>]: The unique identifier of threatIntelligencePolicy
   [TlsInspectionPolicyId <String>]: The unique identifier of tlsInspectionPolicy
+  [Url <String>]: Usage: url='{url}'
 
 
 ## RELATED LINKS
 
-- [Invoke-MgBetaEntityNetworkAccessReportSummary](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/invoke-mgbetaentitynetworkaccessreportsummary)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/networkaccess-reports-entitiessummaries?view=graph-rest-beta)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/invoke-mgbetaentitynetworkaccessreportsummary)
+- [](https://learn.microsoft.com/graph/api/networkaccess-reports-entitiessummaries?view=graph-rest-beta)

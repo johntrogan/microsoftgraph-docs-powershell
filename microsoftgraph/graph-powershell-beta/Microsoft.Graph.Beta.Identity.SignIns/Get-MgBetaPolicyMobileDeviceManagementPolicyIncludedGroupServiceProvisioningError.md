@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Identity.SignIns-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetapolicymobiledevicemanagementpolicyincludedgroupserviceprovisioningerror
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: Get-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroupServiceProvisioningError
 ---
@@ -21,7 +21,7 @@ Errors published by a federated service describing a non-transient, service-spec
 
 ```
 Get-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroupServiceProvisioningError -GroupId <string>
- -MobilityManagementPolicyId <string> [-ExpandProperty <string[]>] [-Filter <string>]
+ -MobileDeviceManagementPolicyId <string> [-ExpandProperty <string[]>] [-Filter <string>]
  [-Property <string[]>] [-Search <string>] [-Skip <int>] [-Sort <string[]>] [-Top <int>]
  [-ResponseHeadersVariable <string>] [-Break] [-Headers <IDictionary>]
  [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]
@@ -37,6 +37,16 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -232,9 +242,9 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -MobilityManagementPolicyId
+### -MobileDeviceManagementPolicyId
 
-The unique identifier of mobilityManagementPolicy
+The unique identifier of mobileDeviceManagementPolicy
 
 ```yaml
 Type: System.String
@@ -490,27 +500,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-- [Get-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroupServiceProvisioningError](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetapolicymobiledevicemanagementpolicyincludedgroupserviceprovisioningerror)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins/get-mgbetapolicymobiledevicemanagementpolicyincludedgroupserviceprovisioningerror)

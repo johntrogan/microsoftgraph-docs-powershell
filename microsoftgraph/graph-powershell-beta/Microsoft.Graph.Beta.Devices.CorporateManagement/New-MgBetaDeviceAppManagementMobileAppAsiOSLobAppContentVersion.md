@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Devices.CorporateManagement-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/new-mgbetadeviceappmanagementmobileappasioslobappcontentversion
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion
 ---
@@ -15,9 +15,6 @@ title: New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion
 
 Create new navigation property to contentVersions for deviceAppManagement
 
-> [!NOTE]
-> To view the v1.0 release of this cmdlet, view [New-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion](/powershell/module/Microsoft.Graph.Devices.CorporateManagement/New-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion?view=graph-powershell-1.0)
-
 ## SYNTAX
 
 ### CreateExpanded (Default)
@@ -26,7 +23,8 @@ Create new navigation property to contentVersions for deviceAppManagement
 New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion -MobileAppId <string>
  [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]
  [-ContainedApps <IMicrosoftGraphMobileContainedApp[]>]
- [-Files <IMicrosoftGraphMobileAppContentFile[]>] [-Id <string>] [-Break] [-Headers <IDictionary>]
+ [-Files <IMicrosoftGraphMobileAppContentFile[]>] [-Id <string>]
+ [-Scripts <IMicrosoftGraphMobileAppContentScript[]>] [-Break] [-Headers <IDictionary>]
  [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]
  [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -48,7 +46,8 @@ New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion -MobileAppId <st
 New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion
  -InputObject <IDevicesCorporateManagementIdentity> [-ResponseHeadersVariable <string>]
  [-AdditionalProperties <hashtable>] [-ContainedApps <IMicrosoftGraphMobileContainedApp[]>]
- [-Files <IMicrosoftGraphMobileAppContentFile[]>] [-Id <string>] [-Break] [-Headers <IDictionary>]
+ [-Files <IMicrosoftGraphMobileAppContentFile[]>] [-Id <string>]
+ [-Scripts <IMicrosoftGraphMobileAppContentScript[]>] [-Break] [-Headers <IDictionary>]
  [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>]
  [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -73,6 +72,16 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Create new navigation property to contentVersions for deviceAppManagement
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -462,6 +471,34 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -Scripts
+
+The list of scripts for this app content version.
+To construct, see NOTES section for SCRIPTS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMobileAppContentScript[]
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: CreateViaIdentityExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: CreateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -WhatIf
 
 Runs the command in a mode that only reports what would happen without performing the actions.
@@ -518,7 +555,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphMobileAppContent>`: Contains content properties for a specific app version.
+BODYPARAMETER <IMicrosoftGraphMobileAppContent>: Contains content properties for a specific app version.
 Each mobileAppContent can have multiple mobileAppContentFile.
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
@@ -539,6 +576,14 @@ To be deprecated.
     [Size <Int64?>]: Indicates the original size of the file, in bytes.
     [SizeEncrypted <Int64?>]: Indicates the size of the file after encryption, in bytes.
     [UploadState <String>]: Contains properties for upload request states.
+  [Scripts <IMicrosoftGraphMobileAppContentScript[]>]: The list of scripts for this app content version.
+    [Id <String>]: The unique identifier for an entity.
+Read-only.
+    [Content <String>]: The content of the script.
+This is a Base64-encoded representation of the script's original content.
+The content has a maximum size limit of 100KB.
+    [DisplayName <String>]: The display name for the script.
+    [State <MobileAppContentScriptState?>]: A list of possible script lifecycle states.
 
 CONTAINEDAPPS <IMicrosoftGraphMobileContainedApp[]>: The collection of contained apps in a MobileLobApp acting as a package.
   [Id <String>]: The unique identifier for an entity.
@@ -558,7 +603,7 @@ To be deprecated.
   [SizeEncrypted <Int64?>]: Indicates the size of the file after encryption, in bytes.
   [UploadState <String>]: Contains properties for upload request states.
 
-INPUTOBJECT `<IDevicesCorporateManagementIdentity>`: Identity Parameter
+INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   [AndroidManagedAppProtectionId <String>]: The unique identifier of androidManagedAppProtection
   [AppLogCollectionRequestId <String>]: The unique identifier of appLogCollectionRequest
   [AssignmentFilterEvaluationStatusDetailsId <String>]: The unique identifier of assignmentFilterEvaluationStatusDetails
@@ -603,6 +648,7 @@ INPUTOBJECT `<IDevicesCorporateManagementIdentity>`: Identity Parameter
   [MobileAppCategoryId <String>]: The unique identifier of mobileAppCategory
   [MobileAppContentFileId <String>]: The unique identifier of mobileAppContentFile
   [MobileAppContentId <String>]: The unique identifier of mobileAppContent
+  [MobileAppContentScriptId <String>]: The unique identifier of mobileAppContentScript
   [MobileAppId <String>]: The unique identifier of mobileApp
   [MobileAppIntentAndStateId <String>]: The unique identifier of mobileAppIntentAndState
   [MobileAppProvisioningConfigGroupAssignmentId <String>]: The unique identifier of mobileAppProvisioningConfigGroupAssignment
@@ -632,30 +678,16 @@ INPUTOBJECT `<IDevicesCorporateManagementIdentity>`: Identity Parameter
   [WindowsInformationProtectionWipeActionId <String>]: The unique identifier of windowsInformationProtectionWipeAction
   [WindowsManagedAppProtectionId <String>]: The unique identifier of windowsManagedAppProtection
 
+SCRIPTS <IMicrosoftGraphMobileAppContentScript[]>: The list of scripts for this app content version.
+  [Id <String>]: The unique identifier for an entity.
+Read-only.
+  [Content <String>]: The content of the script.
+This is a Base64-encoded representation of the script's original content.
+The content has a maximum size limit of 100KB.
+  [DisplayName <String>]: The display name for the script.
+  [State <MobileAppContentScriptState?>]: A list of possible script lifecycle states.
+
 
 ## RELATED LINKS
 
-- [New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/new-mgbetadeviceappmanagementmobileappasioslobappcontentversion)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/new-mgbetadeviceappmanagementmobileappasioslobappcontentversion)

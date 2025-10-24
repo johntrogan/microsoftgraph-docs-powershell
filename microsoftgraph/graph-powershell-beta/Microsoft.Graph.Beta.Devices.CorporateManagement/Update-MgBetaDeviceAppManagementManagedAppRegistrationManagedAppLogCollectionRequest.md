@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Devices.CorporateManagement-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/update-mgbetadeviceappmanagementmanagedappregistrationmanagedapplogcollectionrequest
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: Update-MgBetaDeviceAppManagementManagedAppRegistrationManagedAppLogCollectionRequest
 ---
@@ -24,8 +24,8 @@ Update-MgBetaDeviceAppManagementManagedAppRegistrationManagedAppLogCollectionReq
  -ManagedAppLogCollectionRequestId <string> -ManagedAppRegistrationId <string>
  [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]
  [-CompletedDateTime <datetime>] [-Id <string>] [-ManagedAppRegistrationId1 <string>]
- [-RequestedBy <string>] [-RequestedByUserPrincipalName <string>] [-RequestedDateTime <datetime>]
- [-Status <string>] [-UploadedLogs <IMicrosoftGraphManagedAppLogUpload[]>]
+ [-RequestedByUserPrincipalName <string>] [-RequestedDateTime <datetime>]
+ [-UploadedLogs <IMicrosoftGraphManagedAppLogUpload[]>]
  [-UserLogUploadConsent <ManagedAppLogUploadConsent>] [-Version <string>] [-Break]
  [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]
  [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]
@@ -49,9 +49,8 @@ Update-MgBetaDeviceAppManagementManagedAppRegistrationManagedAppLogCollectionReq
 Update-MgBetaDeviceAppManagementManagedAppRegistrationManagedAppLogCollectionRequest
  -InputObject <IDevicesCorporateManagementIdentity> [-ManagedAppRegistrationId <string>]
  [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]
- [-CompletedDateTime <datetime>] [-Id <string>] [-RequestedBy <string>]
- [-RequestedByUserPrincipalName <string>] [-RequestedDateTime <datetime>] [-Status <string>]
- [-UploadedLogs <IMicrosoftGraphManagedAppLogUpload[]>]
+ [-CompletedDateTime <datetime>] [-Id <string>] [-RequestedByUserPrincipalName <string>]
+ [-RequestedDateTime <datetime>] [-UploadedLogs <IMicrosoftGraphManagedAppLogUpload[]>]
  [-UserLogUploadConsent <ManagedAppLogUploadConsent>] [-Version <string>] [-Break]
  [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]
  [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]
@@ -77,6 +76,16 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Update the navigation property managedAppLogCollectionRequests in deviceAppManagement
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -473,34 +482,6 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
-### -RequestedBy
-
-The user principal name associated with the request for the managed application log collection.
-Read-only.
-
-```yaml
-Type: System.String
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: UpdateViaIdentityExpanded
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-- Name: UpdateExpanded
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
 ### -RequestedByUserPrincipalName
 
 The user principal name associated with the request for the managed application log collection.
@@ -572,34 +553,6 @@ Aliases:
 - RHV
 ParameterSets:
 - Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-```
-
-### -Status
-
-Indicates the status for the app log collection request - pending, completed or failed.
-Default is pending.
-
-```yaml
-Type: System.String
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: UpdateViaIdentityExpanded
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-- Name: UpdateExpanded
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
@@ -750,7 +703,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphManagedAppLogCollectionRequest>`: The Managed App log collection response
+BODYPARAMETER <IMicrosoftGraphManagedAppLogCollectionRequest>: The Managed App log collection response
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -761,8 +714,6 @@ Returned by default.
 Read-only.
   [ManagedAppRegistrationId <String>]: The unique identifier of the app instance for which diagnostic logs were collected.
 Read-only.
-  [RequestedBy <String>]: The user principal name associated with the request for the managed application log collection.
-Read-only.
   [RequestedByUserPrincipalName <String>]: The user principal name associated with the request for the managed application log collection.
 Read-only.
   [RequestedDateTime <DateTime?>]: DateTime of when the log upload request was received.
@@ -770,13 +721,8 @@ The Timestamp type represents date and time information using ISO 8601 format an
 For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
 Returned by default.
 Read-only.
-  [Status <String>]: Indicates the status for the app log collection request - pending, completed or failed.
-Default is pending.
   [UploadedLogs <IMicrosoftGraphManagedAppLogUpload[]>]: The collection of log upload results as reported by each component on the device.
 Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs.
-Read-only.
-    [ManagedAppComponent <String>]: The Mobile Application Management (MAM) Logs Uploading Component.
-Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.
 Read-only.
     [ManagedAppComponentDescription <String>]: The Mobile Application Management (MAM) Logs Uploading Component.
 Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.
@@ -787,7 +733,7 @@ Read-only.
   [UserLogUploadConsent <ManagedAppLogUploadConsent?>]: Represents the current consent status of the associated `managedAppLogCollectionRequest`.
   [Version <String>]: Version of the entity.
 
-INPUTOBJECT `<IDevicesCorporateManagementIdentity>`: Identity Parameter
+INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   [AndroidManagedAppProtectionId <String>]: The unique identifier of androidManagedAppProtection
   [AppLogCollectionRequestId <String>]: The unique identifier of appLogCollectionRequest
   [AssignmentFilterEvaluationStatusDetailsId <String>]: The unique identifier of assignmentFilterEvaluationStatusDetails
@@ -832,6 +778,7 @@ INPUTOBJECT `<IDevicesCorporateManagementIdentity>`: Identity Parameter
   [MobileAppCategoryId <String>]: The unique identifier of mobileAppCategory
   [MobileAppContentFileId <String>]: The unique identifier of mobileAppContentFile
   [MobileAppContentId <String>]: The unique identifier of mobileAppContent
+  [MobileAppContentScriptId <String>]: The unique identifier of mobileAppContentScript
   [MobileAppId <String>]: The unique identifier of mobileApp
   [MobileAppIntentAndStateId <String>]: The unique identifier of mobileAppIntentAndState
   [MobileAppProvisioningConfigGroupAssignmentId <String>]: The unique identifier of mobileAppProvisioningConfigGroupAssignment
@@ -864,9 +811,6 @@ INPUTOBJECT `<IDevicesCorporateManagementIdentity>`: Identity Parameter
 UPLOADEDLOGS <IMicrosoftGraphManagedAppLogUpload[]>: The collection of log upload results as reported by each component on the device.
 Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs.
 Read-only.
-  [ManagedAppComponent <String>]: The Mobile Application Management (MAM) Logs Uploading Component.
-Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.
-Read-only.
   [ManagedAppComponentDescription <String>]: The Mobile Application Management (MAM) Logs Uploading Component.
 Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.
 Read-only.
@@ -877,27 +821,4 @@ Read-only.
 
 ## RELATED LINKS
 
-- [Update-MgBetaDeviceAppManagementManagedAppRegistrationManagedAppLogCollectionRequest](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/update-mgbetadeviceappmanagementmanagedappregistrationmanagedapplogcollectionrequest)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/update-mgbetadeviceappmanagementmanagedappregistrationmanagedapplogcollectionrequest)

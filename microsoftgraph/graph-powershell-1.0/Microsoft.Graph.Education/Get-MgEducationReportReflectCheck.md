@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Education-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.education/get-mgeducationreportreflectcheck
 Locale: en-US
 Module Name: Microsoft.Graph.Education
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: Get-MgEducationReportReflectCheck
 ---
@@ -13,10 +13,7 @@ title: Get-MgEducationReportReflectCheck
 
 ## SYNOPSIS
 
-Get reflectCheckInResponses from education
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Get-MgBetaEducationReportReflectCheck](/powershell/module/Microsoft.Graph.Beta.Education/Get-MgBetaEducationReportReflectCheck?view=graph-powershell-beta)
+Details of check-in responses.
 
 ## SYNTAX
 
@@ -56,7 +53,21 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-Get reflectCheckInResponses from education
+Details of check-in responses.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+Import-Module Microsoft.Graph.Education
+
+Get-MgEducationReportReflectCheck
+
+### EXAMPLE 2
+
+Import-Module Microsoft.Graph.Education
+
+Get-MgEducationReportReflectCheck -Filter "submitDateTime gt 2025-06-11T00:00:00.000Z and submitDateTime lt 2025-06-12T00:00:00Z"
 
 ## PARAMETERS
 
@@ -518,7 +529,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-INPUTOBJECT `<IEducationIdentity>`: Identity Parameter
+INPUTOBJECT <IEducationIdentity>: Identity Parameter
   [EducationAssignmentId <String>]: The unique identifier of educationAssignment
   [EducationAssignmentResourceId <String>]: The unique identifier of educationAssignmentResource
   [EducationCategoryId <String>]: The unique identifier of educationCategory
@@ -538,28 +549,5 @@ INPUTOBJECT `<IEducationIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [Get-MgEducationReportReflectCheck](https://learn.microsoft.com/powershell/module/microsoft.graph.education/get-mgeducationreportreflectcheck)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/reportsroot-list-reflectcheckinresponses?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.education/get-mgeducationreportreflectcheck)
+- [](https://learn.microsoft.com/graph/api/reportsroot-list-reflectcheckinresponses?view=graph-rest-1.0)

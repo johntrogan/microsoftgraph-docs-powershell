@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.DeviceManagement-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/new-mgbetadevicemanagementconfigurationpolicy
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.DeviceManagement
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: New-MgBetaDeviceManagementConfigurationPolicy
 ---
@@ -23,9 +23,9 @@ Create new navigation property to configurationPolicies for deviceManagement
 New-MgBetaDeviceManagementConfigurationPolicy [-ResponseHeadersVariable <string>]
  [-AdditionalProperties <hashtable>]
  [-Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>]
- [-CreatedDateTime <datetime>] [-CreationSource <string>] [-Description <string>] [-Id <string>]
- [-LastModifiedDateTime <datetime>] [-Name <string>]
- [-Platforms <DeviceManagementConfigurationPlatforms>]
+ [-CreatedDateTime <datetime>] [-CreationSource <string>] [-Description <string>]
+ [-DisableEntraGroupPolicyAssignment] [-Id <string>] [-LastModifiedDateTime <datetime>]
+ [-Name <string>] [-Platforms <DeviceManagementConfigurationPlatforms>]
  [-PriorityMetaData <IMicrosoftGraphDeviceManagementPriorityMetaData>] [-RoleScopeTagIds <string[]>]
  [-SettingCount <int>] [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
@@ -55,13 +55,15 @@ This cmdlet has the following aliases,
 
 Create new navigation property to configurationPolicies for deviceManagement
 
-**Permissions**
+## EXAMPLES
 
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | DeviceManagementConfiguration.ReadWrite.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | DeviceManagementConfiguration.ReadWrite.All,  |
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -222,6 +224,27 @@ Policy description
 ```yaml
 Type: System.String
 DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: CreateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -DisableEntraGroupPolicyAssignment
+
+Indicates whether Entra Group policy assignment is disabled
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
@@ -660,7 +683,7 @@ Read-only.
     [DeviceAndAppManagementAssignmentFilterId <String>]: The ID of the filter for the target assignment.
     [DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]: Represents type of the assignment filter.
 
-BODYPARAMETER `<IMicrosoftGraphDeviceManagementConfigurationPolicy>`: Device Management Configuration Policy
+BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicy>: Device Management Configuration Policy
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -676,6 +699,7 @@ Read-only.
   [CreatedDateTime <DateTime?>]: Policy creation date and time
   [CreationSource <String>]: Policy creation source
   [Description <String>]: Policy description
+  [DisableEntraGroupPolicyAssignment <Boolean?>]: Indicates whether Entra Group policy assignment is disabled
   [LastModifiedDateTime <DateTime?>]: Policy last modification date and time
   [Name <String>]: Policy name
   [Platforms <DeviceManagementConfigurationPlatforms?>]: Supported platform types.
@@ -734,7 +758,7 @@ Applicable for reusable setting.
     [TemplateFamily <DeviceManagementConfigurationTemplateFamily?>]: Describes the TemplateFamily for the Template entity
     [TemplateId <String>]: Template id
 
-PRIORITYMETADATA `<IMicrosoftGraphDeviceManagementPriorityMetaData>`: Priority metadata of the policy.
+PRIORITYMETADATA <IMicrosoftGraphDeviceManagementPriorityMetaData>: Priority metadata of the policy.
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Priority <Int32?>]: Priority of the policy.
 Valid values 1 to 500
@@ -783,7 +807,7 @@ Applicable for reusable setting.
       [(Any) <Object>]: This indicates any property can be added to this object.
       [SettingInstanceTemplateId <String>]: Setting instance template id
 
-TEMPLATEREFERENCE `<IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference>`: Policy template reference information
+TEMPLATEREFERENCE <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateReference>: Policy template reference information
   [(Any) <Object>]: This indicates any property can be added to this object.
   [TemplateFamily <DeviceManagementConfigurationTemplateFamily?>]: Describes the TemplateFamily for the Template entity
   [TemplateId <String>]: Template id
@@ -791,27 +815,4 @@ TEMPLATEREFERENCE `<IMicrosoftGraphDeviceManagementConfigurationPolicyTemplateRe
 
 ## RELATED LINKS
 
-- [New-MgBetaDeviceManagementConfigurationPolicy](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/new-mgbetadevicemanagementconfigurationpolicy)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/new-mgbetadevicemanagementconfigurationpolicy)

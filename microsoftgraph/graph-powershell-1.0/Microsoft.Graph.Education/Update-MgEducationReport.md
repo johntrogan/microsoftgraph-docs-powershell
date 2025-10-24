@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Education-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.education/update-mgeducationreport
 Locale: en-US
 Module Name: Microsoft.Graph.Education
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: Update-MgEducationReport
 ---
@@ -14,9 +14,6 @@ title: Update-MgEducationReport
 ## SYNOPSIS
 
 Update the navigation property reports in education
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Update-MgBetaEducationReport](/powershell/module/Microsoft.Graph.Beta.Education/Update-MgBetaEducationReport?view=graph-powershell-beta)
 
 ## SYNTAX
 
@@ -49,6 +46,16 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Update the navigation property reports in education
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -288,7 +295,7 @@ HelpMessage: ''
 
 ### -ReadingAssignmentSubmissions
 
-
+Details of submitted reading assignments.
 To construct, see NOTES section for READINGASSIGNMENTSUBMISSIONS properties and create a hash table.
 
 ```yaml
@@ -310,7 +317,7 @@ HelpMessage: ''
 
 ### -ReflectCheckInResponses
 
-
+Details of check-in responses.
 To construct, see NOTES section for REFLECTCHECKINRESPONSES properties and create a hash table.
 
 ```yaml
@@ -404,11 +411,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphReportsRoot>`: reportsRoot
+BODYPARAMETER <IMicrosoftGraphReportsRoot>: reportsRoot
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
-  [ReadingAssignmentSubmissions <IMicrosoftGraphReadingAssignmentSubmission[]>]: 
+  [ReadingAssignmentSubmissions <IMicrosoftGraphReadingAssignmentSubmission[]>]: Details of submitted reading assignments.
     [Id <String>]: The unique identifier for an entity.
 Read-only.
     [AccuracyScore <Double?>]: Accuracy score of the reading progress.
@@ -438,7 +445,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     [UnexpectedPauses <Int64?>]: Number of unexpected pauses made during the reading session.
     [WordCount <Int64?>]: Words count of the reading progress.
     [WordsPerMinute <Double?>]: Words per minute of the reading progress.
-  [ReflectCheckInResponses <IMicrosoftGraphReflectCheckInResponse[]>]: 
+  [ReflectCheckInResponses <IMicrosoftGraphReflectCheckInResponse[]>]: Details of check-in responses.
     [Id <String>]: The unique identifier for an entity.
 Read-only.
     [CheckInId <String>]: Identifier for the Reflect check-in.
@@ -456,7 +463,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
-READINGASSIGNMENTSUBMISSIONS <IMicrosoftGraphReadingAssignmentSubmission[]>: .
+READINGASSIGNMENTSUBMISSIONS <IMicrosoftGraphReadingAssignmentSubmission[]>: Details of submitted reading assignments.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
   [AccuracyScore <Double?>]: Accuracy score of the reading progress.
@@ -487,7 +494,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   [WordCount <Int64?>]: Words count of the reading progress.
   [WordsPerMinute <Double?>]: Words per minute of the reading progress.
 
-REFLECTCHECKINRESPONSES <IMicrosoftGraphReflectCheckInResponse[]>: .
+REFLECTCHECKINRESPONSES <IMicrosoftGraphReflectCheckInResponse[]>: Details of check-in responses.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
   [CheckInId <String>]: Identifier for the Reflect check-in.
@@ -508,27 +515,4 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ## RELATED LINKS
 
-- [Update-MgEducationReport](https://learn.microsoft.com/powershell/module/microsoft.graph.education/update-mgeducationreport)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.education/update-mgeducationreport)

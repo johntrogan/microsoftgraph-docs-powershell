@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.BackupRestore-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.backuprestore/update-mgbetasolutionbackuprestore
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.BackupRestore
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: Update-MgBetaSolutionBackupRestore
 ---
@@ -14,9 +14,6 @@ title: Update-MgBetaSolutionBackupRestore
 ## SYNOPSIS
 
 Update the navigation property backupRestore in solutions
-
-> [!NOTE]
-> To view the v1.0 release of this cmdlet, view [Update-MgSolutionBackupRestore](/powershell/module/Microsoft.Graph.BackupRestore/Update-MgSolutionBackupRestore?view=graph-powershell-1.0)
 
 ## SYNTAX
 
@@ -68,6 +65,16 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Update the navigation property backupRestore in solutions
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -203,7 +210,7 @@ HelpMessage: ''
 
 ### -DriveProtectionUnitsBulkAdditionJobs
 
-
+.
 To construct, see NOTES section for DRIVEPROTECTIONUNITSBULKADDITIONJOBS properties and create a hash table.
 
 ```yaml
@@ -420,7 +427,7 @@ HelpMessage: ''
 
 ### -MailboxProtectionUnitsBulkAdditionJobs
 
-
+.
 To construct, see NOTES section for MAILBOXPROTECTIONUNITSBULKADDITIONJOBS properties and create a hash table.
 
 ```yaml
@@ -791,7 +798,7 @@ HelpMessage: ''
 
 ### -SiteProtectionUnitsBulkAdditionJobs
 
-
+.
 To construct, see NOTES section for SITEPROTECTIONUNITSBULKADDITIONJOBS properties and create a hash table.
 
 ```yaml
@@ -863,7 +870,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphBackupRestoreRoot>`: backupRestoreRoot
+BODYPARAMETER <IMicrosoftGraphBackupRestoreRoot>: backupRestoreRoot
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -946,10 +953,21 @@ This property is read-only.
   [ExchangeProtectionPolicies <IMicrosoftGraphExchangeProtectionPolicy[]>]: The list of Exchange protection policies in the tenant.
     [BillingPolicyId <String>]: 
     [CreatedBy <IMicrosoftGraphIdentitySet>]: identitySet
-    [CreatedDateTime <DateTime?>]: The time of creation of the policy.
+    [CreatedDateTime <DateTime?>]: The date and time when the policy was created.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     [DisplayName <String>]: The name of the policy to be created.
+    [IsEnabled <Boolean?>]: Indicates whether the policy is enabled.
     [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
-    [LastModifiedDateTime <DateTime?>]: The timestamp of the last modification of the policy.
+    [LastModifiedDateTime <DateTime?>]: The date and time when the policy was last modified.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    [ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]: protectionPolicyArtifactCount
+      [(Any) <Object>]: This indicates any property can be added to this object.
+      [Completed <Int32?>]: The number of artifacts whose protection is completed.
+      [Failed <Int32?>]: The number of artifacts whose protection failed.
+      [InProgress <Int32?>]: The number of artifacts whose protection is in progress.
+      [Total <Int32?>]: The number of artifacts present in the protection policy.
     [RetentionSettings <IMicrosoftGraphRetentionSetting[]>]: Contains the retention setting details for the policy.
       [Interval <String>]: The frequency of the backup.
       [Period <TimeSpan?>]: The period of time to retain the protected data for a single Microsoft 365 service.
@@ -1041,7 +1059,8 @@ Read-only.
       [Status <String>]: artifactRestoreStatus
       [Id <String>]: The unique identifier for an entity.
 Read-only.
-      [ArtifactCount <Int32?>]: .
+      [ArtifactCount <Int32?>]: This property will be deprecated soon.
+Don't use.
       [SearchResponseId <String>]: .
     [MailboxRestoreArtifacts <IMicrosoftGraphMailboxRestoreArtifact[]>]: A collection of restore points and destination details that can be used to restore Exchange mailboxes.
       [CompletionDateTime <DateTime?>]: The time when restoration of restore artifact is completed.
@@ -1082,10 +1101,16 @@ Read-only.
   [OneDriveForBusinessProtectionPolicies <IMicrosoftGraphOneDriveForBusinessProtectionPolicy[]>]: The list of OneDrive for Business protection policies in the tenant.
     [BillingPolicyId <String>]: 
     [CreatedBy <IMicrosoftGraphIdentitySet>]: identitySet
-    [CreatedDateTime <DateTime?>]: The time of creation of the policy.
+    [CreatedDateTime <DateTime?>]: The date and time when the policy was created.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     [DisplayName <String>]: The name of the policy to be created.
+    [IsEnabled <Boolean?>]: Indicates whether the policy is enabled.
     [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
-    [LastModifiedDateTime <DateTime?>]: The timestamp of the last modification of the policy.
+    [LastModifiedDateTime <DateTime?>]: The date and time when the policy was last modified.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    [ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]: protectionPolicyArtifactCount
     [RetentionSettings <IMicrosoftGraphRetentionSetting[]>]: Contains the retention setting details for the policy.
     [Status <String>]: protectionPolicyStatus
     [Id <String>]: The unique identifier for an entity.
@@ -1139,10 +1164,16 @@ Read-only.
 Read-only.
     [BillingPolicyId <String>]: 
     [CreatedBy <IMicrosoftGraphIdentitySet>]: identitySet
-    [CreatedDateTime <DateTime?>]: The time of creation of the policy.
+    [CreatedDateTime <DateTime?>]: The date and time when the policy was created.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     [DisplayName <String>]: The name of the policy to be created.
+    [IsEnabled <Boolean?>]: Indicates whether the policy is enabled.
     [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
-    [LastModifiedDateTime <DateTime?>]: The timestamp of the last modification of the policy.
+    [LastModifiedDateTime <DateTime?>]: The date and time when the policy was last modified.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    [ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]: protectionPolicyArtifactCount
     [RetentionSettings <IMicrosoftGraphRetentionSetting[]>]: Contains the retention setting details for the policy.
     [Status <String>]: protectionPolicyStatus
   [ProtectionUnits <IMicrosoftGraphProtectionUnitBase[]>]: List of protection units in the tenant.
@@ -1180,10 +1211,16 @@ Read-only.
   [SharePointProtectionPolicies <IMicrosoftGraphSharePointProtectionPolicy[]>]: The list of SharePoint protection policies in the tenant.
     [BillingPolicyId <String>]: 
     [CreatedBy <IMicrosoftGraphIdentitySet>]: identitySet
-    [CreatedDateTime <DateTime?>]: The time of creation of the policy.
+    [CreatedDateTime <DateTime?>]: The date and time when the policy was created.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     [DisplayName <String>]: The name of the policy to be created.
+    [IsEnabled <Boolean?>]: Indicates whether the policy is enabled.
     [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
-    [LastModifiedDateTime <DateTime?>]: The timestamp of the last modification of the policy.
+    [LastModifiedDateTime <DateTime?>]: The date and time when the policy was last modified.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    [ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]: protectionPolicyArtifactCount
     [RetentionSettings <IMicrosoftGraphRetentionSetting[]>]: Contains the retention setting details for the policy.
     [Status <String>]: protectionPolicyStatus
     [Id <String>]: The unique identifier for an entity.
@@ -1379,7 +1416,7 @@ Read-only.
   [DirectoryObjectIds <String[]>]: The list of OneDrive directoryObjectIds to add to the OneDrive protection policy.
   [Drives <String[]>]: The list of email addresses to add to the OneDrive protection policy.
 
-EMAILNOTIFICATIONSSETTING `<IMicrosoftGraphEmailNotificationsSetting>`: emailNotificationsSetting
+EMAILNOTIFICATIONSSETTING <IMicrosoftGraphEmailNotificationsSetting>: emailNotificationsSetting
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -1408,10 +1445,21 @@ This property is read-only.
 This property is read-only.
     [Device <IMicrosoftGraphIdentity>]: identity
     [User <IMicrosoftGraphIdentity>]: identity
-  [CreatedDateTime <DateTime?>]: The time of creation of the policy.
+  [CreatedDateTime <DateTime?>]: The date and time when the policy was created.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   [DisplayName <String>]: The name of the policy to be created.
+  [IsEnabled <Boolean?>]: Indicates whether the policy is enabled.
   [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
-  [LastModifiedDateTime <DateTime?>]: The timestamp of the last modification of the policy.
+  [LastModifiedDateTime <DateTime?>]: The date and time when the policy was last modified.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  [ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]: protectionPolicyArtifactCount
+    [(Any) <Object>]: This indicates any property can be added to this object.
+    [Completed <Int32?>]: The number of artifacts whose protection is completed.
+    [Failed <Int32?>]: The number of artifacts whose protection failed.
+    [InProgress <Int32?>]: The number of artifacts whose protection is in progress.
+    [Total <Int32?>]: The number of artifacts present in the protection policy.
   [RetentionSettings <IMicrosoftGraphRetentionSetting[]>]: Contains the retention setting details for the policy.
     [Interval <String>]: The frequency of the backup.
     [Period <TimeSpan?>]: The period of time to retain the protected data for a single Microsoft 365 service.
@@ -1541,7 +1589,8 @@ Read-only.
     [Status <String>]: artifactRestoreStatus
     [Id <String>]: The unique identifier for an entity.
 Read-only.
-    [ArtifactCount <Int32?>]: .
+    [ArtifactCount <Int32?>]: This property will be deprecated soon.
+Don't use.
     [SearchResponseId <String>]: .
   [MailboxRestoreArtifacts <IMicrosoftGraphMailboxRestoreArtifact[]>]: A collection of restore points and destination details that can be used to restore Exchange mailboxes.
     [CompletionDateTime <DateTime?>]: The time when restoration of restore artifact is completed.
@@ -1699,10 +1748,21 @@ This property is read-only.
 This property is read-only.
     [Device <IMicrosoftGraphIdentity>]: identity
     [User <IMicrosoftGraphIdentity>]: identity
-  [CreatedDateTime <DateTime?>]: The time of creation of the policy.
+  [CreatedDateTime <DateTime?>]: The date and time when the policy was created.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   [DisplayName <String>]: The name of the policy to be created.
+  [IsEnabled <Boolean?>]: Indicates whether the policy is enabled.
   [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
-  [LastModifiedDateTime <DateTime?>]: The timestamp of the last modification of the policy.
+  [LastModifiedDateTime <DateTime?>]: The date and time when the policy was last modified.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  [ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]: protectionPolicyArtifactCount
+    [(Any) <Object>]: This indicates any property can be added to this object.
+    [Completed <Int32?>]: The number of artifacts whose protection is completed.
+    [Failed <Int32?>]: The number of artifacts whose protection failed.
+    [InProgress <Int32?>]: The number of artifacts whose protection is in progress.
+    [Total <Int32?>]: The number of artifacts present in the protection policy.
   [RetentionSettings <IMicrosoftGraphRetentionSetting[]>]: Contains the retention setting details for the policy.
     [Interval <String>]: The frequency of the backup.
     [Period <TimeSpan?>]: The period of time to retain the protected data for a single Microsoft 365 service.
@@ -1867,10 +1927,21 @@ This property is read-only.
 This property is read-only.
     [Device <IMicrosoftGraphIdentity>]: identity
     [User <IMicrosoftGraphIdentity>]: identity
-  [CreatedDateTime <DateTime?>]: The time of creation of the policy.
+  [CreatedDateTime <DateTime?>]: The date and time when the policy was created.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   [DisplayName <String>]: The name of the policy to be created.
+  [IsEnabled <Boolean?>]: Indicates whether the policy is enabled.
   [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
-  [LastModifiedDateTime <DateTime?>]: The timestamp of the last modification of the policy.
+  [LastModifiedDateTime <DateTime?>]: The date and time when the policy was last modified.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  [ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]: protectionPolicyArtifactCount
+    [(Any) <Object>]: This indicates any property can be added to this object.
+    [Completed <Int32?>]: The number of artifacts whose protection is completed.
+    [Failed <Int32?>]: The number of artifacts whose protection failed.
+    [InProgress <Int32?>]: The number of artifacts whose protection is in progress.
+    [Total <Int32?>]: The number of artifacts present in the protection policy.
   [RetentionSettings <IMicrosoftGraphRetentionSetting[]>]: Contains the retention setting details for the policy.
     [Interval <String>]: The frequency of the backup.
     [Period <TimeSpan?>]: The period of time to retain the protected data for a single Microsoft 365 service.
@@ -2015,7 +2086,7 @@ This property is read-only.
   [RegistrationDateTime <DateTime?>]: Timestamp of the creation of the service app entity.
   [Status <String>]: serviceAppStatus
 
-SERVICESTATUS `<IMicrosoftGraphServiceStatus>`: serviceStatus
+SERVICESTATUS <IMicrosoftGraphServiceStatus>: serviceStatus
   [(Any) <Object>]: This indicates any property can be added to this object.
   [BackupServiceConsumer <String>]: backupServiceConsumer
   [DisableReason <String>]: disableReason
@@ -2046,10 +2117,21 @@ This property is read-only.
 This property is read-only.
     [Device <IMicrosoftGraphIdentity>]: identity
     [User <IMicrosoftGraphIdentity>]: identity
-  [CreatedDateTime <DateTime?>]: The time of creation of the policy.
+  [CreatedDateTime <DateTime?>]: The date and time when the policy was created.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   [DisplayName <String>]: The name of the policy to be created.
+  [IsEnabled <Boolean?>]: Indicates whether the policy is enabled.
   [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
-  [LastModifiedDateTime <DateTime?>]: The timestamp of the last modification of the policy.
+  [LastModifiedDateTime <DateTime?>]: The date and time when the policy was last modified.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  [ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]: protectionPolicyArtifactCount
+    [(Any) <Object>]: This indicates any property can be added to this object.
+    [Completed <Int32?>]: The number of artifacts whose protection is completed.
+    [Failed <Int32?>]: The number of artifacts whose protection failed.
+    [InProgress <Int32?>]: The number of artifacts whose protection is in progress.
+    [Total <Int32?>]: The number of artifacts present in the protection policy.
   [RetentionSettings <IMicrosoftGraphRetentionSetting[]>]: Contains the retention setting details for the policy.
     [Interval <String>]: The frequency of the backup.
     [Period <TimeSpan?>]: The period of time to retain the protected data for a single Microsoft 365 service.
@@ -2312,27 +2394,4 @@ Read-only.
 
 ## RELATED LINKS
 
-- [Update-MgBetaSolutionBackupRestore](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.backuprestore/update-mgbetasolutionbackuprestore)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.backuprestore/update-mgbetasolutionbackuprestore)

@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Devices.CorporateManagement-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/update-mgbetadeviceappmanagementmobileapp
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: Update-MgBetaDeviceAppManagementMobileApp
 ---
@@ -14,9 +14,6 @@ title: Update-MgBetaDeviceAppManagementMobileApp
 ## SYNOPSIS
 
 Update the navigation property mobileApps in deviceAppManagement
-
-> [!NOTE]
-> To view the v1.0 release of this cmdlet, view [Update-MgDeviceAppManagementMobileApp](/powershell/module/Microsoft.Graph.Devices.CorporateManagement/Update-MgDeviceAppManagementMobileApp?view=graph-powershell-1.0)
 
 ## SYNTAX
 
@@ -82,13 +79,15 @@ This cmdlet has the following aliases,
 
 Update the navigation property mobileApps in deviceAppManagement
 
-**Permissions**
+## EXAMPLES
 
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | DeviceManagementApps.ReadWrite.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | DeviceManagementApps.ReadWrite.All,  |
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -758,7 +757,7 @@ HelpMessage: ''
 
 ### -Relationships
 
-List of relationships for this mobile app.
+The set of direct relationships for this app.
 To construct, see NOTES section for RELATIONSHIPS properties and create a hash table.
 
 ```yaml
@@ -901,7 +900,7 @@ Read-only.
     [DeviceAndAppManagementAssignmentFilterId <String>]: The ID of the filter for the target assignment.
     [DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]: Represents type of the assignment filter.
 
-BODYPARAMETER `<IMicrosoftGraphMobileApp>`: An abstract class containing the base properties for Intune mobile apps.
+BODYPARAMETER <IMicrosoftGraphMobileApp>: An abstract class containing the base properties for Intune mobile apps.
 Note: Listing mobile apps with `$expand=assignments` has been deprecated.
 Instead get the list of apps without the `$expand` query on `assignments`.
 Then, perform the expansion on individual applications.
@@ -937,7 +936,7 @@ Read-only.
   [PrivacyInformationUrl <String>]: The privacy statement Url.
   [Publisher <String>]: The publisher of the app.
   [PublishingState <MobileAppPublishingState?>]: Indicates the publishing state of an app.
-  [Relationships <IMicrosoftGraphMobileAppRelationship[]>]: List of relationships for this mobile app.
+  [Relationships <IMicrosoftGraphMobileAppRelationship[]>]: The set of direct relationships for this app.
     [Id <String>]: The unique identifier for an entity.
 Read-only.
     [TargetId <String>]: The unique app identifier of the target of the mobile app relationship entity.
@@ -954,7 +953,7 @@ CATEGORIES <IMicrosoftGraphMobileAppCategory[]>: The list of categories for this
 Read-only.
   [DisplayName <String>]: The name of the app category.
 
-INPUTOBJECT `<IDevicesCorporateManagementIdentity>`: Identity Parameter
+INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   [AndroidManagedAppProtectionId <String>]: The unique identifier of androidManagedAppProtection
   [AppLogCollectionRequestId <String>]: The unique identifier of appLogCollectionRequest
   [AssignmentFilterEvaluationStatusDetailsId <String>]: The unique identifier of assignmentFilterEvaluationStatusDetails
@@ -999,6 +998,7 @@ INPUTOBJECT `<IDevicesCorporateManagementIdentity>`: Identity Parameter
   [MobileAppCategoryId <String>]: The unique identifier of mobileAppCategory
   [MobileAppContentFileId <String>]: The unique identifier of mobileAppContentFile
   [MobileAppContentId <String>]: The unique identifier of mobileAppContent
+  [MobileAppContentScriptId <String>]: The unique identifier of mobileAppContentScript
   [MobileAppId <String>]: The unique identifier of mobileApp
   [MobileAppIntentAndStateId <String>]: The unique identifier of mobileAppIntentAndState
   [MobileAppProvisioningConfigGroupAssignmentId <String>]: The unique identifier of mobileAppProvisioningConfigGroupAssignment
@@ -1028,12 +1028,12 @@ INPUTOBJECT `<IDevicesCorporateManagementIdentity>`: Identity Parameter
   [WindowsInformationProtectionWipeActionId <String>]: The unique identifier of windowsInformationProtectionWipeAction
   [WindowsManagedAppProtectionId <String>]: The unique identifier of windowsManagedAppProtection
 
-LARGEICON `<IMicrosoftGraphMimeContent>`: Contains properties for a generic mime content.
+LARGEICON <IMicrosoftGraphMimeContent>: Contains properties for a generic mime content.
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Type <String>]: Indicates the content mime type.
   [Value <Byte[]>]: The byte array that contains the actual content.
 
-RELATIONSHIPS <IMicrosoftGraphMobileAppRelationship[]>: List of relationships for this mobile app.
+RELATIONSHIPS <IMicrosoftGraphMobileAppRelationship[]>: The set of direct relationships for this app.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
   [TargetId <String>]: The unique app identifier of the target of the mobile app relationship entity.
@@ -1047,27 +1047,4 @@ Does not support $search, $filter, $orderBy.
 
 ## RELATED LINKS
 
-- [Update-MgBetaDeviceAppManagementMobileApp](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/update-mgbetadeviceappmanagementmobileapp)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement/update-mgbetadeviceappmanagementmobileapp)

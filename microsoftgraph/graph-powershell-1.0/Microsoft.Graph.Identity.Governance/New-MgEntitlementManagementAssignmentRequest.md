@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Identity.Governance-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementassignmentrequest
 Locale: en-US
 Module Name: Microsoft.Graph.Identity.Governance
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: New-MgEntitlementManagementAssignmentRequest
 ---
@@ -15,9 +15,6 @@ title: New-MgEntitlementManagementAssignmentRequest
 
 In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.
 This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [New-MgBetaEntitlementManagementAssignmentRequest](/powershell/module/Microsoft.Graph.Beta.Identity.Governance/New-MgBetaEntitlementManagementAssignmentRequest?view=graph-powershell-beta)
 
 ## SYNTAX
 
@@ -58,18 +55,9 @@ This cmdlet has the following aliases,
 In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.
 This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
 
-**Permissions**
-
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | EntitlementManagement.ReadWrite.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | EntitlementManagement.ReadWrite.All,  |
-
 ## EXAMPLES
-### Example 1: Admin requests a direct assignment for a user already in the directory
 
-```powershell
+### EXAMPLE 1
 
 Import-Module Microsoft.Graph.Identity.Governance
 
@@ -84,12 +72,7 @@ $params = @{
 
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 
-```
-This example will admin requests a direct assignment for a user already in the directory
-
-### Example 2: Remove an assignment
-
-```powershell
+### EXAMPLE 2
 
 Import-Module Microsoft.Graph.Identity.Governance
 
@@ -102,12 +85,7 @@ $params = @{
 
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 
-```
-This example will remove an assignment
-
-### Example 3: Request an assignment by providing answers to questions
-
-```powershell
+### EXAMPLE 3
 
 Import-Module Microsoft.Graph.Identity.Governance
 
@@ -141,12 +119,7 @@ $params = @{
 
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 
-```
-This example will request an assignment by providing answers to questions
-
-### Example 4: Request a package and provide a justification
-
-```powershell
+### EXAMPLE 4
 
 Import-Module Microsoft.Graph.Identity.Governance
 
@@ -160,12 +133,7 @@ $params = @{
 
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 
-```
-This example will request a package and provide a justification
-
-### Example 5: Admin requests a direct assignment for a user not yet in the directory
-
-```powershell
+### EXAMPLE 5
 
 Import-Module Microsoft.Graph.Identity.Governance
 
@@ -182,12 +150,7 @@ $params = @{
 
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 
-```
-This example will admin requests a direct assignment for a user not yet in the directory
-
-### Example 6: Request an update to answers for an assignment
-
-```powershell
+### EXAMPLE 6
 
 Import-Module Microsoft.Graph.Identity.Governance
 
@@ -221,12 +184,7 @@ $params = @{
 
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 
-```
-This example will request an update to answers for an assignment
-
-### Example 7: Update the expiration date for an access package assignment
-
-```powershell
+### EXAMPLE 7
 
 Import-Module Microsoft.Graph.Identity.Governance
 
@@ -248,10 +206,6 @@ $params = @{
 }
 
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
-
-```
-This example will update the expiration date for an access package assignment
-
 
 ## PARAMETERS
 
@@ -828,7 +782,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-ACCESSPACKAGE `<IMicrosoftGraphAccessPackage>`: accessPackage
+ACCESSPACKAGE <IMicrosoftGraphAccessPackage>: accessPackage
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -1983,7 +1937,7 @@ Always set to en-us.
             [Mentions <IMicrosoftGraphChatMessageMention[]>]: List of entities mentioned in the chat message.
 Supported entities are: user, bot, team, channel, chat, and tag.
               [Id <Int32?>]: Index of an entity being mentioned in the specified chatMessage.
-Matches the {index} value in the corresponding `<at id='{index}'>` tag in the message body.
+Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
               [MentionText <String>]: String used to represent the mention.
 For example, a user's display name, a team name.
               [Mentioned <IMicrosoftGraphChatMessageMentionedIdentitySet>]: chatMessageMentionedIdentitySet
@@ -3132,17 +3086,17 @@ Read-only.
 Read-only.
                           [Options <IMicrosoftGraphWorkbookWorksheetProtectionOptions>]: workbookWorksheetProtectionOptions
                             [(Any) <Object>]: This indicates any property can be added to this object.
-                            [AllowAutoFilter <Boolean?>]: Represents the worksheet protection option of allowing using auto filter feature.
-                            [AllowDeleteColumns <Boolean?>]: Represents the worksheet protection option of allowing deleting columns.
-                            [AllowDeleteRows <Boolean?>]: Represents the worksheet protection option of allowing deleting rows.
-                            [AllowFormatCells <Boolean?>]: Represents the worksheet protection option of allowing formatting cells.
-                            [AllowFormatColumns <Boolean?>]: Represents the worksheet protection option of allowing formatting columns.
-                            [AllowFormatRows <Boolean?>]: Represents the worksheet protection option of allowing formatting rows.
-                            [AllowInsertColumns <Boolean?>]: Represents the worksheet protection option of allowing inserting columns.
-                            [AllowInsertHyperlinks <Boolean?>]: Represents the worksheet protection option of allowing inserting hyperlinks.
-                            [AllowInsertRows <Boolean?>]: Represents the worksheet protection option of allowing inserting rows.
-                            [AllowPivotTables <Boolean?>]: Represents the worksheet protection option of allowing using pivot table feature.
-                            [AllowSort <Boolean?>]: Represents the worksheet protection option of allowing using sort feature.
+                            [AllowAutoFilter <Boolean?>]: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+                            [AllowDeleteColumns <Boolean?>]: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+                            [AllowDeleteRows <Boolean?>]: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+                            [AllowFormatCells <Boolean?>]: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+                            [AllowFormatColumns <Boolean?>]: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+                            [AllowFormatRows <Boolean?>]: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+                            [AllowInsertColumns <Boolean?>]: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+                            [AllowInsertHyperlinks <Boolean?>]: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+                            [AllowInsertRows <Boolean?>]: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+                            [AllowPivotTables <Boolean?>]: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+                            [AllowSort <Boolean?>]: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
                           [Protected <Boolean?>]: Indicates whether the worksheet is protected.
  Read-only.
                         [Tables <IMicrosoftGraphWorkbookTable[]>]: The list of tables that are part of the worksheet.
@@ -4789,6 +4743,7 @@ Supports $filter (eq, ne, not, ge, le, in, startsWith).
           [AllowAttendeeToEnableCamera <Boolean?>]: Indicates whether attendees can turn on their camera.
           [AllowAttendeeToEnableMic <Boolean?>]: Indicates whether attendees can turn on their microphone.
           [AllowBreakoutRooms <Boolean?>]: Indicates whether breakout rooms are enabled for the meeting.
+          [AllowCopyingAndSharingMeetingContent <Boolean?>]: Indicates whether the ability to copy and share meeting content is enabled for the meeting.
           [AllowLiveShare <String>]: meetingLiveShareOptions
           [AllowMeetingChat <String>]: meetingChatMode
           [AllowParticipantsToChangeName <Boolean?>]: Specifies if participants are allowed to rename themselves in an instance of the meeting.
@@ -4856,7 +4811,7 @@ Read-only.
             [(Any) <Object>]: This indicates any property can be added to this object.
             [AllowTextOnly <Boolean?>]: Indicates whether only text is allowed in the meeting chat.
 Optional.
-          [IsEndToEndEncryptionEnabled <Boolean?>]: 
+          [IsEndToEndEncryptionEnabled <Boolean?>]: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
           [IsEntryExitAnnounced <Boolean?>]: Indicates whether to announce when callers join or leave.
           [JoinInformation <IMicrosoftGraphItemBody>]: itemBody
           [JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]: joinMeetingIdSettings
@@ -5235,9 +5190,9 @@ This attribute returns an empty string.Returned only on $select.
           [Id <String>]: The unique identifier for an entity.
 Read-only.
           [Activity <String>]: The supplemental information to a user's availability.
-Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
+Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.
           [Availability <String>]: The base presence information for a user.
-Possible values are Available, availableIdle,  Away, beRightBack, Busy, busyIdle, DoNotDisturb, Offline, presenceUnknown.
+Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.
           [OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>]: outOfOfficeSettings
             [(Any) <Object>]: This indicates any property can be added to this object.
             [IsOutOfOffice <Boolean?>]: If true, either of the following is met:The current time falls within the out-of-office window configured in Outlook or Teams.An event marked as 'Show as Out of Office' appears on the user's calendar.Otherwise, false.
@@ -5787,8 +5742,8 @@ By convention, this value should map to the user's email name.
 The general format is alias@domain, where the domain must be present in the tenant's collection of verified domains.
 This property is required when a user is created.
 The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters.
-Only the following characters are allowed A - Z, a - z, 0 - 9, ', ., -, _, !, #, ^, ~,
- 
+Only the following characters are allowed A - Z, a - z, 0 - 9, ' .
+- _ ! # ^ ~.
 For the complete list of allowed characters, see username policies.
 Returned by default.
 Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
@@ -6101,7 +6056,7 @@ Required.
     [Text <String>]: The text of the question to show to the requestor.
   [DisplayValue <String>]: The localized display value shown to the requestor and approvers.
 
-ASSIGNMENT `<IMicrosoftGraphAccessPackageAssignment>`: accessPackageAssignment
+ASSIGNMENT <IMicrosoftGraphAccessPackageAssignment>: accessPackageAssignment
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -7260,7 +7215,7 @@ Always set to en-us.
               [Mentions <IMicrosoftGraphChatMessageMention[]>]: List of entities mentioned in the chat message.
 Supported entities are: user, bot, team, channel, chat, and tag.
                 [Id <Int32?>]: Index of an entity being mentioned in the specified chatMessage.
-Matches the {index} value in the corresponding `<at id='{index}'>` tag in the message body.
+Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
                 [MentionText <String>]: String used to represent the mention.
 For example, a user's display name, a team name.
                 [Mentioned <IMicrosoftGraphChatMessageMentionedIdentitySet>]: chatMessageMentionedIdentitySet
@@ -8409,17 +8364,17 @@ Read-only.
 Read-only.
                             [Options <IMicrosoftGraphWorkbookWorksheetProtectionOptions>]: workbookWorksheetProtectionOptions
                               [(Any) <Object>]: This indicates any property can be added to this object.
-                              [AllowAutoFilter <Boolean?>]: Represents the worksheet protection option of allowing using auto filter feature.
-                              [AllowDeleteColumns <Boolean?>]: Represents the worksheet protection option of allowing deleting columns.
-                              [AllowDeleteRows <Boolean?>]: Represents the worksheet protection option of allowing deleting rows.
-                              [AllowFormatCells <Boolean?>]: Represents the worksheet protection option of allowing formatting cells.
-                              [AllowFormatColumns <Boolean?>]: Represents the worksheet protection option of allowing formatting columns.
-                              [AllowFormatRows <Boolean?>]: Represents the worksheet protection option of allowing formatting rows.
-                              [AllowInsertColumns <Boolean?>]: Represents the worksheet protection option of allowing inserting columns.
-                              [AllowInsertHyperlinks <Boolean?>]: Represents the worksheet protection option of allowing inserting hyperlinks.
-                              [AllowInsertRows <Boolean?>]: Represents the worksheet protection option of allowing inserting rows.
-                              [AllowPivotTables <Boolean?>]: Represents the worksheet protection option of allowing using pivot table feature.
-                              [AllowSort <Boolean?>]: Represents the worksheet protection option of allowing using sort feature.
+                              [AllowAutoFilter <Boolean?>]: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+                              [AllowDeleteColumns <Boolean?>]: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+                              [AllowDeleteRows <Boolean?>]: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+                              [AllowFormatCells <Boolean?>]: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+                              [AllowFormatColumns <Boolean?>]: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+                              [AllowFormatRows <Boolean?>]: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+                              [AllowInsertColumns <Boolean?>]: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+                              [AllowInsertHyperlinks <Boolean?>]: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+                              [AllowInsertRows <Boolean?>]: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+                              [AllowPivotTables <Boolean?>]: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+                              [AllowSort <Boolean?>]: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
                             [Protected <Boolean?>]: Indicates whether the worksheet is protected.
  Read-only.
                           [Tables <IMicrosoftGraphWorkbookTable[]>]: The list of tables that are part of the worksheet.
@@ -10066,6 +10021,7 @@ Supports $filter (eq, ne, not, ge, le, in, startsWith).
             [AllowAttendeeToEnableCamera <Boolean?>]: Indicates whether attendees can turn on their camera.
             [AllowAttendeeToEnableMic <Boolean?>]: Indicates whether attendees can turn on their microphone.
             [AllowBreakoutRooms <Boolean?>]: Indicates whether breakout rooms are enabled for the meeting.
+            [AllowCopyingAndSharingMeetingContent <Boolean?>]: Indicates whether the ability to copy and share meeting content is enabled for the meeting.
             [AllowLiveShare <String>]: meetingLiveShareOptions
             [AllowMeetingChat <String>]: meetingChatMode
             [AllowParticipantsToChangeName <Boolean?>]: Specifies if participants are allowed to rename themselves in an instance of the meeting.
@@ -10133,7 +10089,7 @@ Read-only.
               [(Any) <Object>]: This indicates any property can be added to this object.
               [AllowTextOnly <Boolean?>]: Indicates whether only text is allowed in the meeting chat.
 Optional.
-            [IsEndToEndEncryptionEnabled <Boolean?>]: 
+            [IsEndToEndEncryptionEnabled <Boolean?>]: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
             [IsEntryExitAnnounced <Boolean?>]: Indicates whether to announce when callers join or leave.
             [JoinInformation <IMicrosoftGraphItemBody>]: itemBody
             [JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]: joinMeetingIdSettings
@@ -10512,9 +10468,9 @@ This attribute returns an empty string.Returned only on $select.
             [Id <String>]: The unique identifier for an entity.
 Read-only.
             [Activity <String>]: The supplemental information to a user's availability.
-Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
+Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.
             [Availability <String>]: The base presence information for a user.
-Possible values are Available, availableIdle,  Away, beRightBack, Busy, busyIdle, DoNotDisturb, Offline, presenceUnknown.
+Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.
             [OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>]: outOfOfficeSettings
               [(Any) <Object>]: This indicates any property can be added to this object.
               [IsOutOfOffice <Boolean?>]: If true, either of the following is met:The current time falls within the out-of-office window configured in Outlook or Teams.An event marked as 'Show as Out of Office' appears on the user's calendar.Otherwise, false.
@@ -11064,8 +11020,8 @@ By convention, this value should map to the user's email name.
 The general format is alias@domain, where the domain must be present in the tenant's collection of verified domains.
 This property is required when a user is created.
 The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters.
-Only the following characters are allowed A - Z, a - z, 0 - 9, ', ., -, _, !, #, ^, ~,
- 
+Only the following characters are allowed A - Z, a - z, 0 - 9, ' .
+- _ ! # ^ ~.
 For the complete list of allowed characters, see username policies.
 Returned by default.
 Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
@@ -11405,7 +11361,7 @@ null if the subject isn't yet a user in the tenant.
     [PrincipalName <String>]: The principal name, if known, of the subject.
     [SubjectType <String>]: accessPackageSubjectType
 
-BODYPARAMETER `<IMicrosoftGraphAccessPackageAssignmentRequest>`: accessPackageAssignmentRequest
+BODYPARAMETER <IMicrosoftGraphAccessPackageAssignmentRequest>: accessPackageAssignmentRequest
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -12564,7 +12520,7 @@ Always set to en-us.
               [Mentions <IMicrosoftGraphChatMessageMention[]>]: List of entities mentioned in the chat message.
 Supported entities are: user, bot, team, channel, chat, and tag.
                 [Id <Int32?>]: Index of an entity being mentioned in the specified chatMessage.
-Matches the {index} value in the corresponding `<at id='{index}'>` tag in the message body.
+Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
                 [MentionText <String>]: String used to represent the mention.
 For example, a user's display name, a team name.
                 [Mentioned <IMicrosoftGraphChatMessageMentionedIdentitySet>]: chatMessageMentionedIdentitySet
@@ -13713,17 +13669,17 @@ Read-only.
 Read-only.
                             [Options <IMicrosoftGraphWorkbookWorksheetProtectionOptions>]: workbookWorksheetProtectionOptions
                               [(Any) <Object>]: This indicates any property can be added to this object.
-                              [AllowAutoFilter <Boolean?>]: Represents the worksheet protection option of allowing using auto filter feature.
-                              [AllowDeleteColumns <Boolean?>]: Represents the worksheet protection option of allowing deleting columns.
-                              [AllowDeleteRows <Boolean?>]: Represents the worksheet protection option of allowing deleting rows.
-                              [AllowFormatCells <Boolean?>]: Represents the worksheet protection option of allowing formatting cells.
-                              [AllowFormatColumns <Boolean?>]: Represents the worksheet protection option of allowing formatting columns.
-                              [AllowFormatRows <Boolean?>]: Represents the worksheet protection option of allowing formatting rows.
-                              [AllowInsertColumns <Boolean?>]: Represents the worksheet protection option of allowing inserting columns.
-                              [AllowInsertHyperlinks <Boolean?>]: Represents the worksheet protection option of allowing inserting hyperlinks.
-                              [AllowInsertRows <Boolean?>]: Represents the worksheet protection option of allowing inserting rows.
-                              [AllowPivotTables <Boolean?>]: Represents the worksheet protection option of allowing using pivot table feature.
-                              [AllowSort <Boolean?>]: Represents the worksheet protection option of allowing using sort feature.
+                              [AllowAutoFilter <Boolean?>]: Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
+                              [AllowDeleteColumns <Boolean?>]: Indicates whether the worksheet protection option to allow deleting columns is enabled.
+                              [AllowDeleteRows <Boolean?>]: Indicates whether the worksheet protection option to allow deleting rows is enabled.
+                              [AllowFormatCells <Boolean?>]: Indicates whether the worksheet protection option to allow formatting cells is enabled.
+                              [AllowFormatColumns <Boolean?>]: Indicates whether the worksheet protection option to allow formatting columns is enabled.
+                              [AllowFormatRows <Boolean?>]: Indicates whether the worksheet protection option to allow formatting rows is enabled.
+                              [AllowInsertColumns <Boolean?>]: Indicates whether the worksheet protection option to allow inserting columns is enabled.
+                              [AllowInsertHyperlinks <Boolean?>]: Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
+                              [AllowInsertRows <Boolean?>]: Indicates whether the worksheet protection option to allow inserting rows is enabled.
+                              [AllowPivotTables <Boolean?>]: Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
+                              [AllowSort <Boolean?>]: Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
                             [Protected <Boolean?>]: Indicates whether the worksheet is protected.
  Read-only.
                           [Tables <IMicrosoftGraphWorkbookTable[]>]: The list of tables that are part of the worksheet.
@@ -15370,6 +15326,7 @@ Supports $filter (eq, ne, not, ge, le, in, startsWith).
             [AllowAttendeeToEnableCamera <Boolean?>]: Indicates whether attendees can turn on their camera.
             [AllowAttendeeToEnableMic <Boolean?>]: Indicates whether attendees can turn on their microphone.
             [AllowBreakoutRooms <Boolean?>]: Indicates whether breakout rooms are enabled for the meeting.
+            [AllowCopyingAndSharingMeetingContent <Boolean?>]: Indicates whether the ability to copy and share meeting content is enabled for the meeting.
             [AllowLiveShare <String>]: meetingLiveShareOptions
             [AllowMeetingChat <String>]: meetingChatMode
             [AllowParticipantsToChangeName <Boolean?>]: Specifies if participants are allowed to rename themselves in an instance of the meeting.
@@ -15437,7 +15394,7 @@ Read-only.
               [(Any) <Object>]: This indicates any property can be added to this object.
               [AllowTextOnly <Boolean?>]: Indicates whether only text is allowed in the meeting chat.
 Optional.
-            [IsEndToEndEncryptionEnabled <Boolean?>]: 
+            [IsEndToEndEncryptionEnabled <Boolean?>]: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
             [IsEntryExitAnnounced <Boolean?>]: Indicates whether to announce when callers join or leave.
             [JoinInformation <IMicrosoftGraphItemBody>]: itemBody
             [JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]: joinMeetingIdSettings
@@ -15816,9 +15773,9 @@ This attribute returns an empty string.Returned only on $select.
             [Id <String>]: The unique identifier for an entity.
 Read-only.
             [Activity <String>]: The supplemental information to a user's availability.
-Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
+Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.
             [Availability <String>]: The base presence information for a user.
-Possible values are Available, availableIdle,  Away, beRightBack, Busy, busyIdle, DoNotDisturb, Offline, presenceUnknown.
+Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.
             [OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>]: outOfOfficeSettings
               [(Any) <Object>]: This indicates any property can be added to this object.
               [IsOutOfOffice <Boolean?>]: If true, either of the following is met:The current time falls within the out-of-office window configured in Outlook or Teams.An event marked as 'Show as Out of Office' appears on the user's calendar.Otherwise, false.
@@ -16368,8 +16325,8 @@ By convention, this value should map to the user's email name.
 The general format is alias@domain, where the domain must be present in the tenant's collection of verified domains.
 This property is required when a user is created.
 The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters.
-Only the following characters are allowed A - Z, a - z, 0 - 9, ', ., -, _, !, #, ^, ~,
- 
+Only the following characters are allowed A - Z, a - z, 0 - 9, ' .
+- _ ! # ^ ~.
 For the complete list of allowed characters, see username policies.
 Returned by default.
 Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
@@ -16741,7 +16698,7 @@ CUSTOMEXTENSIONCALLOUTINSTANCES <IMicrosoftGraphCustomExtensionCalloutInstance[]
 Read-only.
   [Status <String>]: customExtensionCalloutInstanceStatus
 
-REQUESTOR `<IMicrosoftGraphAccessPackageSubject>`: accessPackageSubject
+REQUESTOR <IMicrosoftGraphAccessPackageSubject>: accessPackageSubject
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -16775,7 +16732,7 @@ null if the subject isn't yet a user in the tenant.
   [PrincipalName <String>]: The principal name, if known, of the subject.
   [SubjectType <String>]: accessPackageSubjectType
 
-SCHEDULE `<IMicrosoftGraphEntitlementManagementSchedule>`: entitlementManagementSchedule
+SCHEDULE <IMicrosoftGraphEntitlementManagementSchedule>: entitlementManagementSchedule
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Expiration <IMicrosoftGraphExpirationPattern>]: expirationPattern
     [(Any) <Object>]: This indicates any property can be added to this object.
@@ -16823,27 +16780,5 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ## RELATED LINKS
 
-- [New-MgEntitlementManagementAssignmentRequest](https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementassignmentrequest)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementassignmentrequest)
+- [](https://learn.microsoft.com/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0)

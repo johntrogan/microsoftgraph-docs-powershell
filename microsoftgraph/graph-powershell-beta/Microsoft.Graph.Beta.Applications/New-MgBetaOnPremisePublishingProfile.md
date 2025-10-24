@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Applications-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications/new-mgbetaonpremisepublishingprofile
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Applications
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: New-MgBetaOnPremisePublishingProfile
 ---
@@ -50,6 +50,16 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Add new entity to onPremisesPublishingProfiles
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -640,6 +650,7 @@ Read-only
 APPLICATIONSEGMENTS <IMicrosoftGraphIPApplicationSegment[]>: Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
+  [Action <String>]: actionType
   [Application <IMicrosoftGraphApplication>]: application
     [(Any) <Object>]: This indicates any property can be added to this object.
     [DeletedDateTime <DateTime?>]: Date and time when this object was deleted.
@@ -674,8 +685,8 @@ This text appears in consent experiences where the user is consenting only on be
 This text appears in consent experiences where the user is consenting only on behalf of themselves.
         [Value <String>]: Specifies the value to include in the scp (scope) claim in access tokens.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
       [PreAuthorizedApplications <IMicrosoftGraphPreAuthorizedApplication[]>]: Lists the client applications that are preauthorized with the specified delegated permissions to access this application's APIs.
@@ -778,13 +789,13 @@ Must not be included in any POST or PATCH requests.
 Read-only.
       [Value <String>]: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
     [AuthenticationBehaviors <IMicrosoftGraphAuthenticationBehaviors>]: authenticationBehaviors
       [(Any) <Object>]: This indicates any property can be added to this object.
-      [BlockAzureAdGraphAccess <Boolean?>]: If false, allows the app to have extended access to Azure AD Graph until June 30, 2025 when Azure AD Graph is fully retired.
+      [BlockAzureAdGraphAccess <Boolean?>]: If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired.
 For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.
       [RemoveUnverifiedEmailClaim <Boolean?>]: If true, removes the email claim from tokens sent to an application when the email address's domain can't be verified.
       [RequireClientServicePrincipal <Boolean?>]: If true, requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens.
@@ -991,6 +1002,8 @@ For example, https://intranet/.
       [IsBackendCertificateValidationEnabled <Boolean?>]: Indicates whether backend SSL certificate validation is enabled for the application.
 For all new Application Proxy apps, the property is set to true by default.
 For all existing apps, the property is set to false.
+      [IsContinuousAccessEvaluationEnabled <Boolean?>]: Indicates whether continuous access evaluation is enabled for Application Proxy application.
+For all Application Proxy apps, the property is set to true by default.
       [IsDnsResolutionEnabled <Boolean?>]: Indicates Microsoft Entra Private Access should handle DNS resolution.
 false by default.
       [IsHttpOnlyCookieEnabled <Boolean?>]: Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers.
@@ -1489,7 +1502,7 @@ DO NOT USE.
   [Ports <String[]>]: List of ports supported for the application segment.
   [Protocol <String>]: privateNetworkProtocol
 
-BODYPARAMETER `<IMicrosoftGraphOnPremisesPublishingProfile>`: onPremisesPublishingProfile
+BODYPARAMETER <IMicrosoftGraphOnPremisesPublishingProfile>: onPremisesPublishingProfile
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -1533,6 +1546,7 @@ Nullable.
   [ApplicationSegments <IMicrosoftGraphIPApplicationSegment[]>]: Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
     [Id <String>]: The unique identifier for an entity.
 Read-only.
+    [Action <String>]: actionType
     [Application <IMicrosoftGraphApplication>]: application
       [(Any) <Object>]: This indicates any property can be added to this object.
       [DeletedDateTime <DateTime?>]: Date and time when this object was deleted.
@@ -1567,8 +1581,8 @@ This text appears in consent experiences where the user is consenting only on be
 This text appears in consent experiences where the user is consenting only on behalf of themselves.
           [Value <String>]: Specifies the value to include in the scp (scope) claim in access tokens.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
         [PreAuthorizedApplications <IMicrosoftGraphPreAuthorizedApplication[]>]: Lists the client applications that are preauthorized with the specified delegated permissions to access this application's APIs.
@@ -1671,13 +1685,13 @@ Must not be included in any POST or PATCH requests.
 Read-only.
         [Value <String>]: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
       [AuthenticationBehaviors <IMicrosoftGraphAuthenticationBehaviors>]: authenticationBehaviors
         [(Any) <Object>]: This indicates any property can be added to this object.
-        [BlockAzureAdGraphAccess <Boolean?>]: If false, allows the app to have extended access to Azure AD Graph until June 30, 2025 when Azure AD Graph is fully retired.
+        [BlockAzureAdGraphAccess <Boolean?>]: If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired.
 For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.
         [RemoveUnverifiedEmailClaim <Boolean?>]: If true, removes the email claim from tokens sent to an application when the email address's domain can't be verified.
         [RequireClientServicePrincipal <Boolean?>]: If true, requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens.
@@ -1884,6 +1898,8 @@ For example, https://intranet/.
         [IsBackendCertificateValidationEnabled <Boolean?>]: Indicates whether backend SSL certificate validation is enabled for the application.
 For all new Application Proxy apps, the property is set to true by default.
 For all existing apps, the property is set to false.
+        [IsContinuousAccessEvaluationEnabled <Boolean?>]: Indicates whether continuous access evaluation is enabled for Application Proxy application.
+For all Application Proxy apps, the property is set to true by default.
         [IsDnsResolutionEnabled <Boolean?>]: Indicates Microsoft Entra Private Access should handle DNS resolution.
 false by default.
         [IsHttpOnlyCookieEnabled <Boolean?>]: Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers.
@@ -2440,8 +2456,8 @@ This text appears in consent experiences where the user is consenting only on be
 This text appears in consent experiences where the user is consenting only on behalf of themselves.
         [Value <String>]: Specifies the value to include in the scp (scope) claim in access tokens.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
       [PreAuthorizedApplications <IMicrosoftGraphPreAuthorizedApplication[]>]: Lists the client applications that are preauthorized with the specified delegated permissions to access this application's APIs.
@@ -2544,13 +2560,13 @@ Must not be included in any POST or PATCH requests.
 Read-only.
       [Value <String>]: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
     [AuthenticationBehaviors <IMicrosoftGraphAuthenticationBehaviors>]: authenticationBehaviors
       [(Any) <Object>]: This indicates any property can be added to this object.
-      [BlockAzureAdGraphAccess <Boolean?>]: If false, allows the app to have extended access to Azure AD Graph until June 30, 2025 when Azure AD Graph is fully retired.
+      [BlockAzureAdGraphAccess <Boolean?>]: If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired.
 For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.
       [RemoveUnverifiedEmailClaim <Boolean?>]: If true, removes the email claim from tokens sent to an application when the email address's domain can't be verified.
       [RequireClientServicePrincipal <Boolean?>]: If true, requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens.
@@ -2736,6 +2752,8 @@ For example, https://intranet/.
       [IsBackendCertificateValidationEnabled <Boolean?>]: Indicates whether backend SSL certificate validation is enabled for the application.
 For all new Application Proxy apps, the property is set to true by default.
 For all existing apps, the property is set to false.
+      [IsContinuousAccessEvaluationEnabled <Boolean?>]: Indicates whether continuous access evaluation is enabled for Application Proxy application.
+For all Application Proxy apps, the property is set to true by default.
       [IsDnsResolutionEnabled <Boolean?>]: Indicates Microsoft Entra Private Access should handle DNS resolution.
 false by default.
       [IsHttpOnlyCookieEnabled <Boolean?>]: Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers.
@@ -3290,8 +3308,8 @@ This text appears in consent experiences where the user is consenting only on be
 This text appears in consent experiences where the user is consenting only on behalf of themselves.
           [Value <String>]: Specifies the value to include in the scp (scope) claim in access tokens.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
         [PreAuthorizedApplications <IMicrosoftGraphPreAuthorizedApplication[]>]: Lists the client applications that are preauthorized with the specified delegated permissions to access this application's APIs.
@@ -3394,13 +3412,13 @@ Must not be included in any POST or PATCH requests.
 Read-only.
         [Value <String>]: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
       [AuthenticationBehaviors <IMicrosoftGraphAuthenticationBehaviors>]: authenticationBehaviors
         [(Any) <Object>]: This indicates any property can be added to this object.
-        [BlockAzureAdGraphAccess <Boolean?>]: If false, allows the app to have extended access to Azure AD Graph until June 30, 2025 when Azure AD Graph is fully retired.
+        [BlockAzureAdGraphAccess <Boolean?>]: If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired.
 For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.
         [RemoveUnverifiedEmailClaim <Boolean?>]: If true, removes the email claim from tokens sent to an application when the email address's domain can't be verified.
         [RequireClientServicePrincipal <Boolean?>]: If true, requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens.
@@ -3586,6 +3604,8 @@ For example, https://intranet/.
         [IsBackendCertificateValidationEnabled <Boolean?>]: Indicates whether backend SSL certificate validation is enabled for the application.
 For all new Application Proxy apps, the property is set to true by default.
 For all existing apps, the property is set to false.
+        [IsContinuousAccessEvaluationEnabled <Boolean?>]: Indicates whether continuous access evaluation is enabled for Application Proxy application.
+For all Application Proxy apps, the property is set to true by default.
         [IsDnsResolutionEnabled <Boolean?>]: Indicates Microsoft Entra Private Access should handle DNS resolution.
 false by default.
         [IsHttpOnlyCookieEnabled <Boolean?>]: Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers.
@@ -4088,7 +4108,7 @@ Read-only.
   [Version <String>]: The version of the connector.
 Read-only.
 
-HYBRIDAGENTUPDATERCONFIGURATION `<IMicrosoftGraphHybridAgentUpdaterConfiguration>`: hybridAgentUpdaterConfiguration
+HYBRIDAGENTUPDATERCONFIGURATION <IMicrosoftGraphHybridAgentUpdaterConfiguration>: hybridAgentUpdaterConfiguration
   [(Any) <Object>]: This indicates any property can be added to this object.
   [AllowUpdateConfigurationOverride <Boolean?>]: Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.
   [DeferUpdateDateTime <DateTime?>]: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
@@ -4136,27 +4156,4 @@ Nullable.
 
 ## RELATED LINKS
 
-- [New-MgBetaOnPremisePublishingProfile](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications/new-mgbetaonpremisepublishingprofile)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications/new-mgbetaonpremisepublishingprofile)

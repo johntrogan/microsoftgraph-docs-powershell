@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.DeviceManagement-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/new-mgbetadevicemanagementconfigurationpolicytemplate
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.DeviceManagement
-ms.date: 10/17/2025
+ms.date: 10/24/2025
 PlatyPS schema version: 2024-05-01
 title: New-MgBetaDeviceManagementConfigurationPolicyTemplate
 ---
@@ -22,7 +22,8 @@ Create new navigation property to configurationPolicyTemplates for deviceManagem
 ```
 New-MgBetaDeviceManagementConfigurationPolicyTemplate [-ResponseHeadersVariable <string>]
  [-AdditionalProperties <hashtable>] [-AllowUnmanagedSettings] [-BaseId <string>]
- [-Description <string>] [-DisplayName <string>] [-DisplayVersion <string>] [-Id <string>]
+ [-Description <string>] [-DisableEntraGroupPolicyAssignment] [-DisplayName <string>]
+ [-DisplayVersion <string>] [-Id <string>]
  [-LifecycleState <DeviceManagementTemplateLifecycleState>]
  [-Platforms <DeviceManagementConfigurationPlatforms>]
  [-SettingTemplates <IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]>]
@@ -53,13 +54,15 @@ This cmdlet has the following aliases,
 
 Create new navigation property to configurationPolicyTemplates for deviceManagement
 
-**Permissions**
+## EXAMPLES
 
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | DeviceManagementConfiguration.ReadWrite.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | DeviceManagementConfiguration.ReadWrite.All,  |
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -198,6 +201,27 @@ Template description
 ```yaml
 Type: System.String
 DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: CreateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -DisableEntraGroupPolicyAssignment
+
+Indicates whether assignments to Entra security groups is disabled
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
@@ -582,13 +606,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate>`: Device Management Configuration Policy Template
+BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate>: Device Management Configuration Policy Template
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
   [AllowUnmanagedSettings <Boolean?>]: Allow unmanaged setting templates
   [BaseId <String>]: Template base identifier
   [Description <String>]: Template description
+  [DisableEntraGroupPolicyAssignment <Boolean?>]: Indicates whether assignments to Entra security groups is disabled
   [DisplayName <String>]: Template display name
   [DisplayVersion <String>]: Description of template version
   [LifecycleState <DeviceManagementTemplateLifecycleState?>]: Describes current lifecycle state of a template
@@ -682,27 +707,4 @@ Applicable for reusable setting.
 
 ## RELATED LINKS
 
-- [New-MgBetaDeviceManagementConfigurationPolicyTemplate](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/new-mgbetadevicemanagementconfigurationpolicytemplate)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement/new-mgbetadevicemanagementconfigurationpolicytemplate)

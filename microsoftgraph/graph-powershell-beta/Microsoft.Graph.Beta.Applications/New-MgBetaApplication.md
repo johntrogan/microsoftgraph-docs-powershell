@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Applications-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications/new-mgbetaapplication
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Applications
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: New-MgBetaApplication
 ---
@@ -14,9 +14,7 @@ title: New-MgBetaApplication
 ## SYNOPSIS
 
 Create a new application object.
-
-> [!NOTE]
-> To view the v1.0 release of this cmdlet, view [New-MgApplication](/powershell/module/Microsoft.Graph.Applications/New-MgApplication?view=graph-powershell-1.0)
+This API can also create an agentIdentityBlueprint object when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
 
 ## SYNTAX
 
@@ -29,15 +27,15 @@ New-MgBetaApplication [-ResponseHeadersVariable <string>] [-AdditionalProperties
  [-AppRoles <IMicrosoftGraphAppRole[]>]
  [-AuthenticationBehaviors <IMicrosoftGraphAuthenticationBehaviors>]
  [-Certification <IMicrosoftGraphCertification>] [-ConnectorGroup <IMicrosoftGraphConnectorGroup>]
- [-CreatedDateTime <datetime>] [-CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]
- [-DefaultRedirectUri <string>] [-DeletedDateTime <datetime>] [-Description <string>]
- [-DisabledByMicrosoftStatus <string>] [-DisplayName <string>]
- [-ExtensionProperties <IMicrosoftGraphExtensionProperty[]>]
+ [-CreatedByAppId <string>] [-CreatedDateTime <datetime>]
+ [-CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>] [-DefaultRedirectUri <string>]
+ [-DeletedDateTime <datetime>] [-Description <string>] [-DisabledByMicrosoftStatus <string>]
+ [-DisplayName <string>] [-ExtensionProperties <IMicrosoftGraphExtensionProperty[]>]
  [-FederatedIdentityCredentials <IMicrosoftGraphFederatedIdentityCredential[]>]
  [-GroupMembershipClaims <string>]
  [-HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>] [-Id <string>]
  [-IdentifierUris <string[]>] [-Info <IMicrosoftGraphInformationalUrl>] [-IsDeviceOnlyAuthSupported]
- [-IsFallbackPublicClient] [-KeyCredentials <IMicrosoftGraphKeyCredential[]>]
+ [-IsDisabled] [-IsFallbackPublicClient] [-KeyCredentials <IMicrosoftGraphKeyCredential[]>]
  [-LogoInputFile <string>] [-NativeAuthenticationApisEnabled <string>] [-Notes <string>]
  [-OnPremisesPublishing <IMicrosoftGraphOnPremisesPublishing>]
  [-OptionalClaims <IMicrosoftGraphOptionalClaims>] [-Owners <IMicrosoftGraphDirectoryObject[]>]
@@ -48,9 +46,11 @@ New-MgBetaApplication [-ResponseHeadersVariable <string>] [-AdditionalProperties
  [-RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>] [-SamlMetadataUrl <string>]
  [-ServiceManagementReference <string>]
  [-ServicePrincipalLockConfiguration <IMicrosoftGraphServicePrincipalLockConfiguration>]
- [-SignInAudience <string>] [-Spa <IMicrosoftGraphSpaApplication>]
- [-Synchronization <IMicrosoftGraphSynchronization>] [-Tags <string[]>]
- [-TokenEncryptionKeyId <string>] [-TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]
+ [-SignInAudience <string>]
+ [-SignInAudienceRestrictions <IMicrosoftGraphSignInAudienceRestrictionsBase>]
+ [-Spa <IMicrosoftGraphSpaApplication>] [-Synchronization <IMicrosoftGraphSynchronization>]
+ [-Tags <string[]>] [-TokenEncryptionKeyId <string>]
+ [-TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]
  [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy[]>] [-UniqueName <string>]
  [-VerifiedPublisher <IMicrosoftGraphVerifiedPublisher>] [-Web <IMicrosoftGraphWebApplication>]
  [-Windows <IMicrosoftGraphWindowsApplication>] [-Break] [-Headers <IDictionary>]
@@ -77,19 +77,12 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Create a new application object.
-
-**Permissions**
-
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | Application.ReadWrite.All,  |
-| Delegated (personal Microsoft account) | Application.ReadWrite.All,  |
-| Application | Application.ReadWrite.OwnedBy, Application.ReadWrite.All,  |
+This API can also create an agentIdentityBlueprint object when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
 
 ## EXAMPLES
-### Example 1: Create a new application
 
-```powershell
+### EXAMPLE 1
+
 New-MgBetaApplication -DisplayName 'New app' | 
   Format-List Id, DisplayName, AppId, SignInAudience, PublisherDomain
 
@@ -98,9 +91,6 @@ DisplayName     : New app
 AppId           : c678b75d-1012-4466-8655-1672192232b4
 SignInAudience  : AzureADandPersonalMicrosoftAccount
 PublisherDomain : M365B977454.onmicrosoft.com
-```
-
-This example creates a new application.
 
 ## PARAMETERS
 
@@ -349,6 +339,29 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -CreatedByAppId
+
+The globally unique appId (called Application (client) ID on the Microsoft Entra admin center) of the application that created this application.
+Set internally by Microsoft Entra ID.
+Read-only.
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: CreateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -CreatedDateTime
 
 The date and time the application was registered.
@@ -469,7 +482,7 @@ HelpMessage: ''
 ### -DisabledByMicrosoftStatus
 
 Specifies whether Microsoft has disabled the registered application.
-Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
+The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
 Supports $filter (eq, ne, not).
 
 ```yaml
@@ -604,7 +617,7 @@ HelpMessage: ''
 
 ### -HomeRealmDiscoveryPolicies
 
-
+.
 To construct, see NOTES section for HOMEREALMDISCOVERYPOLICIES properties and create a hash table.
 
 ```yaml
@@ -739,6 +752,28 @@ HelpMessage: ''
 
 Specifies whether this application supports device authentication without a user.
 The default is false.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: CreateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -IsDisabled
+
+Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources.
+When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -1261,6 +1296,28 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -SignInAudienceRestrictions
+
+signInAudienceRestrictionsBase
+To construct, see NOTES section for SIGNINAUDIENCERESTRICTIONS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSignInAudienceRestrictionsBase
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: CreateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -Spa
 
 spaApplication
@@ -1353,7 +1410,7 @@ HelpMessage: ''
 
 ### -TokenIssuancePolicies
 
-
+.
 To construct, see NOTES section for TOKENISSUANCEPOLICIES properties and create a hash table.
 
 ```yaml
@@ -1537,7 +1594,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-API `<IMicrosoftGraphApiApplication>`: apiApplication
+API <IMicrosoftGraphApiApplication>: apiApplication
   [(Any) <Object>]: This indicates any property can be added to this object.
   [AcceptMappedClaims <Boolean?>]: When true, allows an application to use claims mapping without specifying a custom signing key.
   [KnownClientApplications <String[]>]: Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app.
@@ -1565,8 +1622,8 @@ This text appears in consent experiences where the user is consenting only on be
 This text appears in consent experiences where the user is consenting only on behalf of themselves.
     [Value <String>]: Specifies the value to include in the scp (scope) claim in access tokens.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
   [PreAuthorizedApplications <IMicrosoftGraphPreAuthorizedApplication[]>]: Lists the client applications that are preauthorized with the specified delegated permissions to access this application's APIs.
@@ -1627,13 +1684,18 @@ For existing applications, the enforcement date can be retroactively applied.
       [(Any) <Object>]: This indicates any property can be added to this object.
       [Audiences <IMicrosoftGraphAudiencesConfiguration>]: audiencesConfiguration
         [(Any) <Object>]: This indicates any property can be added to this object.
-        [AzureAdMultipleOrgs <IMicrosoftGraphAudienceRestriction>]: audienceRestriction
+        [AzureAdMultipleOrgs <IMicrosoftGraphAzureAdMultipleOrgsAudienceRestriction>]: azureAdMultipleOrgsAudienceRestriction
           [(Any) <Object>]: This indicates any property can be added to this object.
           [ExcludeActors <IMicrosoftGraphAppManagementPolicyActorExemptions>]: appManagementPolicyActorExemptions
           [RestrictForAppsCreatedAfterDateTime <DateTime?>]: Specifies the date from which the policy restriction applies to newly created applications.
 For existing applications, the enforcement date can be retroactively applied.
           [State <String>]: appManagementRestrictionState
         [PersonalMicrosoftAccount <IMicrosoftGraphAudienceRestriction>]: audienceRestriction
+          [(Any) <Object>]: This indicates any property can be added to this object.
+          [ExcludeActors <IMicrosoftGraphAppManagementPolicyActorExemptions>]: appManagementPolicyActorExemptions
+          [RestrictForAppsCreatedAfterDateTime <DateTime?>]: Specifies the date from which the policy restriction applies to newly created applications.
+For existing applications, the enforcement date can be retroactively applied.
+          [State <String>]: appManagementRestrictionState
       [IdentifierUris <IMicrosoftGraphIdentifierUriConfiguration>]: identifierUriConfiguration
         [(Any) <Object>]: This indicates any property can be added to this object.
         [NonDefaultUriAddition <IMicrosoftGraphIdentifierUriRestriction>]: identifierUriRestriction
@@ -1666,12 +1728,12 @@ Must not be included in any POST or PATCH requests.
 Read-only.
   [Value <String>]: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
 
-AUTHENTICATIONBEHAVIORS `<IMicrosoftGraphAuthenticationBehaviors>`: authenticationBehaviors
+AUTHENTICATIONBEHAVIORS <IMicrosoftGraphAuthenticationBehaviors>: authenticationBehaviors
   [(Any) <Object>]: This indicates any property can be added to this object.
   [BlockAzureAdGraphAccess <Boolean?>]: If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired.
 For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.
@@ -1680,7 +1742,7 @@ For more information on Azure AD retirement updates, see June 2024 update on Azu
 This property is only modifiable for multitenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft.
 Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
 
-BODYPARAMETER `<IMicrosoftGraphApplication>`: application
+BODYPARAMETER <IMicrosoftGraphApplication>: application
   [(Any) <Object>]: This indicates any property can be added to this object.
   [DeletedDateTime <DateTime?>]: Date and time when this object was deleted.
 Always null when the object hasn't been deleted.
@@ -1714,8 +1776,8 @@ This text appears in consent experiences where the user is consenting only on be
 This text appears in consent experiences where the user is consenting only on behalf of themselves.
       [Value <String>]: Specifies the value to include in the scp (scope) claim in access tokens.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
     [PreAuthorizedApplications <IMicrosoftGraphPreAuthorizedApplication[]>]: Lists the client applications that are preauthorized with the specified delegated permissions to access this application's APIs.
@@ -1780,13 +1842,18 @@ For existing applications, the enforcement date can be retroactively applied.
         [(Any) <Object>]: This indicates any property can be added to this object.
         [Audiences <IMicrosoftGraphAudiencesConfiguration>]: audiencesConfiguration
           [(Any) <Object>]: This indicates any property can be added to this object.
-          [AzureAdMultipleOrgs <IMicrosoftGraphAudienceRestriction>]: audienceRestriction
+          [AzureAdMultipleOrgs <IMicrosoftGraphAzureAdMultipleOrgsAudienceRestriction>]: azureAdMultipleOrgsAudienceRestriction
             [(Any) <Object>]: This indicates any property can be added to this object.
             [ExcludeActors <IMicrosoftGraphAppManagementPolicyActorExemptions>]: appManagementPolicyActorExemptions
             [RestrictForAppsCreatedAfterDateTime <DateTime?>]: Specifies the date from which the policy restriction applies to newly created applications.
 For existing applications, the enforcement date can be retroactively applied.
             [State <String>]: appManagementRestrictionState
           [PersonalMicrosoftAccount <IMicrosoftGraphAudienceRestriction>]: audienceRestriction
+            [(Any) <Object>]: This indicates any property can be added to this object.
+            [ExcludeActors <IMicrosoftGraphAppManagementPolicyActorExemptions>]: appManagementPolicyActorExemptions
+            [RestrictForAppsCreatedAfterDateTime <DateTime?>]: Specifies the date from which the policy restriction applies to newly created applications.
+For existing applications, the enforcement date can be retroactively applied.
+            [State <String>]: appManagementRestrictionState
         [IdentifierUris <IMicrosoftGraphIdentifierUriConfiguration>]: identifierUriConfiguration
           [(Any) <Object>]: This indicates any property can be added to this object.
           [NonDefaultUriAddition <IMicrosoftGraphIdentifierUriRestriction>]: identifierUriRestriction
@@ -1818,8 +1885,8 @@ Must not be included in any POST or PATCH requests.
 Read-only.
     [Value <String>]: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
   [AuthenticationBehaviors <IMicrosoftGraphAuthenticationBehaviors>]: authenticationBehaviors
@@ -1857,6 +1924,9 @@ Read-only.
 Read-only.
     [Name <String>]: The name associated with the connectorGroup.
     [Region <String>]: connectorGroupRegion
+  [CreatedByAppId <String>]: The globally unique appId (called Application (client) ID on the Microsoft Entra admin center) of the application that created this application.
+Set internally by Microsoft Entra ID.
+Read-only.
   [CreatedDateTime <DateTime?>]: The date and time the application was registered.
 The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -1872,7 +1942,7 @@ The maximum allowed size is 1,024 characters.
 Returned by default.
 Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
   [DisabledByMicrosoftStatus <String>]: Specifies whether Microsoft has disabled the registered application.
-Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
+The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
  Supports $filter (eq, ne, not).
   [DisplayName <String>]: The display name for the application.
 Maximum length is 256 characters.
@@ -1978,6 +2048,8 @@ For example, https://www.contoso.com/app/support
 For example, https://www.contoso.com/app/termsofservice
   [IsDeviceOnlyAuthSupported <Boolean?>]: Specifies whether this application supports device authentication without a user.
 The default is false.
+  [IsDisabled <Boolean?>]: Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources.
+When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
   [IsFallbackPublicClient <Boolean?>]: Specifies the fallback application type as public client, such as an installed application running on a mobile device.
 The default value is false, which means the fallback application type is confidential client such as a web app.
 There are certain scenarios where Microsoft Entra ID can't determine the client application type.
@@ -2201,6 +2273,9 @@ For more information, see Limits on requested permissions per app.
 The value for this property has implications on other app object properties.
 As a result, if you change this property, you may need to change other properties first.
 For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
+  [SignInAudienceRestrictions <IMicrosoftGraphSignInAudienceRestrictionsBase>]: signInAudienceRestrictionsBase
+    [(Any) <Object>]: This indicates any property can be added to this object.
+    [Kind <String>]: kind
   [Spa <IMicrosoftGraphSpaApplication>]: spaApplication
     [(Any) <Object>]: This indicates any property can be added to this object.
     [RedirectUris <String[]>]: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
@@ -2525,13 +2600,13 @@ Read-only.
     [RedirectUris <String[]>]: Specifies the URLs where user tokens are sent for sign-in or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
 Only available for applications that support the PersonalMicrosoftAccount signInAudience.
 
-CERTIFICATION `<IMicrosoftGraphCertification>`: certification
+CERTIFICATION <IMicrosoftGraphCertification>: certification
   [(Any) <Object>]: This indicates any property can be added to this object.
   [CertificationExpirationDateTime <DateTime?>]: The timestamp when the current certification for the application expires.
   [IsPublisherAttested <Boolean?>]: Indicates whether the application developer or publisher completed Publisher Attestation.
   [LastCertificationDateTime <DateTime?>]: The timestamp when the certification for the application was most recently added or updated.
 
-CONNECTORGROUP `<IMicrosoftGraphConnectorGroup>`: connectorGroup
+CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -2568,8 +2643,8 @@ This text appears in consent experiences where the user is consenting only on be
 This text appears in consent experiences where the user is consenting only on behalf of themselves.
         [Value <String>]: Specifies the value to include in the scp (scope) claim in access tokens.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
       [PreAuthorizedApplications <IMicrosoftGraphPreAuthorizedApplication[]>]: Lists the client applications that are preauthorized with the specified delegated permissions to access this application's APIs.
@@ -2634,13 +2709,18 @@ For existing applications, the enforcement date can be retroactively applied.
           [(Any) <Object>]: This indicates any property can be added to this object.
           [Audiences <IMicrosoftGraphAudiencesConfiguration>]: audiencesConfiguration
             [(Any) <Object>]: This indicates any property can be added to this object.
-            [AzureAdMultipleOrgs <IMicrosoftGraphAudienceRestriction>]: audienceRestriction
+            [AzureAdMultipleOrgs <IMicrosoftGraphAzureAdMultipleOrgsAudienceRestriction>]: azureAdMultipleOrgsAudienceRestriction
               [(Any) <Object>]: This indicates any property can be added to this object.
               [ExcludeActors <IMicrosoftGraphAppManagementPolicyActorExemptions>]: appManagementPolicyActorExemptions
               [RestrictForAppsCreatedAfterDateTime <DateTime?>]: Specifies the date from which the policy restriction applies to newly created applications.
 For existing applications, the enforcement date can be retroactively applied.
               [State <String>]: appManagementRestrictionState
             [PersonalMicrosoftAccount <IMicrosoftGraphAudienceRestriction>]: audienceRestriction
+              [(Any) <Object>]: This indicates any property can be added to this object.
+              [ExcludeActors <IMicrosoftGraphAppManagementPolicyActorExemptions>]: appManagementPolicyActorExemptions
+              [RestrictForAppsCreatedAfterDateTime <DateTime?>]: Specifies the date from which the policy restriction applies to newly created applications.
+For existing applications, the enforcement date can be retroactively applied.
+              [State <String>]: appManagementRestrictionState
           [IdentifierUris <IMicrosoftGraphIdentifierUriConfiguration>]: identifierUriConfiguration
             [(Any) <Object>]: This indicates any property can be added to this object.
             [NonDefaultUriAddition <IMicrosoftGraphIdentifierUriRestriction>]: identifierUriRestriction
@@ -2672,8 +2752,8 @@ Must not be included in any POST or PATCH requests.
 Read-only.
       [Value <String>]: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
     [AuthenticationBehaviors <IMicrosoftGraphAuthenticationBehaviors>]: authenticationBehaviors
@@ -2690,6 +2770,9 @@ Tenant administrators should respond to security advisories sent through Azure H
       [IsPublisherAttested <Boolean?>]: Indicates whether the application developer or publisher completed Publisher Attestation.
       [LastCertificationDateTime <DateTime?>]: The timestamp when the certification for the application was most recently added or updated.
     [ConnectorGroup <IMicrosoftGraphConnectorGroup>]: connectorGroup
+    [CreatedByAppId <String>]: The globally unique appId (called Application (client) ID on the Microsoft Entra admin center) of the application that created this application.
+Set internally by Microsoft Entra ID.
+Read-only.
     [CreatedDateTime <DateTime?>]: The date and time the application was registered.
 The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -2705,7 +2788,7 @@ The maximum allowed size is 1,024 characters.
 Returned by default.
 Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     [DisabledByMicrosoftStatus <String>]: Specifies whether Microsoft has disabled the registered application.
-Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
+The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
  Supports $filter (eq, ne, not).
     [DisplayName <String>]: The display name for the application.
 Maximum length is 256 characters.
@@ -2811,6 +2894,8 @@ For example, https://www.contoso.com/app/support
 For example, https://www.contoso.com/app/termsofservice
     [IsDeviceOnlyAuthSupported <Boolean?>]: Specifies whether this application supports device authentication without a user.
 The default is false.
+    [IsDisabled <Boolean?>]: Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources.
+When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
     [IsFallbackPublicClient <Boolean?>]: Specifies the fallback application type as public client, such as an installed application running on a mobile device.
 The default value is false, which means the fallback application type is confidential client such as a web app.
 There are certain scenarios where Microsoft Entra ID can't determine the client application type.
@@ -3034,6 +3119,9 @@ For more information, see Limits on requested permissions per app.
 The value for this property has implications on other app object properties.
 As a result, if you change this property, you may need to change other properties first.
 For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
+    [SignInAudienceRestrictions <IMicrosoftGraphSignInAudienceRestrictionsBase>]: signInAudienceRestrictionsBase
+      [(Any) <Object>]: This indicates any property can be added to this object.
+      [Kind <String>]: kind
     [Spa <IMicrosoftGraphSpaApplication>]: spaApplication
       [(Any) <Object>]: This indicates any property can be added to this object.
       [RedirectUris <String[]>]: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
@@ -3375,7 +3463,7 @@ Read-only.
   [Name <String>]: The name associated with the connectorGroup.
   [Region <String>]: connectorGroupRegion
 
-CREATEDONBEHALFOF `<IMicrosoftGraphDirectoryObject>`: directoryObject
+CREATEDONBEHALFOF <IMicrosoftGraphDirectoryObject>: directoryObject
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -3470,7 +3558,7 @@ Always null when the object hasn't been deleted.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
 
-INFO `<IMicrosoftGraphInformationalUrl>`: informationalUrl
+INFO <IMicrosoftGraphInformationalUrl>: informationalUrl
   [(Any) <Object>]: This indicates any property can be added to this object.
   [LogoUrl <String>]: CDN URL to the application's logo, Read-only.
   [MarketingUrl <String>]: Link to the application's marketing page.
@@ -3506,7 +3594,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   [Usage <String>]: A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign.
 If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
 
-ONPREMISESPUBLISHING `<IMicrosoftGraphOnPremisesPublishing>`: onPremisesPublishing
+ONPREMISESPUBLISHING <IMicrosoftGraphOnPremisesPublishing>: onPremisesPublishing
   [(Any) <Object>]: This indicates any property can be added to this object.
   [AlternateUrl <String>]: If you're configuring a traffic manager in front of multiple app proxy applications, this user-friendly URL points to the traffic manager.
   [ApplicationServerTimeout <String>]: The duration the connector waits for a response from the backend application before closing the connection.
@@ -3638,7 +3726,7 @@ Optional.
   [WafIPRanges <IMicrosoftGraphIPRange[]>]: 
   [WafProvider <String>]: 
 
-OPTIONALCLAIMS `<IMicrosoftGraphOptionalClaims>`: optionalClaims
+OPTIONALCLAIMS <IMicrosoftGraphOptionalClaims>: optionalClaims
   [(Any) <Object>]: This indicates any property can be added to this object.
   [AccessToken <IMicrosoftGraphOptionalClaim[]>]: The optional claims returned in the JWT access token.
     [AdditionalProperties <String[]>]: Additional properties of the claim.
@@ -3663,7 +3751,7 @@ Read-only.
   [DeletedDateTime <DateTime?>]: Date and time when this object was deleted.
 Always null when the object hasn't been deleted.
 
-PARENTALCONTROLSETTINGS `<IMicrosoftGraphParentalControlSettings>`: parentalControlSettings
+PARENTALCONTROLSETTINGS <IMicrosoftGraphParentalControlSettings>: parentalControlSettings
   [(Any) <Object>]: This indicates any property can be added to this object.
   [CountriesBlockedForMinors <String[]>]: Specifies the two-letter ISO country codes.
 Access to the application will be blocked for minors from the countries specified in this list.
@@ -3692,13 +3780,13 @@ The Timestamp type represents date and time information using ISO 8601 format an
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Optional.
 
-PUBLICCLIENT `<IMicrosoftGraphPublicClientApplication>`: publicClientApplication
+PUBLICCLIENT <IMicrosoftGraphPublicClientApplication>: publicClientApplication
   [(Any) <Object>]: This indicates any property can be added to this object.
   [RedirectUris <String[]>]: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
 For iOS and macOS apps, specify the value following the syntax msauth.{BUNDLEID}://auth, replacing '{BUNDLEID}'.
 For example, if the bundle ID is com.microsoft.identitysample.MSALiOS, the URI is msauth.com.microsoft.identitysample.MSALiOS://auth.
 
-REQUESTSIGNATUREVERIFICATION `<IMicrosoftGraphRequestSignatureVerification>`: requestSignatureVerification
+REQUESTSIGNATUREVERIFICATION <IMicrosoftGraphRequestSignatureVerification>: requestSignatureVerification
   [(Any) <Object>]: This indicates any property can be added to this object.
   [AllowedWeakAlgorithms <String>]: weakAlgorithms
   [IsSignedRequestRequired <Boolean?>]: Specifies whether signed authentication requests for this application should be required.
@@ -3720,7 +3808,7 @@ The possible values are: Scope (for delegated permissions) or Role (for app role
   [ResourceAppId <String>]: The unique identifier for the resource that the application requires access to.
 This should be equal to the appId declared on the target resource application.
 
-SERVICEPRINCIPALLOCKCONFIGURATION `<IMicrosoftGraphServicePrincipalLockConfiguration>`: servicePrincipalLockConfiguration
+SERVICEPRINCIPALLOCKCONFIGURATION <IMicrosoftGraphServicePrincipalLockConfiguration>: servicePrincipalLockConfiguration
   [(Any) <Object>]: This indicates any property can be added to this object.
   [AllProperties <Boolean?>]: Enables locking all sensitive properties.
 The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.
@@ -3731,11 +3819,15 @@ This locks OAuth service principals.
 To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
   [TokenEncryptionKeyId <Boolean?>]: Locks the tokenEncryptionKeyId property for modification on the service principal.
 
-SPA `<IMicrosoftGraphSpaApplication>`: spaApplication
+SIGNINAUDIENCERESTRICTIONS <IMicrosoftGraphSignInAudienceRestrictionsBase>: signInAudienceRestrictionsBase
+  [(Any) <Object>]: This indicates any property can be added to this object.
+  [Kind <String>]: kind
+
+SPA <IMicrosoftGraphSpaApplication>: spaApplication
   [(Any) <Object>]: This indicates any property can be added to this object.
   [RedirectUris <String[]>]: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
 
-SYNCHRONIZATION `<IMicrosoftGraphSynchronization>`: synchronization
+SYNCHRONIZATION <IMicrosoftGraphSynchronization>: synchronization
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -4029,13 +4121,13 @@ Always null when the object hasn't been deleted.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
 
-VERIFIEDPUBLISHER `<IMicrosoftGraphVerifiedPublisher>`: verifiedPublisher
+VERIFIEDPUBLISHER <IMicrosoftGraphVerifiedPublisher>: verifiedPublisher
   [(Any) <Object>]: This indicates any property can be added to this object.
   [AddedDateTime <DateTime?>]: The timestamp when the verified publisher was first added or most recently updated.
   [DisplayName <String>]: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
   [VerifiedPublisherId <String>]: The ID of the verified publisher from the app publisher's Partner Center account.
 
-WEB `<IMicrosoftGraphWebApplication>`: webApplication
+WEB <IMicrosoftGraphWebApplication>: webApplication
   [(Any) <Object>]: This indicates any property can be added to this object.
   [HomePageUrl <String>]: Home page or landing page of the application.
   [ImplicitGrantSettings <IMicrosoftGraphImplicitGrantSettings>]: implicitGrantSettings
@@ -4052,7 +4144,7 @@ The index is unique across all the redirectUris for the application.
     [Uri <String>]: Specifies the URI that tokens are sent to.
   [RedirectUris <String[]>]: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
 
-WINDOWS `<IMicrosoftGraphWindowsApplication>`: windowsApplication
+WINDOWS <IMicrosoftGraphWindowsApplication>: windowsApplication
   [(Any) <Object>]: This indicates any property can be added to this object.
   [PackageSid <String>]: The package security identifier that Microsoft has assigned the application.
 Optional.
@@ -4063,27 +4155,5 @@ Only available for applications that support the PersonalMicrosoftAccount signIn
 
 ## RELATED LINKS
 
-- [New-MgBetaApplication](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications/new-mgbetaapplication)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-beta)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications/new-mgbetaapplication)
+- [](https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-beta)

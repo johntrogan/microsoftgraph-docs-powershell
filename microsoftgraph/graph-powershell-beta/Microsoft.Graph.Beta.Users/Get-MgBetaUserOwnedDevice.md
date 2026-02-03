@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Users-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users/get-mgbetauserowneddevice
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Users
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Get-MgBetaUserOwnedDevice
 ---
@@ -17,9 +17,6 @@ Devices owned by the user.
 Read-only.
 Nullable.
 Supports $expand.
-
-> [!NOTE]
-> To view the v1.0 release of this cmdlet, view [Get-MgUserOwnedDevice](/powershell/module/Microsoft.Graph.Users/Get-MgUserOwnedDevice?view=graph-powershell-1.0)
 
 ## SYNTAX
 
@@ -67,14 +64,12 @@ Nullable.
 Supports $expand.
 
 ## EXAMPLES
-### Example 1: Using the Get-MgBetaUserOwnedDevice Cmdlet
-```powershell
+
+### EXAMPLE 1
+
 Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
 Get-MgBetaUserOwnedDevice -UserId $userId
-```
-This example shows how to use the Get-MgBetaUserOwnedDevice Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -585,13 +580,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
+INPUTOBJECT <IUsersIdentity>: Identity Parameter
   [AppId <String>]: Alternate key of servicePrincipal
   [AttachmentBaseId <String>]: The unique identifier of attachmentBase
   [AttachmentId <String>]: The unique identifier of attachment
   [AttachmentSessionId <String>]: The unique identifier of attachmentSession
   [ChecklistItemId <String>]: The unique identifier of checklistItem
   [DirectoryObjectId <String>]: The unique identifier of directoryObject
+  [EndDateTime <String>]: Usage: endDateTime='{endDateTime}'
   [ExtensionId <String>]: The unique identifier of extension
   [LicenseDetailsId <String>]: The unique identifier of licenseDetails
   [LinkedResourceId <String>]: The unique identifier of linkedResource
@@ -605,6 +601,7 @@ INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
   [ServicePrincipalId <String>]: The unique identifier of servicePrincipal
   [ServiceStorageQuotaBreakdownId <String>]: The unique identifier of serviceStorageQuotaBreakdown
   [SharedInsightId <String>]: The unique identifier of sharedInsight
+  [StartDateTime <String>]: Usage: startDateTime='{startDateTime}'
   [TimeZoneStandard <String>]: Usage: TimeZoneStandard='{TimeZoneStandard}'
   [TodoTaskId <String>]: The unique identifier of todoTask
   [TodoTaskListId <String>]: The unique identifier of todoTaskList
@@ -614,30 +611,10 @@ INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
   [UserPrincipalName <String>]: Alternate key of user
   [WindowsSettingId <String>]: The unique identifier of windowsSetting
   [WindowsSettingInstanceId <String>]: The unique identifier of windowsSettingInstance
+  [WorkPlanOccurrenceId <String>]: The unique identifier of workPlanOccurrence
+  [WorkPlanRecurrenceId <String>]: The unique identifier of workPlanRecurrence
 
 
 ## RELATED LINKS
 
-- [Get-MgBetaUserOwnedDevice](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users/get-mgbetauserowneddevice)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users/get-mgbetauserowneddevice)

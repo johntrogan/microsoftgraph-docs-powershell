@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.NetworkAccess-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/new-mgbetanetworkaccessforwardingprofile
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.NetworkAccess
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: New-MgBetaNetworkAccessForwardingProfile
 ---
@@ -49,6 +49,16 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Create new navigation property to forwardingProfiles for networkAccess
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -267,7 +277,7 @@ HelpMessage: ''
 
 ### -IsCustomProfile
 
-
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -309,7 +319,7 @@ HelpMessage: ''
 
 ### -Name
 
-The name of the profile.
+Name of the entity
 
 ```yaml
 Type: System.String
@@ -593,11 +603,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphNetworkaccessForwardingProfile>`: forwardingProfile
+BODYPARAMETER <IMicrosoftGraphNetworkaccessForwardingProfile>: forwardingProfile
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Description <String>]: Description.
   [LastModifiedDateTime <DateTime?>]: The date and time when the profile was last modified.
-  [Name <String>]: The name of the profile.
   [Policies <IMicrosoftGraphNetworkaccessPolicyLink[]>]: The traffic forwarding policies associated with this profile.
     [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -616,6 +625,7 @@ Read-only.
     [Version <String>]: Version.
   [State <String>]: status
   [Version <String>]: Profile version.
+  [Name <String>]: Name of the entity
   [Id <String>]: The unique identifier for an entity.
 Read-only.
   [Associations <IMicrosoftGraphNetworkaccessAssociation[]>]: Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.
@@ -637,8 +647,8 @@ This lets services like Microsoft 365 call the application in the context of a d
       [Properties <IMicrosoftGraphKeyValue[]>]: The collection of key-value pairs that define parameters that the consuming service can use or call.
 You must specify this property when performing a POST or a PATCH operation on the addIns collection.
 Required.
-        [Key <String>]: Contains the name of the field that a value is associated with.
-        [Value <String>]: Contains the corresponding value for the specified key.
+        [Key <String>]: Key.
+        [Value <String>]: Value.
       [Type <String>]: The unique name for the functionality exposed by the app.
     [AlternativeNames <String[]>]: Used to retrieve service principals by subscription, identify resource group and full resource IDs for managed identities.
 Supports $filter (eq, not, ge, le, startsWith).
@@ -693,13 +703,18 @@ For existing applications, the enforcement date can be retroactively applied.
           [(Any) <Object>]: This indicates any property can be added to this object.
           [Audiences <IMicrosoftGraphAudiencesConfiguration>]: audiencesConfiguration
             [(Any) <Object>]: This indicates any property can be added to this object.
-            [AzureAdMultipleOrgs <IMicrosoftGraphAudienceRestriction>]: audienceRestriction
+            [AzureAdMultipleOrgs <IMicrosoftGraphAzureAdMultipleOrgsAudienceRestriction>]: azureAdMultipleOrgsAudienceRestriction
               [(Any) <Object>]: This indicates any property can be added to this object.
               [ExcludeActors <IMicrosoftGraphAppManagementPolicyActorExemptions>]: appManagementPolicyActorExemptions
               [RestrictForAppsCreatedAfterDateTime <DateTime?>]: Specifies the date from which the policy restriction applies to newly created applications.
 For existing applications, the enforcement date can be retroactively applied.
               [State <String>]: appManagementRestrictionState
             [PersonalMicrosoftAccount <IMicrosoftGraphAudienceRestriction>]: audienceRestriction
+              [(Any) <Object>]: This indicates any property can be added to this object.
+              [ExcludeActors <IMicrosoftGraphAppManagementPolicyActorExemptions>]: appManagementPolicyActorExemptions
+              [RestrictForAppsCreatedAfterDateTime <DateTime?>]: Specifies the date from which the policy restriction applies to newly created applications.
+For existing applications, the enforcement date can be retroactively applied.
+              [State <String>]: appManagementRestrictionState
           [IdentifierUris <IMicrosoftGraphIdentifierUriConfiguration>]: identifierUriConfiguration
             [(Any) <Object>]: This indicates any property can be added to this object.
             [NonDefaultUriAddition <IMicrosoftGraphIdentifierUriRestriction>]: identifierUriRestriction
@@ -768,8 +783,8 @@ Must not be included in any POST or PATCH requests.
 Read-only.
       [Value <String>]: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
     [ApplicationTemplateId <String>]: Unique identifier of the applicationTemplate.
@@ -820,6 +835,9 @@ Optional.
       [IncludeBasicClaimSet <Boolean?>]: Determines whether the basic claim set is included in tokens affected by this policy.
 If set to true, all claims in the basic claim set are emitted in tokens affected by the policy.
 By default the basic claim set isn't in the tokens unless they're explicitly configured in this policy.
+    [CreatedByAppId <String>]: The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal.
+Set internally by Microsoft Entra ID.
+Read-only.
     [CreatedObjects <IMicrosoftGraphDirectoryObject[]>]: Directory objects created by this service principal.
 Read-only.
 Nullable.
@@ -840,7 +858,7 @@ End-user portals such MyApps displays the application description in this field.
 The maximum allowed size is 1,024 characters.
 Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     [DisabledByMicrosoftStatus <String>]: Specifies whether Microsoft has disabled the registered application.
-Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
+The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
  Supports $filter (eq, ne, not).
     [DisplayName <String>]: The display name for the service principal.
 Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
@@ -933,6 +951,8 @@ For example, https://www.contoso.com/app/privacy
 For example, https://www.contoso.com/app/support
       [TermsOfServiceUrl <String>]: Link to the application's terms of service statement.
 For example, https://www.contoso.com/app/termsofservice
+    [IsDisabled <Boolean?>]: Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources.
+When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
     [KeyCredentials <IMicrosoftGraphKeyCredential[]>]: The collection of key credentials associated with the service principal.
 Not nullable.
 Supports $filter (eq, not, ge, le).
@@ -1097,8 +1117,8 @@ This text appears in consent experiences where the user is consenting only on be
 This text appears in consent experiences where the user is consenting only on behalf of themselves.
       [Value <String>]: Specifies the value to include in the scp (scope) claim in access tokens.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
     [PublisherName <String>]: The name of the Microsoft Entra tenant that published the application.
@@ -1112,6 +1132,7 @@ Read-only.
         [DisplayName <String>]: 
       [IsRemoteDesktopProtocolEnabled <Boolean?>]: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
       [TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+<br/<Supports $expand.
         [Id <String>]: The unique identifier for an entity.
 Read-only.
         [DisplayName <String>]: Display name for the target device group.
@@ -1128,9 +1149,9 @@ For example,Client apps can specify a resource URI that is based on the values o
 Not nullable.
  Supports $filter (eq, not, ge, le, startsWith).
     [ServicePrincipalType <String>]: Identifies if the service principal represents an application or a managed identity.
-This is set by Microsoft Entra ID internally.
+This property is set by Microsoft Entra ID internally.
 For a service principal that represents an application this is set as Application.
-For a service principal that represents a managed identity this is set as ManagedIdentity.
+For a service principal that represents a managed identity this is set as ManagedIdentity.For a service principal that represents an agent identity, this is set to ServiceIdentity.
 The SocialIdp type is for internal use.
     [SignInAudience <String>]: Specifies the Microsoft accounts that are supported for the current application.
 Read-only.
@@ -1450,7 +1471,7 @@ Read-only.
   [State <String>]: status
   [Version <String>]: Version.
 
-SERVICEPRINCIPAL `<IMicrosoftGraphServicePrincipal>`: servicePrincipal
+SERVICEPRINCIPAL <IMicrosoftGraphServicePrincipal>: servicePrincipal
   [(Any) <Object>]: This indicates any property can be added to this object.
   [DeletedDateTime <DateTime?>]: Date and time when this object was deleted.
 Always null when the object hasn't been deleted.
@@ -1466,8 +1487,8 @@ This lets services like Microsoft 365 call the application in the context of a d
     [Properties <IMicrosoftGraphKeyValue[]>]: The collection of key-value pairs that define parameters that the consuming service can use or call.
 You must specify this property when performing a POST or a PATCH operation on the addIns collection.
 Required.
-      [Key <String>]: Contains the name of the field that a value is associated with.
-      [Value <String>]: Contains the corresponding value for the specified key.
+      [Key <String>]: Key.
+      [Value <String>]: Value.
     [Type <String>]: The unique name for the functionality exposed by the app.
   [AlternativeNames <String[]>]: Used to retrieve service principals by subscription, identify resource group and full resource IDs for managed identities.
 Supports $filter (eq, not, ge, le, startsWith).
@@ -1522,13 +1543,18 @@ For existing applications, the enforcement date can be retroactively applied.
         [(Any) <Object>]: This indicates any property can be added to this object.
         [Audiences <IMicrosoftGraphAudiencesConfiguration>]: audiencesConfiguration
           [(Any) <Object>]: This indicates any property can be added to this object.
-          [AzureAdMultipleOrgs <IMicrosoftGraphAudienceRestriction>]: audienceRestriction
+          [AzureAdMultipleOrgs <IMicrosoftGraphAzureAdMultipleOrgsAudienceRestriction>]: azureAdMultipleOrgsAudienceRestriction
             [(Any) <Object>]: This indicates any property can be added to this object.
             [ExcludeActors <IMicrosoftGraphAppManagementPolicyActorExemptions>]: appManagementPolicyActorExemptions
             [RestrictForAppsCreatedAfterDateTime <DateTime?>]: Specifies the date from which the policy restriction applies to newly created applications.
 For existing applications, the enforcement date can be retroactively applied.
             [State <String>]: appManagementRestrictionState
           [PersonalMicrosoftAccount <IMicrosoftGraphAudienceRestriction>]: audienceRestriction
+            [(Any) <Object>]: This indicates any property can be added to this object.
+            [ExcludeActors <IMicrosoftGraphAppManagementPolicyActorExemptions>]: appManagementPolicyActorExemptions
+            [RestrictForAppsCreatedAfterDateTime <DateTime?>]: Specifies the date from which the policy restriction applies to newly created applications.
+For existing applications, the enforcement date can be retroactively applied.
+            [State <String>]: appManagementRestrictionState
         [IdentifierUris <IMicrosoftGraphIdentifierUriConfiguration>]: identifierUriConfiguration
           [(Any) <Object>]: This indicates any property can be added to this object.
           [NonDefaultUriAddition <IMicrosoftGraphIdentifierUriRestriction>]: identifierUriRestriction
@@ -1597,8 +1623,8 @@ Must not be included in any POST or PATCH requests.
 Read-only.
     [Value <String>]: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
   [ApplicationTemplateId <String>]: Unique identifier of the applicationTemplate.
@@ -1649,6 +1675,9 @@ Optional.
     [IncludeBasicClaimSet <Boolean?>]: Determines whether the basic claim set is included in tokens affected by this policy.
 If set to true, all claims in the basic claim set are emitted in tokens affected by the policy.
 By default the basic claim set isn't in the tokens unless they're explicitly configured in this policy.
+  [CreatedByAppId <String>]: The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal.
+Set internally by Microsoft Entra ID.
+Read-only.
   [CreatedObjects <IMicrosoftGraphDirectoryObject[]>]: Directory objects created by this service principal.
 Read-only.
 Nullable.
@@ -1669,7 +1698,7 @@ End-user portals such MyApps displays the application description in this field.
 The maximum allowed size is 1,024 characters.
 Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
   [DisabledByMicrosoftStatus <String>]: Specifies whether Microsoft has disabled the registered application.
-Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
+The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
  Supports $filter (eq, ne, not).
   [DisplayName <String>]: The display name for the service principal.
 Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
@@ -1762,6 +1791,8 @@ For example, https://www.contoso.com/app/privacy
 For example, https://www.contoso.com/app/support
     [TermsOfServiceUrl <String>]: Link to the application's terms of service statement.
 For example, https://www.contoso.com/app/termsofservice
+  [IsDisabled <Boolean?>]: Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources.
+When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
   [KeyCredentials <IMicrosoftGraphKeyCredential[]>]: The collection of key credentials associated with the service principal.
 Not nullable.
 Supports $filter (eq, not, ge, le).
@@ -1926,8 +1957,8 @@ This text appears in consent experiences where the user is consenting only on be
 This text appears in consent experiences where the user is consenting only on behalf of themselves.
     [Value <String>]: Specifies the value to include in the scp (scope) claim in access tokens.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
   [PublisherName <String>]: The name of the Microsoft Entra tenant that published the application.
@@ -1941,6 +1972,7 @@ Read-only.
       [DisplayName <String>]: 
     [IsRemoteDesktopProtocolEnabled <Boolean?>]: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
     [TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+<br/<Supports $expand.
       [Id <String>]: The unique identifier for an entity.
 Read-only.
       [DisplayName <String>]: Display name for the target device group.
@@ -1957,9 +1989,9 @@ For example,Client apps can specify a resource URI that is based on the values o
 Not nullable.
  Supports $filter (eq, not, ge, le, startsWith).
   [ServicePrincipalType <String>]: Identifies if the service principal represents an application or a managed identity.
-This is set by Microsoft Entra ID internally.
+This property is set by Microsoft Entra ID internally.
 For a service principal that represents an application this is set as Application.
-For a service principal that represents a managed identity this is set as ManagedIdentity.
+For a service principal that represents a managed identity this is set as ManagedIdentity.For a service principal that represents an agent identity, this is set to ServiceIdentity.
 The SocialIdp type is for internal use.
   [SignInAudience <String>]: Specifies the Microsoft accounts that are supported for the current application.
 Read-only.
@@ -2264,27 +2296,4 @@ Read-only.
 
 ## RELATED LINKS
 
-- [New-MgBetaNetworkAccessForwardingProfile](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/new-mgbetanetworkaccessforwardingprofile)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/new-mgbetanetworkaccessforwardingprofile)

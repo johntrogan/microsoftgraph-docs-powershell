@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Security-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.security/invoke-mgandsecuritydatasecurityandgovernancesensitivitylabel
 Locale: en-US
 Module Name: Microsoft.Graph.Security
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Invoke-MgAndSecurityDataSecurityAndGovernanceSensitivityLabel
 ---
@@ -14,9 +14,6 @@ title: Invoke-MgAndSecurityDataSecurityAndGovernanceSensitivityLabel
 ## SYNOPSIS
 
 Computes the rights and inheritance for sensitivity labels based on the input content and labels.
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Invoke-MgBetaAndSecurityDataSecurityAndGovernanceSensitivityLabel](/powershell/module/Microsoft.Graph.Beta.Security/Invoke-MgBetaAndSecurityDataSecurityAndGovernanceSensitivityLabel?view=graph-powershell-beta)
 
 ## SYNTAX
 
@@ -51,13 +48,26 @@ This cmdlet has the following aliases,
 
 Computes the rights and inheritance for sensitivity labels based on the input content and labels.
 
-**Permissions**
+## EXAMPLES
 
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | SensitivityLabel.Evaluate, SensitivityLabel.Evaluate.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | SensitivityLabel.Evaluate, SensitivityLabel.Evaluate.All,  |
+### EXAMPLE 1
+
+Import-Module Microsoft.Graph.Security
+
+$params = @{
+	delegatedUserEmail = "String"
+	locale = "String"
+	protectedContents = @(
+		@{
+			"@odata.type" = "microsoft.graph.protectedContent"
+		}
+	)
+	supportedContentFormats = @(
+	"String"
+)
+}
+
+Invoke-MgAndSecurityDataSecurityAndGovernanceSensitivityLabel -BodyParameter $params
 
 ## PARAMETERS
 
@@ -84,7 +94,7 @@ HelpMessage: ''
 
 ### -Body
 
-
+.
 To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
@@ -149,7 +159,7 @@ HelpMessage: ''
 
 ### -DelegatedUserEmail
 
-
+.
 
 ```yaml
 Type: System.String
@@ -233,7 +243,7 @@ HelpMessage: ''
 
 ### -Locale
 
-
+.
 
 ```yaml
 Type: System.String
@@ -254,7 +264,7 @@ HelpMessage: ''
 
 ### -ProtectedContents
 
-
+.
 To construct, see NOTES section for PROTECTEDCONTENTS properties and create a hash table.
 
 ```yaml
@@ -361,7 +371,7 @@ HelpMessage: ''
 
 ### -SupportedContentFormats
 
-
+.
 
 ```yaml
 Type: System.String[]
@@ -432,7 +442,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODY `<IPaths1Bfgf7OSecurityDatasecurityandgovernanceSensitivitylabelsMicrosoftGraphComputerightsandinheritancePostRequestbodyContentApplicationJsonSchema>`: .
+BODY <IPaths1Bfgf7OSecurityDatasecurityandgovernanceSensitivitylabelsMicrosoftGraphComputerightsandinheritancePostRequestbodyContentApplicationJsonSchema>: .
   [(Any) <Object>]: This indicates any property can be added to this object.
   [DelegatedUserEmail <String>]: 
   [Locale <String>]: 
@@ -450,28 +460,5 @@ PROTECTEDCONTENTS <IMicrosoftGraphProtectedContent[]>: .
 
 ## RELATED LINKS
 
-- [Invoke-MgAndSecurityDataSecurityAndGovernanceSensitivityLabel](https://learn.microsoft.com/powershell/module/microsoft.graph.security/invoke-mgandsecuritydatasecurityandgovernancesensitivitylabel)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.security/invoke-mgandsecuritydatasecurityandgovernancesensitivitylabel)
+- [](https://learn.microsoft.com/graph/api/sensitivitylabel-computerightsandinheritance?view=graph-rest-1.0)

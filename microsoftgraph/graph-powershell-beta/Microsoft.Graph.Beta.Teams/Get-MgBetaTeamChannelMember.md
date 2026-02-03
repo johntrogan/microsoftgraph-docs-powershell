@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Teams-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/get-mgbetateamchannelmember
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Teams
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Get-MgBetaTeamChannelMember
 ---
@@ -13,11 +13,9 @@ title: Get-MgBetaTeamChannelMember
 
 ## SYNOPSIS
 
-A collection of membership records associated with the channel.
-It includes both direct and indirect members of shared channels.
-
-> [!NOTE]
-> To view the v1.0 release of this cmdlet, view [Get-MgTeamChannelMember](/powershell/module/Microsoft.Graph.Teams/Get-MgTeamChannelMember?view=graph-powershell-1.0)
+Retrieve a single conversationMember (direct or indirect) from the allMembers collection using the membership ID.
+This API provides access to the following member types:\r\n- *Direct members*: Users who are added directly to the channel, including users from other tenants (cross-tenant).\r\n- *Indirect members*: Users who are members of a team with which the channel is shared, including teams in the same tenant or in a different tenant (cross-tenant).
+When you retrieve an indirect member, the @microsoft.graph.originalSourceMembershipUrl property identifies the original source team, which indicates that the user is an indirect member of the shared channel.
 
 ## SYNTAX
 
@@ -88,40 +86,23 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-A collection of membership records associated with the channel.
-It includes both direct and indirect members of shared channels.
-
-**Permissions**
-
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | ChannelMember.Read.All, ChannelMember.ReadWrite.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | ChannelMember.Read.Group, ChannelMember.ReadWrite.Group, ChannelMember.ReadWrite.All, ChannelMember.Read.All,  |
+Retrieve a single conversationMember (direct or indirect) from the allMembers collection using the membership ID.
+This API provides access to the following member types:\r\n- *Direct members*: Users who are added directly to the channel, including users from other tenants (cross-tenant).\r\n- *Indirect members*: Users who are members of a team with which the channel is shared, including teams in the same tenant or in a different tenant (cross-tenant).
+When you retrieve an indirect member, the @microsoft.graph.originalSourceMembershipUrl property identifies the original source team, which indicates that the user is an indirect member of the shared channel.
 
 ## EXAMPLES
-### Example 1: List all members of a channel
 
-```powershell
+### EXAMPLE 1
 
 Import-Module Microsoft.Graph.Beta.Teams
 
 Get-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId
 
-```
-This example will list all members of a channel
-
-### Example 2: Find a channel member using their Microsoft Entra user object ID
-
-```powershell
+### EXAMPLE 2
 
 Import-Module Microsoft.Graph.Beta.Teams
 
-Get-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -Filter "(microsoft.graph.aadUserConversationMember/userId eq '73761f06-2ac9-469c-9f10-279a8cc267f9')" 
-
-```
-This example will find a channel member using their microsoft entra user object id
-
+Get-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -Filter "(microsoft.graph.aadUserConversationMember/userId eq '73761f06-2ac9-469c-9f10-279a8cc267f9')"
 
 ## PARAMETERS
 
@@ -721,7 +702,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-INPUTOBJECT `<ITeamsIdentity>`: Identity Parameter
+INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   [AssociatedTeamInfoId <String>]: The unique identifier of associatedTeamInfo
   [ChannelId <String>]: The unique identifier of channel
   [ChatId <String>]: The unique identifier of chat
@@ -771,29 +752,8 @@ INPUTOBJECT `<ITeamsIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [Get-MgBetaTeamChannelMember](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/get-mgbetateamchannelmember)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/channel-get-members?view=graph-rest-beta)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/channel-list-allmembers?view=graph-rest-beta)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/channel-list-members?view=graph-rest-beta)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/get-mgbetateamchannelmember)
+- [](https://learn.microsoft.com/graph/api/channel-get-allmembers?view=graph-rest-beta)
+- [](https://learn.microsoft.com/graph/api/channel-get-members?view=graph-rest-beta)
+- [](https://learn.microsoft.com/graph/api/channel-list-allmembers?view=graph-rest-beta)
+- [](https://learn.microsoft.com/graph/api/channel-list-members?view=graph-rest-beta)

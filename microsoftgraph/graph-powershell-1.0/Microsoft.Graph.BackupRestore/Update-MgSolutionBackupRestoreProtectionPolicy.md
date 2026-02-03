@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.BackupRestore-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/update-mgsolutionbackuprestoreprotectionpolicy
 Locale: en-US
 Module Name: Microsoft.Graph.BackupRestore
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Update-MgSolutionBackupRestoreProtectionPolicy
 ---
@@ -15,9 +15,6 @@ title: Update-MgSolutionBackupRestoreProtectionPolicy
 
 Update the navigation property protectionPolicies in solutions
 
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Update-MgBetaSolutionBackupRestoreProtectionPolicy](/powershell/module/Microsoft.Graph.Beta.BackupRestore/Update-MgBetaSolutionBackupRestoreProtectionPolicy?view=graph-powershell-beta)
-
 ## SYNTAX
 
 ### UpdateExpanded (Default)
@@ -26,7 +23,9 @@ Update the navigation property protectionPolicies in solutions
 Update-MgSolutionBackupRestoreProtectionPolicy -ProtectionPolicyBaseId <string>
  [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <datetime>] [-DisplayName <string>]
- [-Id <string>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <datetime>]
+ [-Id <string>] [-IsEnabled] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
+ [-LastModifiedDateTime <datetime>]
+ [-ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]
  [-RetentionSettings <IMicrosoftGraphRetentionSetting[]>] [-Status <string>] [-Break]
  [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]
  [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]
@@ -49,7 +48,9 @@ Update-MgSolutionBackupRestoreProtectionPolicy -ProtectionPolicyBaseId <string>
 Update-MgSolutionBackupRestoreProtectionPolicy -InputObject <IBackupRestoreIdentity>
  [-ResponseHeadersVariable <string>] [-AdditionalProperties <hashtable>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <datetime>] [-DisplayName <string>]
- [-Id <string>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <datetime>]
+ [-Id <string>] [-IsEnabled] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
+ [-LastModifiedDateTime <datetime>]
+ [-ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]
  [-RetentionSettings <IMicrosoftGraphRetentionSetting[]>] [-Status <string>] [-Break]
  [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]
  [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]
@@ -74,6 +75,16 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Update the navigation property protectionPolicies in solutions
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -376,6 +387,33 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -IsEnabled
+
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: UpdateViaIdentityExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: UpdateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -LastModifiedBy
 
 identitySet
@@ -410,6 +448,34 @@ The timestamp of the last modification of the policy.
 
 ```yaml
 Type: System.DateTime
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: UpdateViaIdentityExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: UpdateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ProtectionPolicyArtifactCount
+
+protectionPolicyArtifactCount
+To construct, see NOTES section for PROTECTIONPOLICYARTIFACTCOUNT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProtectionPolicyArtifactCount
 DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
@@ -654,7 +720,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphProtectionPolicyBase>`: protectionPolicyBase
+BODYPARAMETER <IMicrosoftGraphProtectionPolicyBase>: protectionPolicyBase
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -670,14 +736,21 @@ For example, in the access reviews decisions API, this property might record the
     [User <IMicrosoftGraphIdentity>]: identity
   [CreatedDateTime <DateTime?>]: The time of creation of the policy.
   [DisplayName <String>]: The name of the policy to be created.
+  [IsEnabled <Boolean?>]: 
   [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
   [LastModifiedDateTime <DateTime?>]: The timestamp of the last modification of the policy.
+  [ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]: protectionPolicyArtifactCount
+    [(Any) <Object>]: This indicates any property can be added to this object.
+    [Completed <Int32?>]: 
+    [Failed <Int32?>]: 
+    [InProgress <Int32?>]: 
+    [Total <Int32?>]: 
   [RetentionSettings <IMicrosoftGraphRetentionSetting[]>]: Contains the retention setting details for the policy.
     [Interval <String>]: The frequency of the backup.
     [Period <TimeSpan?>]: The period of time to retain the protected data for a single Microsoft 365 service.
   [Status <String>]: protectionPolicyStatus
 
-CREATEDBY `<IMicrosoftGraphIdentitySet>`: identitySet
+CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Application <IMicrosoftGraphIdentity>]: identity
     [(Any) <Object>]: This indicates any property can be added to this object.
@@ -688,7 +761,7 @@ For example, in the access reviews decisions API, this property might record the
   [Device <IMicrosoftGraphIdentity>]: identity
   [User <IMicrosoftGraphIdentity>]: identity
 
-INPUTOBJECT `<IBackupRestoreIdentity>`: Identity Parameter
+INPUTOBJECT <IBackupRestoreIdentity>: Identity Parameter
   [DriveProtectionRuleId <String>]: The unique identifier of driveProtectionRule
   [DriveProtectionUnitId <String>]: The unique identifier of driveProtectionUnit
   [DriveProtectionUnitsBulkAdditionJobId <String>]: The unique identifier of driveProtectionUnitsBulkAdditionJob
@@ -717,7 +790,7 @@ INPUTOBJECT `<IBackupRestoreIdentity>`: Identity Parameter
   [SiteRestoreArtifactId <String>]: The unique identifier of siteRestoreArtifact
   [SiteRestoreArtifactsBulkAdditionRequestId <String>]: The unique identifier of siteRestoreArtifactsBulkAdditionRequest
 
-LASTMODIFIEDBY `<IMicrosoftGraphIdentitySet>`: identitySet
+LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Application <IMicrosoftGraphIdentity>]: identity
     [(Any) <Object>]: This indicates any property can be added to this object.
@@ -728,6 +801,13 @@ For example, in the access reviews decisions API, this property might record the
   [Device <IMicrosoftGraphIdentity>]: identity
   [User <IMicrosoftGraphIdentity>]: identity
 
+PROTECTIONPOLICYARTIFACTCOUNT <IMicrosoftGraphProtectionPolicyArtifactCount>: protectionPolicyArtifactCount
+  [(Any) <Object>]: This indicates any property can be added to this object.
+  [Completed <Int32?>]: 
+  [Failed <Int32?>]: 
+  [InProgress <Int32?>]: 
+  [Total <Int32?>]: 
+
 RETENTIONSETTINGS <IMicrosoftGraphRetentionSetting[]>: Contains the retention setting details for the policy.
   [Interval <String>]: The frequency of the backup.
   [Period <TimeSpan?>]: The period of time to retain the protected data for a single Microsoft 365 service.
@@ -735,27 +815,4 @@ RETENTIONSETTINGS <IMicrosoftGraphRetentionSetting[]>: Contains the retention se
 
 ## RELATED LINKS
 
-- [Update-MgSolutionBackupRestoreProtectionPolicy](https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/update-mgsolutionbackuprestoreprotectionpolicy)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/update-mgsolutionbackuprestoreprotectionpolicy)

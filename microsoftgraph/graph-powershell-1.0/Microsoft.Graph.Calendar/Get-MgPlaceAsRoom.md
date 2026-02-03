@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Calendar-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.calendar/get-mgplaceasroom
 Locale: en-US
 Module Name: Microsoft.Graph.Calendar
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Get-MgPlaceAsRoom
 ---
@@ -13,15 +13,8 @@ title: Get-MgPlaceAsRoom
 
 ## SYNOPSIS
 
-Get a collection of the specified type of place objects defined in the tenant.
-For example, you can get all the rooms, all the room lists, or the rooms in a specific room list in the tenant.
-A place object can be one of the following types: Both room and roomList are derived from the place object.
-By default, this operation returns 100 places per page.
-Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists.
-See details for how they compare.
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Get-MgBetaPlaceAsRoom](/powershell/module/Microsoft.Graph.Beta.Calendar/Get-MgBetaPlaceAsRoom?view=graph-powershell-beta)
+Get a collection of the specified type of place objects defined in a tenant.
+You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list.
 
 ## SYNTAX
 
@@ -61,25 +54,16 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-Get a collection of the specified type of place objects defined in the tenant.
-For example, you can get all the rooms, all the room lists, or the rooms in a specific room list in the tenant.
-A place object can be one of the following types: Both room and roomList are derived from the place object.
-By default, this operation returns 100 places per page.
-Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists.
-See details for how they compare.
+Get a collection of the specified type of place objects defined in a tenant.
+You can do the following for a given tenant:\r\n- List all buildings.\r\n- List all floors.\r\n- List all sections.\r\n- List all desks.\r\n- List all rooms.\r\n- List all workspaces.\r\n- List all room lists.\r\n- List rooms in a specific room list.\r\n- List workspaces in a specific room list.
 
 ## EXAMPLES
-### Example 1: List all the rooms defined in the tenant
 
-```powershell
+### EXAMPLE 1
 
 Import-Module Microsoft.Graph.Calendar
 
 Get-MgPlaceAsRoom
-
-```
-This example will list all the rooms defined in the tenant
-
 
 ## PARAMETERS
 
@@ -541,43 +525,28 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-INPUTOBJECT `<ICalendarIdentity>`: Identity Parameter
+INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   [AttachmentId <String>]: The unique identifier of attachment
   [CalendarGroupId <String>]: The unique identifier of calendarGroup
   [CalendarId <String>]: The unique identifier of calendar
   [CalendarPermissionId <String>]: The unique identifier of calendarPermission
+  [CheckInClaimCalendarEventId <String>]: The unique identifier of checkInClaim
   [EventId <String>]: The unique identifier of event
   [ExtensionId <String>]: The unique identifier of extension
+  [FixtureMapId <String>]: The unique identifier of fixtureMap
+  [FootprintMapId <String>]: The unique identifier of footprintMap
   [GroupId <String>]: The unique identifier of group
+  [LevelMapId <String>]: The unique identifier of levelMap
   [PlaceId <String>]: The unique identifier of place
   [RoomId <String>]: The unique identifier of room
+  [SectionMapId <String>]: The unique identifier of sectionMap
+  [UnitMapId <String>]: The unique identifier of unitMap
   [User <String>]: Usage: User='{User}'
   [UserId <String>]: The unique identifier of user
+  [WorkspaceId <String>]: The unique identifier of workspace
 
 
 ## RELATED LINKS
 
-- [Get-MgPlaceAsRoom](https://learn.microsoft.com/powershell/module/microsoft.graph.calendar/get-mgplaceasroom)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.calendar/get-mgplaceasroom)
+- [](https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0)

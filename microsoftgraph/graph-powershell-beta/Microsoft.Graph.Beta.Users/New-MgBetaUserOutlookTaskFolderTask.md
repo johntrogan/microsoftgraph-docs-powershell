@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Users-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users/new-mgbetauseroutlooktaskfoldertask
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Users
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: New-MgBetaUserOutlookTaskFolderTask
 ---
@@ -84,17 +84,10 @@ This cmdlet has the following aliases,
 
 Create new navigation property to tasks for users
 
-**Permissions**
-
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | Tasks.ReadWrite,  |
-| Delegated (personal Microsoft account) | Tasks.ReadWrite,  |
-| Application | Not supported |
-
 ## EXAMPLES
-### Example 1: Using the New-MgBetaUserOutlookTaskFolderTask Cmdlet
-```powershell
+
+### EXAMPLE 1
+
 Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	Subject = "Shop for dinner"
@@ -109,9 +102,6 @@ $params = @{
 }
 # A UPN can also be used as -UserId.
 New-MgBetaUserOutlookTaskFolderTask -UserId $userId -OutlookTaskFolderId $outlookTaskFolderId -BodyParameter $params
-```
-This example shows how to use the New-MgBetaUserOutlookTaskFolderTask Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -1155,12 +1145,12 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 This does not need to be the actual file name.
   [Size <Int32?>]: The length of the attachment in bytes.
 
-BODY `<IMicrosoftGraphItemBody>`: itemBody
+BODY <IMicrosoftGraphItemBody>: itemBody
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Content <String>]: The content of the item.
   [ContentType <String>]: bodyType
 
-BODYPARAMETER `<IMicrosoftGraphOutlookTask>`: outlookTask
+BODYPARAMETER <IMicrosoftGraphOutlookTask>: outlookTask
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Categories <String[]>]: The categories associated with the item.
   [ChangeKey <String>]: Identifies the version of the item.
@@ -1253,27 +1243,28 @@ Read-only.
   [Status <String>]: taskStatus
   [Subject <String>]: A brief description or title of the task.
 
-COMPLETEDDATETIME `<IMicrosoftGraphDateTimeZone>`: dateTimeTimeZone
+COMPLETEDDATETIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   [(Any) <Object>]: This indicates any property can be added to this object.
   [DateTime <String>]: A single point of time in a combined date and time representation ({date}T{time}).
 For example, '2019-04-16T09:00:00'.
   [TimeZone <String>]: Represents a time zone, for example, 'Pacific Standard Time'.
 See below for possible values.
 
-DUEDATETIME `<IMicrosoftGraphDateTimeZone>`: dateTimeTimeZone
+DUEDATETIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   [(Any) <Object>]: This indicates any property can be added to this object.
   [DateTime <String>]: A single point of time in a combined date and time representation ({date}T{time}).
 For example, '2019-04-16T09:00:00'.
   [TimeZone <String>]: Represents a time zone, for example, 'Pacific Standard Time'.
 See below for possible values.
 
-INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
+INPUTOBJECT <IUsersIdentity>: Identity Parameter
   [AppId <String>]: Alternate key of servicePrincipal
   [AttachmentBaseId <String>]: The unique identifier of attachmentBase
   [AttachmentId <String>]: The unique identifier of attachment
   [AttachmentSessionId <String>]: The unique identifier of attachmentSession
   [ChecklistItemId <String>]: The unique identifier of checklistItem
   [DirectoryObjectId <String>]: The unique identifier of directoryObject
+  [EndDateTime <String>]: Usage: endDateTime='{endDateTime}'
   [ExtensionId <String>]: The unique identifier of extension
   [LicenseDetailsId <String>]: The unique identifier of licenseDetails
   [LinkedResourceId <String>]: The unique identifier of linkedResource
@@ -1287,6 +1278,7 @@ INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
   [ServicePrincipalId <String>]: The unique identifier of servicePrincipal
   [ServiceStorageQuotaBreakdownId <String>]: The unique identifier of serviceStorageQuotaBreakdown
   [SharedInsightId <String>]: The unique identifier of sharedInsight
+  [StartDateTime <String>]: Usage: startDateTime='{startDateTime}'
   [TimeZoneStandard <String>]: Usage: TimeZoneStandard='{TimeZoneStandard}'
   [TodoTaskId <String>]: The unique identifier of todoTask
   [TodoTaskListId <String>]: The unique identifier of todoTaskList
@@ -1296,6 +1288,8 @@ INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
   [UserPrincipalName <String>]: Alternate key of user
   [WindowsSettingId <String>]: The unique identifier of windowsSetting
   [WindowsSettingInstanceId <String>]: The unique identifier of windowsSettingInstance
+  [WorkPlanOccurrenceId <String>]: The unique identifier of workPlanOccurrence
+  [WorkPlanRecurrenceId <String>]: The unique identifier of workPlanRecurrence
 
 MULTIVALUEEXTENDEDPROPERTIES <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>: The collection of multi-value extended properties defined for the task.
 Read-only.
@@ -1304,7 +1298,7 @@ Nullable.
 Read-only.
   [Value <String[]>]: A collection of property values.
 
-RECURRENCE `<IMicrosoftGraphPatternedRecurrence>`: patternedRecurrence
+RECURRENCE <IMicrosoftGraphPatternedRecurrence>: patternedRecurrence
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Pattern <IMicrosoftGraphRecurrencePattern>]: recurrencePattern
     [(Any) <Object>]: This indicates any property can be added to this object.
@@ -1337,7 +1331,7 @@ Must be the same value as the start property of the recurring event.
 Required.
     [Type <String>]: recurrenceRangeType
 
-REMINDERDATETIME `<IMicrosoftGraphDateTimeZone>`: dateTimeTimeZone
+REMINDERDATETIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   [(Any) <Object>]: This indicates any property can be added to this object.
   [DateTime <String>]: A single point of time in a combined date and time representation ({date}T{time}).
 For example, '2019-04-16T09:00:00'.
@@ -1351,7 +1345,7 @@ Nullable.
 Read-only.
   [Value <String>]: A property value.
 
-STARTDATETIME `<IMicrosoftGraphDateTimeZone>`: dateTimeTimeZone
+STARTDATETIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   [(Any) <Object>]: This indicates any property can be added to this object.
   [DateTime <String>]: A single point of time in a combined date and time representation ({date}T{time}).
 For example, '2019-04-16T09:00:00'.
@@ -1361,26 +1355,4 @@ See below for possible values.
 
 ## RELATED LINKS
 
-- [New-MgBetaUserOutlookTaskFolderTask](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users/new-mgbetauseroutlooktaskfoldertask)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users/new-mgbetauseroutlooktaskfoldertask)

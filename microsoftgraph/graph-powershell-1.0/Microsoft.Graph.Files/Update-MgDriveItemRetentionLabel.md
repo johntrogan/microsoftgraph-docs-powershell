@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Files-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.files/update-mgdriveitemretentionlabel
 Locale: en-US
 Module Name: Microsoft.Graph.Files
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Update-MgDriveItemRetentionLabel
 ---
@@ -13,14 +13,9 @@ title: Update-MgDriveItemRetentionLabel
 
 ## SYNOPSIS
 
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Update-MgBetaDriveItemRetentionLabel](/powershell/module/Microsoft.Graph.Beta.Files/Update-MgBetaDriveItemRetentionLabel?view=graph-powershell-beta)
+For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ## SYNTAX
 
@@ -76,16 +71,13 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 
 ## EXAMPLES
-### Example 1: Code snippet
 
-```powershell
+### EXAMPLE 1
 
 Import-Module Microsoft.Graph.Files
 
@@ -96,10 +88,6 @@ $params = @{
 }
 
 Update-MgDriveItemRetentionLabel -DriveId $driveId -DriveItemId $driveItemId -BodyParameter $params
-
-```
-This example shows how to use the Update-MgDriveItemRetentionLabel Cmdlet.
-
 
 ## PARAMETERS
 
@@ -658,7 +646,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphItemRetentionLabel>`: itemRetentionLabel
+BODYPARAMETER <IMicrosoftGraphItemRetentionLabel>: itemRetentionLabel
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -695,7 +683,7 @@ Read-only.
     [IsRecordLocked <Boolean?>]: Specifies whether the item is locked.
 Read-write.
 
-INPUTOBJECT `<IFilesIdentity>`: Identity Parameter
+INPUTOBJECT <IFilesIdentity>: Identity Parameter
   [ColumnDefinitionId <String>]: The unique identifier of columnDefinition
   [ColumnLinkId <String>]: The unique identifier of columnLink
   [ContentTypeId <String>]: The unique identifier of contentType
@@ -721,7 +709,7 @@ INPUTOBJECT `<IFilesIdentity>`: Identity Parameter
   [Token <String>]: Usage: token='{token}'
   [UserId <String>]: The unique identifier of user
 
-LABELAPPLIEDBY `<IMicrosoftGraphIdentitySet>`: identitySet
+LABELAPPLIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Application <IMicrosoftGraphIdentity>]: identity
     [(Any) <Object>]: This indicates any property can be added to this object.
@@ -732,7 +720,7 @@ For example, in the access reviews decisions API, this property might record the
   [Device <IMicrosoftGraphIdentity>]: identity
   [User <IMicrosoftGraphIdentity>]: identity
 
-RETENTIONSETTINGS `<IMicrosoftGraphRetentionLabelSettings>`: retentionLabelSettings
+RETENTIONSETTINGS <IMicrosoftGraphRetentionLabelSettings>: retentionLabelSettings
   [(Any) <Object>]: This indicates any property can be added to this object.
   [BehaviorDuringRetentionPeriod <String>]: behaviorDuringRetentionPeriod
   [IsContentUpdateAllowed <Boolean?>]: Specifies whether updates to document content are allowed.
@@ -749,27 +737,5 @@ Read-write.
 
 ## RELATED LINKS
 
-- [Update-MgDriveItemRetentionLabel](https://learn.microsoft.com/powershell/module/microsoft.graph.files/update-mgdriveitemretentionlabel)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.files/update-mgdriveitemretentionlabel)
+- [](https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0)

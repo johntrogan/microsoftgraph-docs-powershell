@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Users-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.users/set-mgusermanagerbyref
 Locale: en-US
 Module Name: Microsoft.Graph.Users
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Set-MgUserManagerByRef
 ---
@@ -14,9 +14,6 @@ title: Set-MgUserManagerByRef
 ## SYNOPSIS
 
 Assign a user's manager.
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Set-MgBetaUserManagerByRef](/powershell/module/Microsoft.Graph.Beta.Users/Set-MgBetaUserManagerByRef?view=graph-powershell-beta)
 
 ## SYNTAX
 
@@ -70,28 +67,15 @@ This cmdlet has the following aliases,
 
 Assign a user's manager.
 
-**Permissions**
-
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | User.ReadWrite.All, Directory.ReadWrite.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | User.ReadWrite.All, Directory.ReadWrite.All,  |
-
 ## EXAMPLES
-### Example 1: Update a user's manager
 
-```powershell
+### EXAMPLE 1
+
 $NewManager = @{
   "@odata.id"="https://graph.microsoft.com/v1.0/users/075b32dd-edb7-47cf-89ef-f3f733683a3f"
   }
 
 Set-MgUserManagerByRef -UserId '8a7c50d3-fcbd-4727-a889-8ab232dfea01' -BodyParameter $NewManager
-```
-
-In this example, the first command defines the new manager using the $NewManager variable with id `075b32dd-edb7-47cf-89ef-f3f733683a3f`.
-The second command sets the manager for user defined by the UserId as the value provided on the $NewManager variable.
-
 
 ## PARAMETERS
 
@@ -124,7 +108,7 @@ HelpMessage: ''
 
 ### -BodyParameter
 
-
+.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -314,7 +298,7 @@ HelpMessage: ''
 
 ### -OdataType
 
-
+.
 
 ```yaml
 Type: System.String
@@ -528,17 +512,18 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IReferenceUpdate>`: .
+BODYPARAMETER <IReferenceUpdate>: .
   [(Any) <Object>]: This indicates any property can be added to this object.
-  OdataId `<String>`: The entity reference URL of the resource.
+  OdataId <String>: The entity reference URL of the resource.
 For example, https://graph.microsoft.com/v1.0/directoryObjects/{id}.
   [OdataType <String>]: 
 
-INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
+INPUTOBJECT <IUsersIdentity>: Identity Parameter
   [AttachmentBaseId <String>]: The unique identifier of attachmentBase
   [AttachmentSessionId <String>]: The unique identifier of attachmentSession
   [ChecklistItemId <String>]: The unique identifier of checklistItem
   [DirectoryObjectId <String>]: The unique identifier of directoryObject
+  [EndDateTime <String>]: Usage: endDateTime='{endDateTime}'
   [ExtensionId <String>]: The unique identifier of extension
   [LicenseDetailsId <String>]: The unique identifier of licenseDetails
   [LinkedResourceId <String>]: The unique identifier of linkedResource
@@ -547,6 +532,7 @@ INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
   [ProfilePhotoId <String>]: The unique identifier of profilePhoto
   [ServiceStorageQuotaBreakdownId <String>]: The unique identifier of serviceStorageQuotaBreakdown
   [SharedInsightId <String>]: The unique identifier of sharedInsight
+  [StartDateTime <String>]: Usage: startDateTime='{startDateTime}'
   [TimeZoneStandard <String>]: Usage: TimeZoneStandard='{TimeZoneStandard}'
   [TodoTaskId <String>]: The unique identifier of todoTask
   [TodoTaskListId <String>]: The unique identifier of todoTaskList
@@ -556,31 +542,11 @@ INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
   [UserPrincipalName <String>]: Alternate key of user
   [WindowsSettingId <String>]: The unique identifier of windowsSetting
   [WindowsSettingInstanceId <String>]: The unique identifier of windowsSettingInstance
+  [WorkPlanOccurrenceId <String>]: The unique identifier of workPlanOccurrence
+  [WorkPlanRecurrenceId <String>]: The unique identifier of workPlanRecurrence
 
 
 ## RELATED LINKS
 
-- [Set-MgUserManagerByRef](https://learn.microsoft.com/powershell/module/microsoft.graph.users/set-mgusermanagerbyref)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.users/set-mgusermanagerbyref)
+- [](https://learn.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0)

@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Teams-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/complete-mgbetauserchatmigration
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Teams
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Complete-MgBetaUserChatMigration
 ---
@@ -13,7 +13,11 @@ title: Complete-MgBetaUserChatMigration
 
 ## SYNOPSIS
 
-Invoke action completeMigration
+Complete the migration of external messages by removing migration mode from a chat.
+Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process.
+For more information, see Import third-party platform messages to Teams using Microsoft Graph.
+After a completeMigration request is made for an existing or new chat, you can start a migration session by calling chat: startMigration.
+This API supportes the following channel types.
 
 ## SYNTAX
 
@@ -44,7 +48,21 @@ This cmdlet has the following aliases,
 
 ## DESCRIPTION
 
-Invoke action completeMigration
+Complete the migration of external messages by removing migration mode from a chat.
+Complete migration operations were initially restricted to newly created standard channels using migration templates specifically designed for the initial migration process.
+For more information, see Import third-party platform messages to Teams using Microsoft Graph.
+After a completeMigration request is made for an existing or new chat, you can start a migration session by calling chat: startMigration.
+This API supportes the following channel types.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -376,7 +394,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-INPUTOBJECT `<ITeamsIdentity>`: Identity Parameter
+INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   [AssociatedTeamInfoId <String>]: The unique identifier of associatedTeamInfo
   [ChannelId <String>]: The unique identifier of channel
   [ChatId <String>]: The unique identifier of chat
@@ -426,27 +444,5 @@ INPUTOBJECT `<ITeamsIdentity>`: Identity Parameter
 
 ## RELATED LINKS
 
-- [Complete-MgBetaUserChatMigration](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/complete-mgbetauserchatmigration)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams/complete-mgbetauserchatmigration)
+- [](https://learn.microsoft.com/graph/api/chat-completemigration?view=graph-rest-beta)

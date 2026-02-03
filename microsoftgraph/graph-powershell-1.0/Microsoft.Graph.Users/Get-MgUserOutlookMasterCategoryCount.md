@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Users-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.users/get-mguseroutlookmastercategorycount
 Locale: en-US
 Module Name: Microsoft.Graph.Users
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Get-MgUserOutlookMasterCategoryCount
 ---
@@ -14,9 +14,6 @@ title: Get-MgUserOutlookMasterCategoryCount
 ## SYNOPSIS
 
 Get the number of the resource
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Get-MgBetaUserOutlookMasterCategoryCount](/powershell/module/Microsoft.Graph.Beta.Users/Get-MgBetaUserOutlookMasterCategoryCount?view=graph-powershell-beta)
 
 ## SYNTAX
 
@@ -47,13 +44,15 @@ This cmdlet has the following aliases,
 
 Get the number of the resource
 
-**Permissions**
+## EXAMPLES
 
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | MailboxSettings.Read,  |
-| Delegated (personal Microsoft account) | MailboxSettings.Read,  |
-| Application | MailboxSettings.Read,  |
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -341,11 +340,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
+INPUTOBJECT <IUsersIdentity>: Identity Parameter
   [AttachmentBaseId <String>]: The unique identifier of attachmentBase
   [AttachmentSessionId <String>]: The unique identifier of attachmentSession
   [ChecklistItemId <String>]: The unique identifier of checklistItem
   [DirectoryObjectId <String>]: The unique identifier of directoryObject
+  [EndDateTime <String>]: Usage: endDateTime='{endDateTime}'
   [ExtensionId <String>]: The unique identifier of extension
   [LicenseDetailsId <String>]: The unique identifier of licenseDetails
   [LinkedResourceId <String>]: The unique identifier of linkedResource
@@ -354,6 +354,7 @@ INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
   [ProfilePhotoId <String>]: The unique identifier of profilePhoto
   [ServiceStorageQuotaBreakdownId <String>]: The unique identifier of serviceStorageQuotaBreakdown
   [SharedInsightId <String>]: The unique identifier of sharedInsight
+  [StartDateTime <String>]: Usage: startDateTime='{startDateTime}'
   [TimeZoneStandard <String>]: Usage: TimeZoneStandard='{TimeZoneStandard}'
   [TodoTaskId <String>]: The unique identifier of todoTask
   [TodoTaskListId <String>]: The unique identifier of todoTaskList
@@ -363,31 +364,10 @@ INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
   [UserPrincipalName <String>]: Alternate key of user
   [WindowsSettingId <String>]: The unique identifier of windowsSetting
   [WindowsSettingInstanceId <String>]: The unique identifier of windowsSettingInstance
+  [WorkPlanOccurrenceId <String>]: The unique identifier of workPlanOccurrence
+  [WorkPlanRecurrenceId <String>]: The unique identifier of workPlanRecurrence
 
 
 ## RELATED LINKS
 
-- [Get-MgUserOutlookMasterCategoryCount](https://learn.microsoft.com/powershell/module/microsoft.graph.users/get-mguseroutlookmastercategorycount)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.users/get-mguseroutlookmastercategorycount)

@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Users-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users/get-mgbetauserlicensedetail
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Users
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Get-MgBetaUserLicenseDetail
 ---
@@ -14,9 +14,6 @@ title: Get-MgBetaUserLicenseDetail
 ## SYNOPSIS
 
 Get licenseDetails from users
-
-> [!NOTE]
-> To view the v1.0 release of this cmdlet, view [Get-MgUserLicenseDetail](/powershell/module/Microsoft.Graph.Users/Get-MgUserLicenseDetail?view=graph-powershell-1.0)
 
 ## SYNTAX
 
@@ -59,9 +56,9 @@ This cmdlet has the following aliases,
 Get licenseDetails from users
 
 ## EXAMPLES
-### Example 1: Get a user's license details
 
-```powershell
+### EXAMPLE 1
+
 Get-MgBetaUserLicenseDetail -UserId '0ec3a5e8-b4b6-4678-90ff-ce786055065f' | Format-List
 
 Id                   : BF5i-6pS2kKxDRTxGV1mX6sU3Mts2TBMufRq2nzcHUY
@@ -69,9 +66,6 @@ ServicePlans         : {WINDOWSUPDATEFORBUSINESS_DEPLOYMENTSERVICE, UNIVERSAL_PR
 SkuId                : ae5a2394-6002-4128-80c0-d27fe0d823a3
 SkuPartNumber        : SPB
 AdditionalProperties : {}
-```
-
-This example retrieves the license details for the specified user.
 
 ## PARAMETERS
 
@@ -560,13 +554,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
+INPUTOBJECT <IUsersIdentity>: Identity Parameter
   [AppId <String>]: Alternate key of servicePrincipal
   [AttachmentBaseId <String>]: The unique identifier of attachmentBase
   [AttachmentId <String>]: The unique identifier of attachment
   [AttachmentSessionId <String>]: The unique identifier of attachmentSession
   [ChecklistItemId <String>]: The unique identifier of checklistItem
   [DirectoryObjectId <String>]: The unique identifier of directoryObject
+  [EndDateTime <String>]: Usage: endDateTime='{endDateTime}'
   [ExtensionId <String>]: The unique identifier of extension
   [LicenseDetailsId <String>]: The unique identifier of licenseDetails
   [LinkedResourceId <String>]: The unique identifier of linkedResource
@@ -580,6 +575,7 @@ INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
   [ServicePrincipalId <String>]: The unique identifier of servicePrincipal
   [ServiceStorageQuotaBreakdownId <String>]: The unique identifier of serviceStorageQuotaBreakdown
   [SharedInsightId <String>]: The unique identifier of sharedInsight
+  [StartDateTime <String>]: Usage: startDateTime='{startDateTime}'
   [TimeZoneStandard <String>]: Usage: TimeZoneStandard='{TimeZoneStandard}'
   [TodoTaskId <String>]: The unique identifier of todoTask
   [TodoTaskListId <String>]: The unique identifier of todoTaskList
@@ -589,30 +585,10 @@ INPUTOBJECT `<IUsersIdentity>`: Identity Parameter
   [UserPrincipalName <String>]: Alternate key of user
   [WindowsSettingId <String>]: The unique identifier of windowsSetting
   [WindowsSettingInstanceId <String>]: The unique identifier of windowsSettingInstance
+  [WorkPlanOccurrenceId <String>]: The unique identifier of workPlanOccurrence
+  [WorkPlanRecurrenceId <String>]: The unique identifier of workPlanRecurrence
 
 
 ## RELATED LINKS
 
-- [Get-MgBetaUserLicenseDetail](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users/get-mgbetauserlicensedetail)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users/get-mgbetauserlicensedetail)

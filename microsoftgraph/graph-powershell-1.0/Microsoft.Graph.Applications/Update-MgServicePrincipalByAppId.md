@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Applications-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.applications/update-mgserviceprincipalbyappid
 Locale: en-US
 Module Name: Microsoft.Graph.Applications
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Update-MgServicePrincipalByAppId
 ---
@@ -14,9 +14,6 @@ title: Update-MgServicePrincipalByAppId
 ## SYNOPSIS
 
 Create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object.
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Update-MgBetaServicePrincipalByAppId](/powershell/module/Microsoft.Graph.Beta.Applications/Update-MgBetaServicePrincipalByAppId?view=graph-powershell-beta)
 
 ## SYNTAX
 
@@ -132,24 +129,8 @@ This cmdlet has the following aliases,
 Create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object.
 
 ## EXAMPLES
-### Example 1: Create a new servicePrincipal if it doesn't exist
 
-```powershell
-
-Import-Module Microsoft.Graph.Applications
-
-$params = @{
-	displayName = "My app instance"
-}
-
-Update-MgServicePrincipalByAppId -BodyParameter $params
-
-```
-This example will create a new serviceprincipal if it doesn't exist
-
-### Example 2: Update an existing servicePrincipal
-
-```powershell
+### EXAMPLE 1
 
 Import-Module Microsoft.Graph.Applications
 
@@ -159,9 +140,15 @@ $params = @{
 
 Update-MgServicePrincipalByAppId -BodyParameter $params
 
-```
-This example will update an existing serviceprincipal
+### EXAMPLE 2
 
+Import-Module Microsoft.Graph.Applications
+
+$params = @{
+	displayName = "My app instance"
+}
+
+Update-MgServicePrincipalByAppId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -754,7 +741,7 @@ HelpMessage: ''
 
 ### -DelegatedPermissionClassifications
 
-
+.
 To construct, see NOTES section for DELEGATEDPERMISSIONCLASSIFICATIONS properties and create a hash table.
 
 ```yaml
@@ -841,7 +828,7 @@ HelpMessage: ''
 ### -DisabledByMicrosoftStatus
 
 Specifies whether Microsoft has disabled the registered application.
-Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
+The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
 Supports $filter (eq, ne, not).
 
 ```yaml
@@ -897,7 +884,7 @@ HelpMessage: ''
 
 ### -Endpoints
 
-
+.
 To construct, see NOTES section for ENDPOINTS properties and create a hash table.
 
 ```yaml
@@ -1771,14 +1758,14 @@ HelpMessage: ''
 ### -ServicePrincipalType
 
 Identifies whether the service principal represents an application, a managed identity, or a legacy application.
-This is set by Microsoft Entra ID internally.
+This property is set by Microsoft Entra ID internally.
 The servicePrincipalType property can be set to three different values: Application - A service principal that represents an application or service.
 The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant.
 If the associated app registration is missing, tokens aren't issued for the service principal.ManagedIdentity - A service principal that represents a managed identity.
 Service principals representing managed identities can be granted access and permissions, but can't be updated or modified directly.Legacy - A service principal that represents an app created before app registrations, or through legacy experiences.
 A legacy service principal can have credentials, service principal names, reply URLs, and other properties that are editable by an authorized user, but doesn't have an associated app registration.
 The appId value doesn't associate the service principal with an app registration.
-The service principal can only be used in the tenant where it was created.SocialIdp - For internal use.
+The service principal can only be used in the tenant where it was created.ServiceIdentity - A service principal that represents an agent identity.SocialIdp - For internal use.
 
 ```yaml
 Type: System.String
@@ -1976,7 +1963,7 @@ HelpMessage: ''
 
 ### -TransitiveMemberOf
 
-
+.
 To construct, see NOTES section for TRANSITIVEMEMBEROF properties and create a hash table.
 
 ```yaml
@@ -2210,12 +2197,12 @@ Must not be included in any POST or PATCH requests.
 Read-only.
   [Value <String>]: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
 
-BODYPARAMETER `<IMicrosoftGraphServicePrincipal>`: servicePrincipal
+BODYPARAMETER <IMicrosoftGraphServicePrincipal>: servicePrincipal
   [(Any) <Object>]: This indicates any property can be added to this object.
   [DeletedDateTime <DateTime?>]: Date and time when this object was deleted.
 Always null when the object hasn't been deleted.
@@ -2332,8 +2319,8 @@ Must not be included in any POST or PATCH requests.
 Read-only.
     [Value <String>]: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
   [ApplicationTemplateId <String>]: Unique identifier of the applicationTemplate.
@@ -2376,7 +2363,7 @@ End-user portals such MyApps displays the application description in this field.
 The maximum allowed size is 1,024 characters.
 Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
   [DisabledByMicrosoftStatus <String>]: Specifies whether Microsoft has disabled the registered application.
-Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
+The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
  Supports $filter (eq, ne, not).
   [DisplayName <String>]: The display name for the service principal.
 Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
@@ -2530,8 +2517,8 @@ This text appears in consent experiences where the user is consenting only on be
 This text appears in consent experiences where the user is consenting only on behalf of themselves.
     [Value <String>]: Specifies the value to include in the scp (scope) claim in access tokens.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
   [OwnedObjects <IMicrosoftGraphDirectoryObject[]>]: Directory objects that this service principal owns.
@@ -2571,6 +2558,7 @@ For applications that aren't SAML, don't write or otherwise rely on this propert
 Read-only.
     [IsRemoteDesktopProtocolEnabled <Boolean?>]: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
     [TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+<br/<Supports $expand.
       [Id <String>]: The unique identifier for an entity.
 Read-only.
       [DisplayName <String>]: Display name for the target device group.
@@ -2594,14 +2582,14 @@ For example,Client apps can specify a resource URI that is based on the values o
 Not nullable.
  Supports $filter (eq, not, ge, le, startsWith).
   [ServicePrincipalType <String>]: Identifies whether the service principal represents an application, a managed identity, or a legacy application.
-This is set by Microsoft Entra ID internally.
+This property is set by Microsoft Entra ID internally.
 The servicePrincipalType property can be set to three different values: Application - A service principal that represents an application or service.
 The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant.
 If the associated app registration is missing, tokens aren't issued for the service principal.ManagedIdentity - A service principal that represents a managed identity.
 Service principals representing managed identities can be granted access and permissions, but can't be updated or modified directly.Legacy - A service principal that represents an app created before app registrations, or through legacy experiences.
 A legacy service principal can have credentials, service principal names, reply URLs, and other properties that are editable by an authorized user, but doesn't have an associated app registration.
 The appId value doesn't associate the service principal with an app registration.
-The service principal can only be used in the tenant where it was created.SocialIdp - For internal use.
+The service principal can only be used in the tenant where it was created.ServiceIdentity - A service principal that represents an agent identity.SocialIdp - For internal use.
   [SignInAudience <String>]: Specifies the Microsoft accounts that are supported for the current application.
 Read-only.
 Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multitenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
@@ -3000,7 +2988,7 @@ Always null when the object hasn't been deleted.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
 
-INFO `<IMicrosoftGraphInformationalUrl>`: informationalUrl
+INFO <IMicrosoftGraphInformationalUrl>: informationalUrl
   [(Any) <Object>]: This indicates any property can be added to this object.
   [LogoUrl <String>]: CDN URL to the application's logo, Read-only.
   [MarketingUrl <String>]: Link to the application's marketing page.
@@ -3012,7 +3000,7 @@ For example, https://www.contoso.com/app/support
   [TermsOfServiceUrl <String>]: Link to the application's terms of service statement.
 For example, https://www.contoso.com/app/termsofservice
 
-INPUTOBJECT `<IApplicationsIdentity>`: Identity Parameter
+INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   [AppId <String>]: Alternate key of application
   [AppManagementPolicyId <String>]: The unique identifier of appManagementPolicy
   [AppRoleAssignmentId <String>]: The unique identifier of appRoleAssignment
@@ -3117,8 +3105,8 @@ This text appears in consent experiences where the user is consenting only on be
 This text appears in consent experiences where the user is consenting only on behalf of themselves.
   [Value <String>]: Specifies the value to include in the scp (scope) claim in access tokens.
 Must not exceed 120 characters in length.
-Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ \[ \] ^ + _  {  } ~, and characters in the ranges 
- @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
+Allowed characters are : ! # $ % & ' ( ) * + , - .
+/ : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z.
 Any other character, including the space character, aren't allowed.
 May not begin with ..
 
@@ -3158,12 +3146,13 @@ The Timestamp type represents date and time information using ISO 8601 format an
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Optional.
 
-REMOTEDESKTOPSECURITYCONFIGURATION `<IMicrosoftGraphRemoteDesktopSecurityConfiguration>`: remoteDesktopSecurityConfiguration
+REMOTEDESKTOPSECURITYCONFIGURATION <IMicrosoftGraphRemoteDesktopSecurityConfiguration>: remoteDesktopSecurityConfiguration
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
   [IsRemoteDesktopProtocolEnabled <Boolean?>]: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
   [TargetDeviceGroups <IMicrosoftGraphTargetDeviceGroup[]>]: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+<br/<Supports $expand.
     [Id <String>]: The unique identifier for an entity.
 Read-only.
     [DisplayName <String>]: Display name for the target device group.
@@ -3177,11 +3166,11 @@ Read-only.
   [IsEnabled <Boolean?>]: Indicates whether the permission is enabled.
   [Value <String>]: The value of the permission.
 
-SAMLSINGLESIGNONSETTINGS `<IMicrosoftGraphSamlSingleSignOnSettings>`: samlSingleSignOnSettings
+SAMLSINGLESIGNONSETTINGS <IMicrosoftGraphSamlSingleSignOnSettings>: samlSingleSignOnSettings
   [(Any) <Object>]: This indicates any property can be added to this object.
   [RelayState <String>]: The relative URI the service provider would redirect to after completion of the single sign-on flow.
 
-SYNCHRONIZATION `<IMicrosoftGraphSynchronization>`: synchronization
+SYNCHRONIZATION <IMicrosoftGraphSynchronization>: synchronization
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -3476,7 +3465,7 @@ Read-only.
   [DeletedDateTime <DateTime?>]: Date and time when this object was deleted.
 Always null when the object hasn't been deleted.
 
-VERIFIEDPUBLISHER `<IMicrosoftGraphVerifiedPublisher>`: verifiedPublisher
+VERIFIEDPUBLISHER <IMicrosoftGraphVerifiedPublisher>: verifiedPublisher
   [(Any) <Object>]: This indicates any property can be added to this object.
   [AddedDateTime <DateTime?>]: The timestamp when the verified publisher was first added or most recently updated.
   [DisplayName <String>]: The verified publisher name from the app publisher's Partner Center account.
@@ -3485,27 +3474,5 @@ VERIFIEDPUBLISHER `<IMicrosoftGraphVerifiedPublisher>`: verifiedPublisher
 
 ## RELATED LINKS
 
-- [Update-MgServicePrincipalByAppId](https://learn.microsoft.com/powershell/module/microsoft.graph.applications/update-mgserviceprincipalbyappid)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.applications/update-mgserviceprincipalbyappid)
+- [](https://learn.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-1.0)

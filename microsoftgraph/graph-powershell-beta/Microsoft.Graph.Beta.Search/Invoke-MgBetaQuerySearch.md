@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Search-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search/invoke-mgbetaquerysearch
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Search
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Invoke-MgBetaQuerySearch
 ---
@@ -15,9 +15,6 @@ title: Invoke-MgBetaQuerySearch
 
 Run a specified search query.
 Search results are provided in the response.
-
-> [!NOTE]
-> To view the v1.0 release of this cmdlet, view [Invoke-MgQuerySearch](/powershell/module/Microsoft.Graph.Search/Invoke-MgQuerySearch?view=graph-powershell-1.0)
 
 ## SYNTAX
 
@@ -52,18 +49,9 @@ This cmdlet has the following aliases,
 Run a specified search query.
 Search results are provided in the response.
 
-**Permissions**
-
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | Mail.Read, Sites.Read.All, QnA.Read.All, Files.Read.All, ExternalItem.Read.All, Chat.Read, Calendars.Read, Bookmark.Read.All, Acronym.Read.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | Files.Read.All, Sites.Read.All,  |
-
 ## EXAMPLES
-### Example 1: Code snippet
 
-```powershell
+### EXAMPLE 1
 
 Import-Module Microsoft.Graph.Beta.Search
 
@@ -92,10 +80,6 @@ $params = @{
 
 Invoke-MgBetaQuerySearch -BodyParameter $params
 
-```
-This example shows how to use the Invoke-MgBetaQuerySearch Cmdlet.
-
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -121,7 +105,7 @@ HelpMessage: ''
 
 ### -Body
 
-
+.
 To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
@@ -312,7 +296,7 @@ HelpMessage: ''
 
 ### -Requests
 
-
+.
 To construct, see NOTES section for REQUESTS properties and create a hash table.
 
 ```yaml
@@ -406,7 +390,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODY `<IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema>`: .
+BODY <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema>: .
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Requests <IMicrosoftGraphSearchRequest[]>]: 
     [AggregationFilters <String[]>]: Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field.
@@ -460,7 +444,7 @@ Optional.
 This property is only applicable to entityType=message.
 Optional.
     [EntityTypes <String[]>]: One or more types of resources expected in the response.
-Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage.
+The possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage.
 For details about combinations of two or more entity types that are supported in the same search request, see known limitations.
 Required.
     [Fields <String[]>]: Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft 365 Copilot connectors bring in.
@@ -496,6 +480,10 @@ This property is optional.
     [SharePointOneDriveOptions <IMicrosoftGraphSharePointOneDriveOptions>]: sharePointOneDriveOptions
       [(Any) <Object>]: This indicates any property can be added to this object.
       [IncludeContent <String>]: searchContent
+      [IncludeHiddenContent <Boolean?>]: Indicates whether the search results include content that is normally hidden, such as archived content and SharePoint Embedded (RaaS).
+The default value is false, which prevents hidden content from being returned.
+You can also optionally include KQL to scope your query for hidden content to specific content types.
+For more information, see Search hidden content.
     [Size <Int32?>]: The size of the page to be retrieved.
 The maximum value is 500.
 Optional.
@@ -564,7 +552,7 @@ Optional.
 This property is only applicable to entityType=message.
 Optional.
   [EntityTypes <String[]>]: One or more types of resources expected in the response.
-Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage.
+The possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage.
 For details about combinations of two or more entity types that are supported in the same search request, see known limitations.
 Required.
   [Fields <String[]>]: Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft 365 Copilot connectors bring in.
@@ -600,6 +588,10 @@ This property is optional.
   [SharePointOneDriveOptions <IMicrosoftGraphSharePointOneDriveOptions>]: sharePointOneDriveOptions
     [(Any) <Object>]: This indicates any property can be added to this object.
     [IncludeContent <String>]: searchContent
+    [IncludeHiddenContent <Boolean?>]: Indicates whether the search results include content that is normally hidden, such as archived content and SharePoint Embedded (RaaS).
+The default value is false, which prevents hidden content from being returned.
+You can also optionally include KQL to scope your query for hidden content to specific content types.
+For more information, see Search hidden content.
   [Size <Int32?>]: The size of the page to be retrieved.
 The maximum value is 500.
 Optional.
@@ -619,27 +611,5 @@ Optional.
 
 ## RELATED LINKS
 
-- [Invoke-MgBetaQuerySearch](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search/invoke-mgbetaquerysearch)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/search-query?view=graph-rest-beta)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search/invoke-mgbetaquerysearch)
+- [](https://learn.microsoft.com/graph/api/search-query?view=graph-rest-beta)

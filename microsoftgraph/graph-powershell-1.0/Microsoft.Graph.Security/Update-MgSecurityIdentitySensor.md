@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Security-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.security/update-mgsecurityidentitysensor
 Locale: en-US
 Module Name: Microsoft.Graph.Security
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Update-MgSecurityIdentitySensor
 ---
@@ -15,9 +15,6 @@ title: Update-MgSecurityIdentitySensor
 
 Update the properties of a sensor object.
 
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Update-MgBetaSecurityIdentitySensor](/powershell/module/Microsoft.Graph.Beta.Security/Update-MgBetaSecurityIdentitySensor?view=graph-powershell-beta)
-
 ## SYNTAX
 
 ### UpdateExpanded (Default)
@@ -27,7 +24,7 @@ Update-MgSecurityIdentitySensor -SensorId <string> [-ResponseHeadersVariable <st
  [-AdditionalProperties <hashtable>] [-CreatedDateTime <datetime>] [-DeploymentStatus <string>]
  [-DisplayName <string>] [-DomainName <string>]
  [-HealthIssues <IMicrosoftGraphSecurityHealthIssue[]>] [-HealthStatus <string>] [-Id <string>]
- [-OpenHealthIssuesCount <long>] [-SensorType <string>]
+ [-OpenHealthIssuesCount <long>] [-SensorType <string>] [-ServiceStatus <string>]
  [-Settings <IMicrosoftGraphSecuritySensorSettings>] [-Version <string>] [-Break]
  [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]
  [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]
@@ -51,7 +48,7 @@ Update-MgSecurityIdentitySensor -InputObject <ISecurityIdentity> [-ResponseHeade
  [-AdditionalProperties <hashtable>] [-CreatedDateTime <datetime>] [-DeploymentStatus <string>]
  [-DisplayName <string>] [-DomainName <string>]
  [-HealthIssues <IMicrosoftGraphSecurityHealthIssue[]>] [-HealthStatus <string>] [-Id <string>]
- [-OpenHealthIssuesCount <long>] [-SensorType <string>]
+ [-OpenHealthIssuesCount <long>] [-SensorType <string>] [-ServiceStatus <string>]
  [-Settings <IMicrosoftGraphSecuritySensorSettings>] [-Version <string>] [-Break]
  [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]
  [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]
@@ -77,18 +74,9 @@ This cmdlet has the following aliases,
 
 Update the properties of a sensor object.
 
-**Permissions**
-
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | SecurityIdentitiesSensors.ReadWrite.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | SecurityIdentitiesSensors.ReadWrite.All,  |
-
 ## EXAMPLES
-### Example 1: Code snippet
 
-```powershell
+### EXAMPLE 1
 
 Import-Module Microsoft.Graph.Security
 
@@ -103,10 +91,6 @@ $params = @{
 }
 
 Update-MgSecurityIdentitySensor -SensorId $sensorId -BodyParameter $params
-
-```
-This example shows how to use the Update-MgSecurityIdentitySensor Cmdlet.
-
 
 ## PARAMETERS
 
@@ -658,6 +642,33 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -ServiceStatus
+
+serviceStatus
+
+```yaml
+Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: UpdateViaIdentityExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: UpdateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -Settings
 
 sensorSettings
@@ -769,7 +780,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphSecuritySensor>`: sensor
+BODYPARAMETER <IMicrosoftGraphSecuritySensor>: sensor
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -807,6 +818,7 @@ These commands run in sequence for the single recommended fix.
   [HealthStatus <String>]: sensorHealthStatus
   [OpenHealthIssuesCount <Int64?>]: This field displays the count of health issues related to this sensor.
   [SensorType <String>]: sensorType
+  [ServiceStatus <String>]: serviceStatus
   [Settings <IMicrosoftGraphSecuritySensorSettings>]: sensorSettings
     [(Any) <Object>]: This indicates any property can be added to this object.
     [Description <String>]: Description of the sensor.
@@ -845,7 +857,7 @@ These commands run in sequence for the single recommended fix.
   [Severity <String>]: healthIssueSeverity
   [Status <String>]: healthIssueStatus
 
-INPUTOBJECT `<ISecurityIdentity>`: Identity Parameter
+INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   [AlertId <String>]: The unique identifier of alert
   [ArticleId <String>]: The unique identifier of article
   [ArticleIndicatorId <String>]: The unique identifier of articleIndicator
@@ -860,6 +872,7 @@ INPUTOBJECT `<ISecurityIdentity>`: Identity Parameter
   [DepartmentTemplateId <String>]: The unique identifier of departmentTemplate
   [DispositionReviewStageNumber <String>]: The unique identifier of dispositionReviewStage
   [EdiscoveryCaseId <String>]: The unique identifier of ediscoveryCase
+  [EdiscoveryCaseMemberId <String>]: The unique identifier of ediscoveryCaseMember
   [EdiscoveryCustodianId <String>]: The unique identifier of ediscoveryCustodian
   [EdiscoveryNoncustodialDataSourceId <String>]: The unique identifier of ediscoveryNoncustodialDataSource
   [EdiscoveryReviewSetId <String>]: The unique identifier of ediscoveryReviewSet
@@ -878,6 +891,7 @@ INPUTOBJECT `<ISecurityIdentity>`: Identity Parameter
   [HostPortId <String>]: The unique identifier of hostPort
   [HostSslCertificateId <String>]: The unique identifier of hostSslCertificate
   [HostTrackerId <String>]: The unique identifier of hostTracker
+  [IdentityAccountsId <String>]: The unique identifier of identityAccounts
   [IncidentId <String>]: The unique identifier of incident
   [IntelligenceProfileId <String>]: The unique identifier of intelligenceProfile
   [IntelligenceProfileIndicatorId <String>]: The unique identifier of intelligenceProfileIndicator
@@ -895,6 +909,7 @@ INPUTOBJECT `<ISecurityIdentity>`: Identity Parameter
   [SecureScoreId <String>]: The unique identifier of secureScore
   [SensitivityLabelId <String>]: The unique identifier of sensitivityLabel
   [SensitivityLabelId1 <String>]: The unique identifier of sensitivityLabel
+  [SensorCandidateId <String>]: The unique identifier of sensorCandidate
   [SensorId <String>]: The unique identifier of sensor
   [SimulationAutomationId <String>]: The unique identifier of simulationAutomation
   [SimulationAutomationRunId <String>]: The unique identifier of simulationAutomationRun
@@ -915,7 +930,7 @@ INPUTOBJECT `<ISecurityIdentity>`: Identity Parameter
   [WhoisHistoryRecordId <String>]: The unique identifier of whoisHistoryRecord
   [WhoisRecordId <String>]: The unique identifier of whoisRecord
 
-SETTINGS `<IMicrosoftGraphSecuritySensorSettings>`: sensorSettings
+SETTINGS <IMicrosoftGraphSecuritySensorSettings>: sensorSettings
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Description <String>]: Description of the sensor.
   [DomainControllerDnsNames <String[]>]: DNS names for the domain controller
@@ -929,27 +944,5 @@ Read-only.
 
 ## RELATED LINKS
 
-- [Update-MgSecurityIdentitySensor](https://learn.microsoft.com/powershell/module/microsoft.graph.security/update-mgsecurityidentitysensor)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/security-sensor-update?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.security/update-mgsecurityidentitysensor)
+- [](https://learn.microsoft.com/graph/api/security-sensor-update?view=graph-rest-1.0)

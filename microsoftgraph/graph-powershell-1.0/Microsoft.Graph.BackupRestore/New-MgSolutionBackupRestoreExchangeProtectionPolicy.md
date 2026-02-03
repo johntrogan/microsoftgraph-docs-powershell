@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.BackupRestore-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/new-mgsolutionbackuprestoreexchangeprotectionpolicy
 Locale: en-US
 Module Name: Microsoft.Graph.BackupRestore
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: New-MgSolutionBackupRestoreExchangeProtectionPolicy
 ---
@@ -17,9 +17,6 @@ Create a protection policy for the Exchange service in a Microsoft 365 tenant.
 The policy is set to inactive when it is created.
 Users can also provide a list of protection units under the policy.
 
-> [!NOTE]
-> To view the beta release of this cmdlet, view [New-MgBetaSolutionBackupRestoreExchangeProtectionPolicy](/powershell/module/Microsoft.Graph.Beta.BackupRestore/New-MgBetaSolutionBackupRestoreExchangeProtectionPolicy?view=graph-powershell-beta)
-
 ## SYNTAX
 
 ### CreateExpanded (Default)
@@ -27,11 +24,12 @@ Users can also provide a list of protection units under the policy.
 ```
 New-MgSolutionBackupRestoreExchangeProtectionPolicy [-ResponseHeadersVariable <string>]
  [-AdditionalProperties <hashtable>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedDateTime <datetime>] [-DisplayName <string>] [-Id <string>]
+ [-CreatedDateTime <datetime>] [-DisplayName <string>] [-Id <string>] [-IsEnabled]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <datetime>]
  [-MailboxInclusionRules <IMicrosoftGraphMailboxProtectionRule[]>]
  [-MailboxProtectionUnits <IMicrosoftGraphMailboxProtectionUnit[]>]
  [-MailboxProtectionUnitsBulkAdditionJobs <IMicrosoftGraphMailboxProtectionUnitsBulkAdditionJob[]>]
+ [-ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]
  [-RetentionSettings <IMicrosoftGraphRetentionSetting[]>] [-Status <string>] [-Break]
  [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]
  [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]
@@ -58,6 +56,16 @@ This cmdlet has the following aliases,
 Create a protection policy for the Exchange service in a Microsoft 365 tenant.
 The policy is set to inactive when it is created.
 Users can also provide a list of protection units under the policy.
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -296,6 +304,27 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -IsEnabled
+
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: CreateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -LastModifiedBy
 
 identitySet
@@ -385,11 +414,33 @@ HelpMessage: ''
 
 ### -MailboxProtectionUnitsBulkAdditionJobs
 
-
+.
 To construct, see NOTES section for MAILBOXPROTECTIONUNITSBULKADDITIONJOBS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailboxProtectionUnitsBulkAdditionJob[]
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: CreateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -ProtectionPolicyArtifactCount
+
+protectionPolicyArtifactCount
+To construct, see NOTES section for PROTECTIONPOLICYARTIFACTCOUNT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProtectionPolicyArtifactCount
 DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
@@ -585,7 +636,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphExchangeProtectionPolicy>`: exchangeProtectionPolicy
+BODYPARAMETER <IMicrosoftGraphExchangeProtectionPolicy>: exchangeProtectionPolicy
   [(Any) <Object>]: This indicates any property can be added to this object.
   [CreatedBy <IMicrosoftGraphIdentitySet>]: identitySet
     [(Any) <Object>]: This indicates any property can be added to this object.
@@ -599,8 +650,15 @@ For example, in the access reviews decisions API, this property might record the
     [User <IMicrosoftGraphIdentity>]: identity
   [CreatedDateTime <DateTime?>]: The time of creation of the policy.
   [DisplayName <String>]: The name of the policy to be created.
+  [IsEnabled <Boolean?>]: 
   [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
   [LastModifiedDateTime <DateTime?>]: The timestamp of the last modification of the policy.
+  [ProtectionPolicyArtifactCount <IMicrosoftGraphProtectionPolicyArtifactCount>]: protectionPolicyArtifactCount
+    [(Any) <Object>]: This indicates any property can be added to this object.
+    [Completed <Int32?>]: 
+    [Failed <Int32?>]: 
+    [InProgress <Int32?>]: 
+    [Total <Int32?>]: 
   [RetentionSettings <IMicrosoftGraphRetentionSetting[]>]: Contains the retention setting details for the policy.
     [Interval <String>]: The frequency of the backup.
     [Period <TimeSpan?>]: The period of time to retain the protected data for a single Microsoft 365 service.
@@ -625,7 +683,7 @@ Read-only.
         [Target <String>]: The target of the error.
       [Message <String>]: A non-localized message for the developer.
       [Target <String>]: The target of the error.
-    [IsAutoApplyEnabled <Boolean?>]: 
+    [IsAutoApplyEnabled <Boolean?>]: true indicates that the protection rule is dynamic; false that it's static.
     [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
     [LastModifiedDateTime <DateTime?>]: Timestamp of the last modification made to the rule.
     [Status <String>]: protectionRuleStatus
@@ -643,7 +701,11 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     [LastModifiedDateTime <DateTime?>]: Timestamp of the last modification of this protection unit.
 The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    [OffboardRequestedDateTime <DateTime?>]: The date and time when protection unit offboard was requested.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     [PolicyId <String>]: The unique identifier of the protection policy based on which protection unit was created.
+    [ProtectionSources <String>]: protectionSource
     [Status <String>]: protectionUnitStatus
     [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -661,7 +723,7 @@ Read-only.
     [DirectoryObjectIds <String[]>]: The list of Exchange directoryObjectIds to add to the Exchange protection policy.
     [Mailboxes <String[]>]: The list of Exchange email addresses to add to the Exchange protection policy.
 
-CREATEDBY `<IMicrosoftGraphIdentitySet>`: identitySet
+CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Application <IMicrosoftGraphIdentity>]: identity
     [(Any) <Object>]: This indicates any property can be added to this object.
@@ -672,7 +734,7 @@ For example, in the access reviews decisions API, this property might record the
   [Device <IMicrosoftGraphIdentity>]: identity
   [User <IMicrosoftGraphIdentity>]: identity
 
-LASTMODIFIEDBY `<IMicrosoftGraphIdentitySet>`: identitySet
+LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Application <IMicrosoftGraphIdentity>]: identity
     [(Any) <Object>]: This indicates any property can be added to this object.
@@ -710,7 +772,7 @@ For example, in the access reviews decisions API, this property might record the
       [Target <String>]: The target of the error.
     [Message <String>]: A non-localized message for the developer.
     [Target <String>]: The target of the error.
-  [IsAutoApplyEnabled <Boolean?>]: 
+  [IsAutoApplyEnabled <Boolean?>]: true indicates that the protection rule is dynamic; false that it's static.
   [LastModifiedBy <IMicrosoftGraphIdentitySet>]: identitySet
   [LastModifiedDateTime <DateTime?>]: Timestamp of the last modification made to the rule.
   [Status <String>]: protectionRuleStatus
@@ -752,7 +814,11 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   [LastModifiedDateTime <DateTime?>]: Timestamp of the last modification of this protection unit.
 The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  [OffboardRequestedDateTime <DateTime?>]: The date and time when protection unit offboard was requested.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   [PolicyId <String>]: The unique identifier of the protection policy based on which protection unit was created.
+  [ProtectionSources <String>]: protectionSource
   [Status <String>]: protectionUnitStatus
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -794,6 +860,13 @@ Read-only.
   [DirectoryObjectIds <String[]>]: The list of Exchange directoryObjectIds to add to the Exchange protection policy.
   [Mailboxes <String[]>]: The list of Exchange email addresses to add to the Exchange protection policy.
 
+PROTECTIONPOLICYARTIFACTCOUNT <IMicrosoftGraphProtectionPolicyArtifactCount>: protectionPolicyArtifactCount
+  [(Any) <Object>]: This indicates any property can be added to this object.
+  [Completed <Int32?>]: 
+  [Failed <Int32?>]: 
+  [InProgress <Int32?>]: 
+  [Total <Int32?>]: 
+
 RETENTIONSETTINGS <IMicrosoftGraphRetentionSetting[]>: Contains the retention setting details for the policy.
   [Interval <String>]: The frequency of the backup.
   [Period <TimeSpan?>]: The period of time to retain the protected data for a single Microsoft 365 service.
@@ -801,28 +874,5 @@ RETENTIONSETTINGS <IMicrosoftGraphRetentionSetting[]>: Contains the retention se
 
 ## RELATED LINKS
 
-- [New-MgSolutionBackupRestoreExchangeProtectionPolicy](https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/new-mgsolutionbackuprestoreexchangeprotectionpolicy)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/backuprestoreroot-post-exchangeprotectionpolicies?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.backuprestore/new-mgsolutionbackuprestoreexchangeprotectionpolicy)
+- [](https://learn.microsoft.com/graph/api/backuprestoreroot-post-exchangeprotectionpolicies?view=graph-rest-1.0)

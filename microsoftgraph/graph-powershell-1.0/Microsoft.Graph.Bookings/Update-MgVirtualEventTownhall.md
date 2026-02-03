@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Bookings-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.bookings/update-mgvirtualeventtownhall
 Locale: en-US
 Module Name: Microsoft.Graph.Bookings
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Update-MgVirtualEventTownhall
 ---
@@ -15,9 +15,6 @@ title: Update-MgVirtualEventTownhall
 
 Update the properties of a virtualEventTownhall object.
 Only the Organizer and Co-organizer can make changes to a townhall event.
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [Update-MgBetaVirtualEventTownhall](/powershell/module/Microsoft.Graph.Beta.Bookings/Update-MgBetaVirtualEventTownhall?view=graph-powershell-beta)
 
 ## SYNTAX
 
@@ -88,9 +85,8 @@ Update the properties of a virtualEventTownhall object.
 Only the Organizer and Co-organizer can make changes to a townhall event.
 
 ## EXAMPLES
-### Example 1: Code snippet
 
-```powershell
+### EXAMPLE 1
 
 Import-Module Microsoft.Graph.Bookings
 
@@ -106,10 +102,6 @@ $params = @{
 }
 
 Update-MgVirtualEventTownhall -VirtualEventTownhallId $virtualEventTownhallId -BodyParameter $params
-
-```
-This example shows how to use the Update-MgVirtualEventTownhall Cmdlet.
-
 
 ## PARAMETERS
 
@@ -889,7 +881,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphVirtualEventTownhall>`: virtualEventTownhall
+BODYPARAMETER <IMicrosoftGraphVirtualEventTownhall>: virtualEventTownhall
   [(Any) <Object>]: This indicates any property can be added to this object.
   [CreatedBy <IMicrosoftGraphCommunicationsIdentitySet>]: communicationsIdentitySet
     [(Any) <Object>]: This indicates any property can be added to this object.
@@ -979,7 +971,7 @@ If set, the maximum supported length is 256 characters.
         [Identity <IMicrosoftGraphIdentity>]: identity
         [RegistrationId <String>]: Unique identifier of a virtualEventRegistration that is available to all participants registered for the virtualEventWebinar.
         [Role <String>]: Role of the attendee.
-Possible values are: None, Attendee, Presenter, and Organizer.
+The possible values are: None, Attendee, Presenter, and Organizer.
         [TotalAttendanceInSeconds <Int32?>]: Total duration of the attendances in seconds.
       [ExternalEventInformation <IMicrosoftGraphVirtualEventExternalInformation[]>]: The external information of a virtual event.
 Returned only for event organizers or coorganizers.
@@ -1007,6 +999,9 @@ Read-only.
       [(Any) <Object>]: This indicates any property can be added to this object.
       [AllowTextOnly <Boolean?>]: Indicates whether only text is allowed in the meeting chat.
 Optional.
+    [ExpiryDateTime <DateTime?>]: Indicates the date and time when the meeting resource expires.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     [IsEndToEndEncryptionEnabled <Boolean?>]: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
     [IsEntryExitAnnounced <Boolean?>]: Indicates whether to announce when callers join or leave.
     [JoinInformation <IMicrosoftGraphItemBody>]: itemBody
@@ -1027,7 +1022,13 @@ Read-only.
       [IsDialInBypassEnabled <Boolean?>]: Specifies whether or not to always let dial-in callers bypass the lobby.
 Optional.
       [Scope <String>]: lobbyBypassScope
+    [MeetingOptionsWebUrl <String>]: Provides the URL to the Teams meeting options page for the specified meeting.
+This link allows only the organizer to configure meeting settings.
+    [MeetingSpokenLanguageTag <String>]: Specifies the spoken language used during the meeting for recording and transcription purposes.
     [RecordAutomatically <Boolean?>]: Indicates whether to record the meeting automatically.
+    [SensitivityLabelAssignment <IMicrosoftGraphOnlineMeetingSensitivityLabelAssignment>]: onlineMeetingSensitivityLabelAssignment
+      [(Any) <Object>]: This indicates any property can be added to this object.
+      [SensitivityLabelId <String>]: The ID of the sensitivity label that is applied to the Teams meeting.
     [ShareMeetingChatHistoryDefault <String>]: meetingChatHistoryDefaultMode
     [Subject <String>]: The subject of the online meeting.
     [VideoTeleconferenceId <String>]: The video teleconferencing ID.
@@ -1067,7 +1068,7 @@ For example, if a user changes their display name the API might show the new val
 For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that's subject to review.
   [TenantId <String>]: The user's tenant ID.
 
-CREATEDBY `<IMicrosoftGraphCommunicationsIdentitySet>`: communicationsIdentitySet
+CREATEDBY <IMicrosoftGraphCommunicationsIdentitySet>: communicationsIdentitySet
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Application <IMicrosoftGraphIdentity>]: identity
     [(Any) <Object>]: This indicates any property can be added to this object.
@@ -1086,12 +1087,12 @@ For example, in the access reviews decisions API, this property might record the
   [OnPremises <IMicrosoftGraphIdentity>]: identity
   [Phone <IMicrosoftGraphIdentity>]: identity
 
-DESCRIPTION `<IMicrosoftGraphItemBody>`: itemBody
+DESCRIPTION <IMicrosoftGraphItemBody>: itemBody
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Content <String>]: The content of the item.
   [ContentType <String>]: bodyType
 
-ENDDATETIME `<IMicrosoftGraphDateTimeZone>`: dateTimeTimeZone
+ENDDATETIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   [(Any) <Object>]: This indicates any property can be added to this object.
   [DateTime <String>]: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
   [TimeZone <String>]: Represents a time zone, for example, 'Pacific Standard Time'.
@@ -1106,7 +1107,7 @@ This association bundles all the information (both supported and not supported i
 Optional.
 If set, the maximum supported length is 256 characters.
 
-INPUTOBJECT `<IBookingsIdentity>`: Identity Parameter
+INPUTOBJECT <IBookingsIdentity>: Identity Parameter
   [AttendanceRecordId <String>]: The unique identifier of attendanceRecord
   [BookingAppointmentId <String>]: The unique identifier of bookingAppointment
   [BookingBusinessId <String>]: The unique identifier of bookingBusiness
@@ -1200,7 +1201,7 @@ For example, if a user changes their display name the API might show the new val
 For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that's subject to review.
       [RegistrationId <String>]: Unique identifier of a virtualEventRegistration that is available to all participants registered for the virtualEventWebinar.
       [Role <String>]: Role of the attendee.
-Possible values are: None, Attendee, Presenter, and Organizer.
+The possible values are: None, Attendee, Presenter, and Organizer.
       [TotalAttendanceInSeconds <Int32?>]: Total duration of the attendances in seconds.
     [ExternalEventInformation <IMicrosoftGraphVirtualEventExternalInformation[]>]: The external information of a virtual event.
 Returned only for event organizers or coorganizers.
@@ -1234,6 +1235,9 @@ Read-only.
     [(Any) <Object>]: This indicates any property can be added to this object.
     [AllowTextOnly <Boolean?>]: Indicates whether only text is allowed in the meeting chat.
 Optional.
+  [ExpiryDateTime <DateTime?>]: Indicates the date and time when the meeting resource expires.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   [IsEndToEndEncryptionEnabled <Boolean?>]: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
   [IsEntryExitAnnounced <Boolean?>]: Indicates whether to announce when callers join or leave.
   [JoinInformation <IMicrosoftGraphItemBody>]: itemBody
@@ -1257,7 +1261,13 @@ Read-only.
     [IsDialInBypassEnabled <Boolean?>]: Specifies whether or not to always let dial-in callers bypass the lobby.
 Optional.
     [Scope <String>]: lobbyBypassScope
+  [MeetingOptionsWebUrl <String>]: Provides the URL to the Teams meeting options page for the specified meeting.
+This link allows only the organizer to configure meeting settings.
+  [MeetingSpokenLanguageTag <String>]: Specifies the spoken language used during the meeting for recording and transcription purposes.
   [RecordAutomatically <Boolean?>]: Indicates whether to record the meeting automatically.
+  [SensitivityLabelAssignment <IMicrosoftGraphOnlineMeetingSensitivityLabelAssignment>]: onlineMeetingSensitivityLabelAssignment
+    [(Any) <Object>]: This indicates any property can be added to this object.
+    [SensitivityLabelId <String>]: The ID of the sensitivity label that is applied to the Teams meeting.
   [ShareMeetingChatHistoryDefault <String>]: meetingChatHistoryDefaultMode
   [Subject <String>]: The subject of the online meeting.
   [VideoTeleconferenceId <String>]: The video teleconferencing ID.
@@ -1276,11 +1286,11 @@ See below for more possible values.
   [StartDateTime <IMicrosoftGraphDateTimeZone>]: dateTimeTimeZone
   [VideoOnDemandWebUrl <String>]: The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.
 
-SETTINGS `<IMicrosoftGraphVirtualEventSettings>`: virtualEventSettings
+SETTINGS <IMicrosoftGraphVirtualEventSettings>: virtualEventSettings
   [(Any) <Object>]: This indicates any property can be added to this object.
   [IsAttendeeEmailNotificationEnabled <Boolean?>]: Indicates whether virtual event attendees receive email notifications.
 
-STARTDATETIME `<IMicrosoftGraphDateTimeZone>`: dateTimeTimeZone
+STARTDATETIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   [(Any) <Object>]: This indicates any property can be added to this object.
   [DateTime <String>]: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
   [TimeZone <String>]: Represents a time zone, for example, 'Pacific Standard Time'.
@@ -1289,27 +1299,5 @@ See below for more possible values.
 
 ## RELATED LINKS
 
-- [Update-MgVirtualEventTownhall](https://learn.microsoft.com/powershell/module/microsoft.graph.bookings/update-mgvirtualeventtownhall)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/virtualeventtownhall-update?view=graph-rest-1.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.bookings/update-mgvirtualeventtownhall)
+- [](https://learn.microsoft.com/graph/api/virtualeventtownhall-update?view=graph-rest-1.0)

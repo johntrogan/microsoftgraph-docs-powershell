@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Identity.SignIns-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins/new-mgbetatrustframeworkkeyset
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: New-MgBetaTrustFrameworkKeySet
 ---
@@ -51,18 +51,9 @@ Create a new trustFrameworkKeySet.
 The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service.
 The modified ID will be available in the response and in the location header.
 
-**Permissions**
-
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | TrustFrameworkKeySet.ReadWrite.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | TrustFrameworkKeySet.ReadWrite.All,  |
-
 ## EXAMPLES
-### Example 1: Code snippet
 
-```powershell
+### EXAMPLE 1
 
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
@@ -93,10 +84,6 @@ $params = @{
 }
 
 New-MgBetaTrustFrameworkKeySet -BodyParameter $params
-
-```
-This example shows how to use the New-MgBetaTrustFrameworkKeySet Cmdlet.
-
 
 ## PARAMETERS
 
@@ -452,7 +439,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphTrustFrameworkKeySet>`: trustFrameworkKeySet
+BODYPARAMETER <IMicrosoftGraphTrustFrameworkKeySet>: trustFrameworkKeySet
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -483,7 +470,7 @@ The field isn't readable.
     [Status <String>]: trustFrameworkKeyStatus
     [Use <String>]: The use (public key use) parameter identifies the intended use of the public key.
 The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data.
-Possible values are: sig (signature), enc (encryption).
+The possible values are: sig (signature), enc (encryption).
     [X5C <String[]>]: The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates.
 For more information, see RFC 5280.
     [X5T <String>]: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate.
@@ -516,7 +503,7 @@ The field isn't readable.
     [Status <String>]: trustFrameworkKeyStatus
     [Use <String>]: The use (public key use) parameter identifies the intended use of the public key.
 The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data.
-Possible values are: sig (signature), enc (encryption).
+The possible values are: sig (signature), enc (encryption).
     [X5C <String[]>]: The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates.
 For more information, see RFC 5280.
     [X5T <String>]: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate.
@@ -549,7 +536,7 @@ The field isn't readable.
   [Status <String>]: trustFrameworkKeyStatus
   [Use <String>]: The use (public key use) parameter identifies the intended use of the public key.
 The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data.
-Possible values are: sig (signature), enc (encryption).
+The possible values are: sig (signature), enc (encryption).
   [X5C <String[]>]: The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates.
 For more information, see RFC 5280.
   [X5T <String>]: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate.
@@ -583,7 +570,7 @@ The field isn't readable.
   [Status <String>]: trustFrameworkKeyStatus
   [Use <String>]: The use (public key use) parameter identifies the intended use of the public key.
 The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data.
-Possible values are: sig (signature), enc (encryption).
+The possible values are: sig (signature), enc (encryption).
   [X5C <String[]>]: The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates.
 For more information, see RFC 5280.
   [X5T <String>]: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate.
@@ -592,27 +579,5 @@ For more information, see RFC 5280.
 
 ## RELATED LINKS
 
-- [New-MgBetaTrustFrameworkKeySet](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins/new-mgbetatrustframeworkkeyset)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/trustframework-post-keysets?view=graph-rest-beta)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins/new-mgbetatrustframeworkkeyset)
+- [](https://learn.microsoft.com/graph/api/trustframework-post-keysets?view=graph-rest-beta)

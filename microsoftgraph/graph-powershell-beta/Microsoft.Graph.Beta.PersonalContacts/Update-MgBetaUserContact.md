@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.PersonalContacts-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.personalcontacts/update-mgbetausercontact
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.PersonalContacts
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: Update-MgBetaUserContact
 ---
@@ -14,9 +14,6 @@ title: Update-MgBetaUserContact
 ## SYNOPSIS
 
 Update the navigation property contacts in users
-
-> [!NOTE]
-> To view the v1.0 release of this cmdlet, view [Update-MgUserContact](/powershell/module/Microsoft.Graph.PersonalContacts/Update-MgUserContact?view=graph-powershell-1.0)
 
 ## SYNTAX
 
@@ -34,11 +31,14 @@ Update-MgBetaUserContact -ContactId <string> -UserId <string> [-ResponseHeadersV
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-NickName <string>] [-OfficeLocation <string>] [-ParentFolderId <string>]
  [-PersonalNotes <string>] [-Phones <IMicrosoftGraphPhone[]>] [-Photo <IMicrosoftGraphProfilePhoto>]
- [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>] [-Profession <string>]
+ [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>]
+ [-PrimaryEmailAddress <IMicrosoftGraphEmailAddress>] [-Profession <string>]
+ [-SecondaryEmailAddress <IMicrosoftGraphEmailAddress>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-SpouseName <string>] [-Surname <string>] [-Title <string>] [-Websites <IMicrosoftGraphWebsite[]>]
- [-WeddingAnniversary <datetime>] [-YomiCompanyName <string>] [-YomiGivenName <string>]
- [-YomiSurname <string>] [-Break] [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]
+ [-SpouseName <string>] [-Surname <string>] [-TertiaryEmailAddress <IMicrosoftGraphEmailAddress>]
+ [-Title <string>] [-Websites <IMicrosoftGraphWebsite[]>] [-WeddingAnniversary <datetime>]
+ [-YomiCompanyName <string>] [-YomiGivenName <string>] [-YomiSurname <string>] [-Break]
+ [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]
  [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]
  [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -68,11 +68,14 @@ Update-MgBetaUserContact -InputObject <IPersonalContactsIdentity>
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-NickName <string>] [-OfficeLocation <string>] [-ParentFolderId <string>]
  [-PersonalNotes <string>] [-Phones <IMicrosoftGraphPhone[]>] [-Photo <IMicrosoftGraphProfilePhoto>]
- [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>] [-Profession <string>]
+ [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>]
+ [-PrimaryEmailAddress <IMicrosoftGraphEmailAddress>] [-Profession <string>]
+ [-SecondaryEmailAddress <IMicrosoftGraphEmailAddress>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-SpouseName <string>] [-Surname <string>] [-Title <string>] [-Websites <IMicrosoftGraphWebsite[]>]
- [-WeddingAnniversary <datetime>] [-YomiCompanyName <string>] [-YomiGivenName <string>]
- [-YomiSurname <string>] [-Break] [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]
+ [-SpouseName <string>] [-Surname <string>] [-TertiaryEmailAddress <IMicrosoftGraphEmailAddress>]
+ [-Title <string>] [-Websites <IMicrosoftGraphWebsite[]>] [-WeddingAnniversary <datetime>]
+ [-YomiCompanyName <string>] [-YomiGivenName <string>] [-YomiSurname <string>] [-Break]
+ [-Headers <IDictionary>] [-HttpPipelineAppend <SendAsyncStep[]>]
  [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <uri>] [-ProxyCredential <pscredential>]
  [-ProxyUseDefaultCredentials] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -96,18 +99,10 @@ This cmdlet has the following aliases,
 
 Update the navigation property contacts in users
 
-**Permissions**
-
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | Contacts.ReadWrite,  |
-| Delegated (personal Microsoft account) | Contacts.ReadWrite,  |
-| Application | Contacts.ReadWrite,  |
-
 ## EXAMPLES
-### Example 1: Code snippet
 
-```powershell
+### EXAMPLE 1
+
 Import-Module Microsoft.Graph.Beta.PersonalContacts
 
 $params = @{
@@ -128,11 +123,6 @@ $params = @{
 
 # A UPN can also be used as -UserId.
 Update-MgBetaUserContact -UserId $userId -ContactId $contactId -BodyParameter $params
-```
-This example shows how to use the Update-MgBetaUserContact Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
 
 ## PARAMETERS
 
@@ -881,7 +871,7 @@ HelpMessage: ''
 
 ### -IsFavorite
 
-
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -1237,6 +1227,34 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -PrimaryEmailAddress
+
+emailAddress
+To construct, see NOTES section for PRIMARYEMAILADDRESS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: UpdateViaIdentityExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: UpdateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -Profession
 
 The contact's profession.
@@ -1349,6 +1367,34 @@ AcceptedValues: []
 HelpMessage: ''
 ```
 
+### -SecondaryEmailAddress
+
+emailAddress
+To construct, see NOTES section for SECONDARYEMAILADDRESS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: UpdateViaIdentityExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: UpdateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
 ### -SingleValueExtendedProperties
 
 The collection of single-value extended properties defined for the contact.
@@ -1412,6 +1458,34 @@ The contact's surname.
 
 ```yaml
 Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: UpdateViaIdentityExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+- Name: UpdateExpanded
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+```
+
+### -TertiaryEmailAddress
+
+emailAddress
+To construct, see NOTES section for TERTIARYEMAILADDRESS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEmailAddress
 DefaultValue: ''
 SupportsWildcards: false
 Aliases: []
@@ -1679,7 +1753,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphContact>`: contact
+BODYPARAMETER <IMicrosoftGraphContact>: contact
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Categories <String[]>]: The categories associated with the item.
   [ChangeKey <String>]: Identifies the version of the item.
@@ -1765,7 +1839,12 @@ It's a free-format string value, for example, 'United States'.
     [State <String>]: The state.
     [Street <String>]: The street.
     [Type <String>]: physicalAddressType
+  [PrimaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
+    [(Any) <Object>]: This indicates any property can be added to this object.
+    [Address <String>]: The email address of an entity instance.
+    [Name <String>]: The display name of an entity instance.
   [Profession <String>]: The contact's profession.
+  [SecondaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
   [SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]: The collection of single-value extended properties defined for the contact.
 Read-only.
 Nullable.
@@ -1774,6 +1853,7 @@ Read-only.
     [Value <String>]: A property value.
   [SpouseName <String>]: The name of the contact's spouse/partner.
   [Surname <String>]: The contact's surname.
+  [TertiaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
   [Title <String>]: The contact's title.
   [Websites <IMicrosoftGraphWebsite[]>]: Web sites associated with the contact.
     [Address <String>]: The URL of the website.
@@ -1797,7 +1877,7 @@ Nullable.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
 
-FLAG `<IMicrosoftGraphFollowupFlag>`: followupFlag
+FLAG <IMicrosoftGraphFollowupFlag>: followupFlag
   [(Any) <Object>]: This indicates any property can be added to this object.
   [CompletedDateTime <IMicrosoftGraphDateTimeZone>]: dateTimeTimeZone
     [(Any) <Object>]: This indicates any property can be added to this object.
@@ -1809,7 +1889,7 @@ See below for possible values.
   [FlagStatus <String>]: followupFlagStatus
   [StartDateTime <IMicrosoftGraphDateTimeZone>]: dateTimeTimeZone
 
-INPUTOBJECT `<IPersonalContactsIdentity>`: Identity Parameter
+INPUTOBJECT <IPersonalContactsIdentity>: Identity Parameter
   [ContactFolderId <String>]: The unique identifier of contactFolder
   [ContactFolderId1 <String>]: The unique identifier of contactFolder
   [ContactId <String>]: The unique identifier of contact
@@ -1827,7 +1907,7 @@ PHONES <IMicrosoftGraphPhone[]>: Phone numbers associated with the contact, for 
   [Number <String>]: The phone number.
   [Type <String>]: phoneType
 
-PHOTO `<IMicrosoftGraphProfilePhoto>`: profilePhoto
+PHOTO <IMicrosoftGraphProfilePhoto>: profilePhoto
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -1846,12 +1926,27 @@ It's a free-format string value, for example, 'United States'.
   [Street <String>]: The street.
   [Type <String>]: physicalAddressType
 
+PRIMARYEMAILADDRESS <IMicrosoftGraphEmailAddress>: emailAddress
+  [(Any) <Object>]: This indicates any property can be added to this object.
+  [Address <String>]: The email address of an entity instance.
+  [Name <String>]: The display name of an entity instance.
+
+SECONDARYEMAILADDRESS <IMicrosoftGraphEmailAddress>: emailAddress
+  [(Any) <Object>]: This indicates any property can be added to this object.
+  [Address <String>]: The email address of an entity instance.
+  [Name <String>]: The display name of an entity instance.
+
 SINGLEVALUEEXTENDEDPROPERTIES <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>: The collection of single-value extended properties defined for the contact.
 Read-only.
 Nullable.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
   [Value <String>]: A property value.
+
+TERTIARYEMAILADDRESS <IMicrosoftGraphEmailAddress>: emailAddress
+  [(Any) <Object>]: This indicates any property can be added to this object.
+  [Address <String>]: The email address of an entity instance.
+  [Name <String>]: The display name of an entity instance.
 
 WEBSITES <IMicrosoftGraphWebsite[]>: Web sites associated with the contact.
   [Address <String>]: The URL of the website.
@@ -1861,26 +1956,4 @@ WEBSITES <IMicrosoftGraphWebsite[]>: Web sites associated with the contact.
 
 ## RELATED LINKS
 
-- [Update-MgBetaUserContact](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.personalcontacts/update-mgbetausercontact)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.personalcontacts/update-mgbetausercontact)

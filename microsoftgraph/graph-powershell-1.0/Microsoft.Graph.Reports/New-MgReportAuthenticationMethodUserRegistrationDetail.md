@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Reports-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.reports/new-mgreportauthenticationmethoduserregistrationdetail
 Locale: en-US
 Module Name: Microsoft.Graph.Reports
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: New-MgReportAuthenticationMethodUserRegistrationDetail
 ---
@@ -14,9 +14,6 @@ title: New-MgReportAuthenticationMethodUserRegistrationDetail
 ## SYNOPSIS
 
 Create new navigation property to userRegistrationDetails for reports
-
-> [!NOTE]
-> To view the beta release of this cmdlet, view [New-MgBetaReportAuthenticationMethodUserRegistrationDetail](/powershell/module/Microsoft.Graph.Beta.Reports/New-MgBetaReportAuthenticationMethodUserRegistrationDetail?view=graph-powershell-beta)
 
 ## SYNTAX
 
@@ -53,6 +50,16 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Create new navigation property to userRegistrationDetails for reports
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -541,7 +548,7 @@ HelpMessage: ''
 ### -SystemPreferredAuthenticationMethods
 
 Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication.
-Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
+The possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
 Supports $filter (any with eq).
 
 ```yaml
@@ -699,7 +706,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphUserRegistrationDetails>`: userRegistrationDetails
+BODYPARAMETER <IMicrosoftGraphUserRegistrationDetails>: userRegistrationDetails
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -730,7 +737,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   [MethodsRegistered <String[]>]: Collection of authentication methods registered, such as mobilePhone, email, passKeyDeviceBound.
 Supports $filter (any with eq).
   [SystemPreferredAuthenticationMethods <String[]>]: Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication.
-Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
+The possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
 Supports $filter (any with eq).
   [UserDisplayName <String>]: The user display name, such as Adele Vance.
 Supports $filter (eq, startsWith) and $orderby.
@@ -742,27 +749,4 @@ Supports $filter (eq, startsWith) and $orderby.
 
 ## RELATED LINKS
 
-- [New-MgReportAuthenticationMethodUserRegistrationDetail](https://learn.microsoft.com/powershell/module/microsoft.graph.reports/new-mgreportauthenticationmethoduserregistrationdetail)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.reports/new-mgreportauthenticationmethoduserregistrationdetail)

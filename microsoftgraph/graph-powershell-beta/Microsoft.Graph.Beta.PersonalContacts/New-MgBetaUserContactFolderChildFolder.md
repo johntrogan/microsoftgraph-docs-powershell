@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.PersonalContacts-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.personalcontacts/new-mgbetausercontactfolderchildfolder
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.PersonalContacts
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: New-MgBetaUserContactFolderChildFolder
 ---
@@ -14,9 +14,6 @@ title: New-MgBetaUserContactFolderChildFolder
 ## SYNOPSIS
 
 Create new navigation property to childFolders for users
-
-> [!NOTE]
-> To view the v1.0 release of this cmdlet, view [New-MgUserContactFolderChildFolder](/powershell/module/Microsoft.Graph.PersonalContacts/New-MgUserContactFolderChildFolder?view=graph-powershell-1.0)
 
 ## SYNTAX
 
@@ -79,18 +76,10 @@ This cmdlet has the following aliases,
 
 Create new navigation property to childFolders for users
 
-**Permissions**
-
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | Contacts.ReadWrite,  |
-| Delegated (personal Microsoft account) | Contacts.ReadWrite,  |
-| Application | Contacts.ReadWrite,  |
-
 ## EXAMPLES
-### Example 1: Code snippet
 
-```powershell
+### EXAMPLE 1
+
 Import-Module Microsoft.Graph.Beta.PersonalContacts
 
 $params = @{
@@ -99,11 +88,6 @@ $params = @{
 
 # A UPN can also be used as -UserId.
 New-MgBetaUserContactFolderChildFolder -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
-```
-This example shows how to use the New-MgBetaUserContactFolderChildFolder Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
 
 ## PARAMETERS
 
@@ -723,7 +707,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphContactFolder>`: contactFolder
+BODYPARAMETER <IMicrosoftGraphContactFolder>: contactFolder
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
@@ -819,7 +803,12 @@ It's a free-format string value, for example, 'United States'.
       [State <String>]: The state.
       [Street <String>]: The street.
       [Type <String>]: physicalAddressType
+    [PrimaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
+      [(Any) <Object>]: This indicates any property can be added to this object.
+      [Address <String>]: The email address of an entity instance.
+      [Name <String>]: The display name of an entity instance.
     [Profession <String>]: The contact's profession.
+    [SecondaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
     [SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]: The collection of single-value extended properties defined for the contact.
 Read-only.
 Nullable.
@@ -828,6 +817,7 @@ Read-only.
       [Value <String>]: A property value.
     [SpouseName <String>]: The name of the contact's spouse/partner.
     [Surname <String>]: The contact's surname.
+    [TertiaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
     [Title <String>]: The contact's title.
     [Websites <IMicrosoftGraphWebsite[]>]: Web sites associated with the contact.
       [Address <String>]: The URL of the website.
@@ -946,7 +936,12 @@ It's a free-format string value, for example, 'United States'.
       [State <String>]: The state.
       [Street <String>]: The street.
       [Type <String>]: physicalAddressType
+    [PrimaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
+      [(Any) <Object>]: This indicates any property can be added to this object.
+      [Address <String>]: The email address of an entity instance.
+      [Name <String>]: The display name of an entity instance.
     [Profession <String>]: The contact's profession.
+    [SecondaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
     [SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]: The collection of single-value extended properties defined for the contact.
 Read-only.
 Nullable.
@@ -955,6 +950,7 @@ Read-only.
       [Value <String>]: A property value.
     [SpouseName <String>]: The name of the contact's spouse/partner.
     [Surname <String>]: The contact's surname.
+    [TertiaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
     [Title <String>]: The contact's title.
     [Websites <IMicrosoftGraphWebsite[]>]: Web sites associated with the contact.
       [Address <String>]: The URL of the website.
@@ -1063,7 +1059,12 @@ It's a free-format string value, for example, 'United States'.
     [State <String>]: The state.
     [Street <String>]: The street.
     [Type <String>]: physicalAddressType
+  [PrimaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
+    [(Any) <Object>]: This indicates any property can be added to this object.
+    [Address <String>]: The email address of an entity instance.
+    [Name <String>]: The display name of an entity instance.
   [Profession <String>]: The contact's profession.
+  [SecondaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
   [SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]: The collection of single-value extended properties defined for the contact.
 Read-only.
 Nullable.
@@ -1072,6 +1073,7 @@ Read-only.
     [Value <String>]: A property value.
   [SpouseName <String>]: The name of the contact's spouse/partner.
   [Surname <String>]: The contact's surname.
+  [TertiaryEmailAddress <IMicrosoftGraphEmailAddress>]: emailAddress
   [Title <String>]: The contact's title.
   [Websites <IMicrosoftGraphWebsite[]>]: Web sites associated with the contact.
     [Address <String>]: The URL of the website.
@@ -1082,7 +1084,7 @@ Read-only.
   [YomiGivenName <String>]: The phonetic Japanese given name (first name) of the contact.
   [YomiSurname <String>]: The phonetic Japanese surname (last name)  of the contact.
 
-INPUTOBJECT `<IPersonalContactsIdentity>`: Identity Parameter
+INPUTOBJECT <IPersonalContactsIdentity>: Identity Parameter
   [ContactFolderId <String>]: The unique identifier of contactFolder
   [ContactFolderId1 <String>]: The unique identifier of contactFolder
   [ContactId <String>]: The unique identifier of contact
@@ -1106,26 +1108,4 @@ Read-only.
 
 ## RELATED LINKS
 
-- [New-MgBetaUserContactFolderChildFolder](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.personalcontacts/new-mgbetausercontactfolderchildfolder)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.personalcontacts/new-mgbetausercontactfolderchildfolder)

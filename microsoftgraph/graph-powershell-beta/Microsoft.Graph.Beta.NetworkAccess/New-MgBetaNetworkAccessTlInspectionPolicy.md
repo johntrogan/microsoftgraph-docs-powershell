@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.NetworkAccess-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/new-mgbetanetworkaccesstlinspectionpolicy
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.NetworkAccess
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: New-MgBetaNetworkAccessTlInspectionPolicy
 ---
@@ -49,13 +49,21 @@ This cmdlet has the following aliases,
 
 Create a new tlsInspectionPolicy object.
 
-**Permissions**
+## EXAMPLES
 
-| Permission type | Permissions (from least to most privileged) |
-| --------------- | ------------------------------------------  |
-| Delegated (work or school account) | NetworkAccess.ReadWrite.All,  |
-| Delegated (personal Microsoft account) | Not supported |
-| Application | NetworkAccess.ReadWrite.All,  |
+### EXAMPLE 1
+
+Import-Module Microsoft.Graph.Beta.NetworkAccess
+
+$params = @{
+	name = "Default TLS Inspection Policy"
+	description = "Policy for inspecting TLS traffic"
+	settings = @{
+		defaultAction = "bypass"
+	}
+}
+
+New-MgBetaNetworkAccessTlInspectionPolicy -BodyParameter $params
 
 ## PARAMETERS
 
@@ -496,7 +504,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphNetworkaccessTlsInspectionPolicy>`: tlsInspectionPolicy
+BODYPARAMETER <IMicrosoftGraphNetworkaccessTlsInspectionPolicy>: tlsInspectionPolicy
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Description <String>]: Description.
   [Name <String>]: Policy name.
@@ -521,28 +529,5 @@ Read-only.
 
 ## RELATED LINKS
 
-- [New-MgBetaNetworkAccessTlInspectionPolicy](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/new-mgbetanetworkaccesstlinspectionpolicy)
-- [Graph API Reference](https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-post-tlsinspectionpolicies?view=graph-rest-beta)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.networkaccess/new-mgbetanetworkaccesstlinspectionpolicy)
+- [](https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-post-tlsinspectionpolicies?view=graph-rest-beta)

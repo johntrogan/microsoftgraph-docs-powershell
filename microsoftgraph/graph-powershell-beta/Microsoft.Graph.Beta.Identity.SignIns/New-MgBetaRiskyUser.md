@@ -1,10 +1,10 @@
----
+﻿---
 document type: cmdlet
 external help file: Microsoft.Graph.Beta.Identity.SignIns-Help.xml
 HelpUri: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins/new-mgbetariskyuser
 Locale: en-US
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-ms.date: 12/05/2025
+ms.date: 02/03/2026
 PlatyPS schema version: 2024-05-01
 title: New-MgBetaRiskyUser
 ---
@@ -14,9 +14,6 @@ title: New-MgBetaRiskyUser
 ## SYNOPSIS
 
 Create new navigation property to riskyUsers for identityProtection
-
-> [!NOTE]
-> To view the v1.0 release of this cmdlet, view [New-MgRiskyUser](/powershell/module/Microsoft.Graph.Identity.SignIns/New-MgRiskyUser?view=graph-powershell-1.0)
 
 ## SYNTAX
 
@@ -49,6 +46,16 @@ This cmdlet has the following aliases,
 ## DESCRIPTION
 
 Create new navigation property to riskyUsers for identityProtection
+
+## EXAMPLES
+
+### EXAMPLE 1
+
+{{ Add code here }}
+
+### EXAMPLE 2
+
+{{ Add code here }}
 
 ## PARAMETERS
 
@@ -161,7 +168,7 @@ HelpMessage: ''
 
 ### -History
 
-
+.
 To construct, see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
@@ -248,7 +255,7 @@ HelpMessage: ''
 ### -IsDeleted
 
 Indicates whether the user is deleted.
-Possible values are: true, false.
+The possible values are: true, false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -553,14 +560,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties.
 For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODYPARAMETER `<IMicrosoftGraphRiskyUser>`: riskyUser
+BODYPARAMETER <IMicrosoftGraphRiskyUser>: riskyUser
   [(Any) <Object>]: This indicates any property can be added to this object.
   [Id <String>]: The unique identifier for an entity.
 Read-only.
   [History <IMicrosoftGraphRiskyUserHistoryItem[]>]: 
     [History <IMicrosoftGraphRiskyUserHistoryItem[]>]: 
     [IsDeleted <Boolean?>]: Indicates whether the user is deleted.
-Possible values are: true, false.
+The possible values are: true, false.
     [IsProcessing <Boolean?>]: Indicates whether a user's risky state is being processed by the backend.
     [RiskDetail <String>]: riskDetail
     [RiskLastUpdatedDateTime <DateTime?>]: The date and time that the risky user was last updated.
@@ -584,7 +591,7 @@ For more information about each value, see Risk types and detection.
     [InitiatedBy <String>]: The ID of actor that does the operation.
     [UserId <String>]: The ID of the user.
   [IsDeleted <Boolean?>]: Indicates whether the user is deleted.
-Possible values are: true, false.
+The possible values are: true, false.
   [IsProcessing <Boolean?>]: Indicates whether a user's risky state is being processed by the backend.
   [RiskDetail <String>]: riskDetail
   [RiskLastUpdatedDateTime <DateTime?>]: The date and time that the risky user was last updated.
@@ -598,7 +605,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 HISTORY <IMicrosoftGraphRiskyUserHistoryItem[]>: .
   [History <IMicrosoftGraphRiskyUserHistoryItem[]>]: 
   [IsDeleted <Boolean?>]: Indicates whether the user is deleted.
-Possible values are: true, false.
+The possible values are: true, false.
   [IsProcessing <Boolean?>]: Indicates whether a user's risky state is being processed by the backend.
   [RiskDetail <String>]: riskDetail
   [RiskLastUpdatedDateTime <DateTime?>]: The date and time that the risky user was last updated.
@@ -625,27 +632,4 @@ For more information about each value, see Risk types and detection.
 
 ## RELATED LINKS
 
-- [New-MgBetaRiskyUser](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins/new-mgbetariskyuser)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins/new-mgbetariskyuser)

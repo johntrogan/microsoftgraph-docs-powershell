@@ -55,6 +55,11 @@ Complete the following steps to create a custom application that you can use to 
         - **URI value**: *http://localhost*
         - An additional Redirect URI is required for Windows Authentication Manager (WAM) broker-based sign-in that will be added subsequently.
     1. Select **Register**.
+    1. Click on **Authentication** in the left hand nav pane
+    1. Click **+ Add Redirect URI**
+    1. Click on **Mobile and desktop applications**
+    1. Enter a URI value: `ms-appx-web://Microsoft.AAD.BrokerPlugin/<YOUR_APP_CLIENT_ID>` in the text box
+    1. Click **Configure**
     1. Go to **Enterprise applications** and select the application you just created.
     1. Under **Manage**, select **Properties** and set **Assignment required?** to **Yes**.
     1. Select **Save**.

@@ -53,7 +53,7 @@ Complete the following steps to create a custom application that you can use to 
     1. For **Redirect URI**:
         - Select **Public client/native** from the drop down
         - **URI value**: *http://localhost*
-        - If you plan to use this application in a sovereign cloud environment, add an additional redirect URI with **Public client/native** and URI value: `ms-appx-web://Microsoft.AAD.BrokerPlugin/<YOUR_APP_CLIENT_ID>`. This URI is required for Windows Authentication Manager (WAM) broker-based sign-in in sovereign clouds.
+        - An additional Redirect URI is required for Windows Authentication Manager (WAM) broker-based sign-in that will be added subsequently.
     1. Select **Register**.
     1. Go to **Enterprise applications** and select the application you just created.
     1. Under **Manage**, select **Properties** and set **Assignment required?** to **Yes**.
